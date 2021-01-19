@@ -32,7 +32,7 @@
 	<body>
 		<header>
 			
-			<div class="header-top">
+			<!-- <div class="header-top">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-left no-padding">
@@ -52,7 +52,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<div class="container main-menu" id="main-menu">
 				<div class="row align-items-center justify-content-between">
 					<nav id="nav-menu-container">
