@@ -1,53 +1,55 @@
-<?php require_once('head.php'); ?>
-    <div class="container-fluid">
-        <div class="row bg-title">
-            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">IMUNISASI</h4>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /row -->
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="white-box">
-                    <h3 class="box-title">Tabel Imunisasi</h3>
-                        <div class="row">
-                            <div class="col-lg-10">
-                                <a href="pendaftaran-imunisasi.php" class="btn btn-success"><i class="fa fa-plus-circle"> </i> Pendaftaran Balita</a>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
-                            </div>
-                        </div>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Tanggal</th>
-                                    <th>Jenis Imunisasi</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Deshmukh</td>
-                                    <td>admin</td>
-                                    <td>
-                                        <a href="detail-balita.php" class="btn btn-primary"><i class="fa fa-list-alt"></i> Detail</a>
-                                        <a href="" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Edit</a>
-                                        <a href="" class="btn btn-danger"><i class="fa fa-trash-o"></i> Hapus</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
-    </div>
-<?php require_once('footer.php'); ?>
+<?php require_once('head.php'); ?>		
+		<div class="site-main-container">
+			<!-- Start top-post Area -->
+			<section class="top-post-area pt-10">
+				<div class="container no-padding">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="hero-nav-area">
+								<h1 class="text-white">Catatan Imunisasi</h1>
+								<p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span>Catatan Imunisasi</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End top-post Area -->
+			<!-- Start latest-post Area -->
+			<section class="latest-post-area pb-120">
+				<div class="container no-padding">
+					<div class="row">
+						<div class="col-lg-12 post-list">
+							<!-- Start single-post Area -->
+							<div class="single-post-wrap">
+								<div class="content-wrap">
+                                    <div class="row">
+                                        <div class="col-lg-9">
+                                            <h3>Catatan Imunisasi</h3>
+                                        </div>
+                                    </div>
+                                    <br>
+									<table class="table">
+                                        <thead>
+                                            <tr>
+                                            <th scope="col">No</th>
+                                            <th scope="col">Tanggal</th>
+                                            <th scope="col">Jenis Imunisasi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+						</div>
+						<!-- End single-post Area -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End latest-post Area -->
+	</div>
+<?php require_once('footer.php') ?>

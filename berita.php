@@ -1,56 +1,45 @@
 <?php require_once('head.php'); ?>
-        <div class="container-fluid">
-            <div class="row bg-title">
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">BERITA</h4>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /row -->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="white-box">
-                        <h3 class="box-title">Tabel Berita</h3>
-                            <div class="row">
-                                <div class="col-lg-10">
-                                    <a href="tambah-berita.php" class="btn btn-success"><i class="fa fa-plus-circle"> </i> Tambah Berita</a>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Username" aria-label="Cari" aria-describedby="basic-addon1">
-                                    </div>
-                                </div>
-                            </div>
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Judul</th>
-                                        <th>Tanggal</th>
-                                        <th>Auditor</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Deshmukh</td>
-                                        <td>Prohaska</td>
-                                        <td>admin</td>
-                                        <td>
-                                            <a href="user/berita.php" class="btn btn-primary"><i class="fa fa-list-alt"></i> Detail</a>
-                                            <a href="edit-berita.php" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Edit</a>
-                                            <a href="" class="btn btn-danger"><i class="fa fa-trash-o"></i> Hapus</a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
-<?php require_once('footer.php'); ?>
+		<div class="site-main-container">
+			<!-- Start top-post Area -->
+			<section class="top-post-area pt-10">
+				<div class="container no-padding">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="hero-nav-area">
+								<h1 class="text-white">Berita</h1>
+								<p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span> Berita</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End top-post Area -->
+			<!-- Start latest-post Area -->
+			<section class="latest-post-area pb-120">
+				<div class="container no-padding">
+					<div class="row">
+						<div class="col-lg-12 post-list">
+							<!-- Start single-post Area -->
+							<div class="single-post-wrap">
+								<div class="feature-img-thumb relative">
+									<div class="overlay overlay-bg"></div>
+									<img class="img-fluid" src="img/f1.jpg" alt="">
+								</div>
+								<div class="content-wrap">
+									<h3>Judul</h3>
+									<ul class="meta pb-20">
+										<li><a href="#"><span class="lnr lnr-user"></span>Auditor</a></li>
+										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+									</ul>
+									<p>
+										ISI BERITA
+									</p>
+						</div>
+						<!-- End single-post Area -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End latest-post Area -->
+	</div>
+<?php require_once('footer.php') ?>
