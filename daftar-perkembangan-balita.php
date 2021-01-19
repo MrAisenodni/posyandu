@@ -2,7 +2,7 @@
         <div class="container-fluid">
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">BALITA</h4>
+                    <h4 class="page-title">PERKEMBANGAN BALITA</h4>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="white-box">
-                        <h3 class="box-title">Tambah Pendaftaran Balita</h3>
+                        <h3 class="box-title">Tambah Perkembangan Balita</h3>
                         <div class="row">
                             <div class="col-sm-6">
                                 <h4 style="text-align: center;">Biodata Balita</h4>

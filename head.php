@@ -75,6 +75,10 @@
                                 aria-hidden="true"></i><span class="hide-menu">Berita</span></a>
                     </li>
                     <li>
+                        <a href="jadwal-posyandu.php" class="waves-effect"><i class="fa fa-table fa-fw"
+                                aria-hidden="true"></i><span class="hide-menu">Jadwal</span></a>
+                    </li>
+                    <li>
                         <a href="balita.php" class="waves-effect"><i class="fa fa-table fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Balita</span></a>
                     </li>

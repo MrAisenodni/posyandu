@@ -19,6 +19,10 @@
                                         <input type="date" class="form-control" id="" aria-describedby="emailHelp" disabled>
                                     </div><br>
                                     <div class="sm-3">
+                                        <label for="exampleInputPassword1" class="form-label">Jam</label>
+                                        <input type="time" class="form-control" id="" disabled>
+                                    </div><br>
+                                    <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tempat</label>
                                         <input type="text" class="form-control" id="" disabled>
                                     </div><br>

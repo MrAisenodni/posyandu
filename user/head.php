@@ -65,7 +65,7 @@
 					</nav><!-- #nav-menu-container -->
 					<div class="navbar-right">
                         <ul class="nav-menu">
-                            <li><a href="contact.html">Login</a></li>
+                            <li><a href="login.php">Login</a></li>
                         </ul>
 					</div>
 				</div>
