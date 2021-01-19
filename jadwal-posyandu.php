@@ -16,17 +16,17 @@
                                 <form>
                                     <div class="sm-3">
                                         <label for="exampleInputEmail1" class="form-label">Tanggal</label>
-                                        <input type="date" class="form-control" id="" aria-describedby="emailHelp" disabled>
+                                        <input type="text" class="form-control" id="" aria-describedby="emailHelp" value="17/01/2021" disabled>
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Jam</label>
-                                        <input type="time" class="form-control" id="" disabled>
+                                        <input type="time" class="form-control" id="" value="09:00" disabled>
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tempat</label>
-                                        <input type="text" class="form-control" id="" disabled>
+                                        <input type="text" class="form-control" id="" value="Posyandu ApelDesa Sukamanah" disabled>
                                     </div><br>
-                                    <a href="" class="btn btn-success btn-lg"><i class="fa fa-check-square"></i> Simpan</a>
+                                    <a href="index.php" class="btn btn-success btn-lg"><i class="fa fa-check-square"></i> Simpan</a>
                                     <a href="perkembangan-balita.php" class="btn btn-danger btn-lg"><i class="fa fa-times"></i> Batal</a>
                                 </form>
                             </div>

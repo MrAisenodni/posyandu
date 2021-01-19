@@ -17,7 +17,7 @@
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                        <input type="text" class="form-control" placeholder="Pencarian" aria-label="Username" aria-describedby="basic-addon1">
                                     </div>
                                 </div>
                             </div>
@@ -36,12 +36,11 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Deshmukh</td>
-                                        <td>Prohaska</td>
-                                        <td>@Genelia</td>
-                                        <td>admin</td>
+                                        <td>317505089160008</td>
+                                        <td>Azka</td>
+                                        <td>HB-D (0-7 hari)</td>
+                                        <td>3,5</td>
                                         <td>
-                                            <a href="detail-balita.php" class="btn btn-primary"><i class="fa fa-list-alt"></i> Detail</a>
                                             <a href="edit-balita.php" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Edit</a>
                                             <a href="" class="btn btn-danger"><i class="fa fa-trash-o"></i> Hapus</a>
                                         </td>

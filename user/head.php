@@ -65,7 +65,8 @@
 					</nav><!-- #nav-menu-container -->
 					<div class="navbar-right">
                         <ul class="nav-menu">
-                            <li><a href="login.php">Login</a></li>
+                            <li><a href="">Azka</a></li>
+                            <li><a href="logout.php">Logout</a></li>
                         </ul>
 					</div>
 				</div>
