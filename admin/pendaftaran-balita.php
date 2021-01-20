@@ -20,7 +20,7 @@ if(isset($_POST['tambah'])){
 
   $adduser = mysqli_query($con,"INSERT INTO user VALUES('$nik','$nuser','$tmuser','$tluser','$alamat',
     '$hp','$agama','$kerja','$ayah','$uname','$pass')");
-  $addbayi = mysqli_query($con,"INSERT INTO balita VALUES('','$nama','$tmbayi','$tlbayi')");
+  $addbayi = mysqli_query($con,"INSERT INTO balita VALUES('','$nik','$nama','$tmbayi','$tlbayi')");
   if($adduser && $addbayi){
     header('location:balita.php?stat=input_success');
   }else{

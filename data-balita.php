@@ -1,4 +1,4 @@
-<?php require_once('head.php'); ?>		
+<?php require_once('head.php'); ?>
 		<div class="site-main-container">
 			<!-- Start top-post Area -->
 			<section class="top-post-area pt-10">
@@ -26,11 +26,11 @@
                                         <div class="col-lg-9">
                                             <h3>Data Balita</h3>
                                         </div>
-                                        <div class="col-lg-3">
+                                        <!-- <div class="col-lg-3">
                                             <div class="mb-3">
                                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Cari....">
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <br>
 									<table class="table">
@@ -43,14 +43,20 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+																					<?php
+				                                  $no = 1;
+				                                  $sql = mysqli_query($con, "SELECT *,YEAR(CURRENT_DATE) - YEAR(tgl_lahir) AS usia FROM balita");
+				                                  while($data = mysqli_fetch_array($sql)){
+				                                  ?>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
+                                                <th scope="row"><?= $no ?></th>
+                                                <td><?= $data['nik']; ?></td>
+                                                <td><?= $data['nama_balita']?></td>
                                                 <td>
                                                     <a href="detail-data-balita.php" class="btn btn-primary">Detail</a>
                                                 </td>
                                             </tr>
+																						<?php $no++;}?>
                                         </tbody>
                                     </table>
 						</div>

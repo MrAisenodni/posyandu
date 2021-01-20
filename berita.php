@@ -1,4 +1,10 @@
-<?php require_once('head.php'); ?>
+<?php require_once('head.php');
+
+$no = 1;
+$sql = mysqli_query($con, "SELECT * FROM phbs order by tgl_dibuat DESC");
+$data = mysqli_fetch_array($sql)
+
+?>
 		<div class="site-main-container">
 			<!-- Start top-post Area -->
 			<section class="top-post-area pt-10">
@@ -23,16 +29,16 @@
 							<div class="single-post-wrap">
 								<div class="feature-img-thumb relative">
 									<div class="overlay overlay-bg"></div>
-									<img class="img-fluid" src="img/f1.jpg" alt="">
+									<img class="img-fluid" src="<?= $data['gambar']?>" alt="">
 								</div>
 								<div class="content-wrap">
-									<h3>Judul</h3>
+									<h3><?php $data['judul_berita']?></h3>
 									<ul class="meta pb-20">
-										<li><a href="#"><span class="lnr lnr-user"></span>Auditor</a></li>
-										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+										<li><a href="#"><span class="lnr lnr-user"></span><?= $data['penulis_berita']?></a></li>
+										<li><a href="#"><span class="lnr lnr-calendar-full"></span><?= $data['tgl_dibuat']?></a></li>
 									</ul>
 									<p>
-										ISI BERITA
+										<?= $data['deskripsi_berita']?>
 									</p>
 						</div>
 						<!-- End single-post Area -->

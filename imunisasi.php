@@ -1,4 +1,4 @@
-<?php require_once('head.php'); ?>		
+<?php require_once('head.php'); ?>
 		<div class="site-main-container">
 			<!-- Start top-post Area -->
 			<section class="top-post-area pt-10">
@@ -37,11 +37,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+																					<?php
+						                              $no = 1;
+						                              $sql = mysqli_query($con, "SELECT * FROM imunisasi
+						                              inner join balita on imunisasi.kode_balita = balita.kode_balita
+						                              inner join user on imunisasi.nik = user.nik");
+						                              while($data = mysqli_fetch_array($sql)){?>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
+                                                <th scope="row"><?= $no ?></th>
+                                                <td><?= $data['tgl_imunisasi'] ?></td>
+                                                <td><?= $data['jenis_imunisasi']?></td>
                                             </tr>
+																					<?php $no++;}?>
                                         </tbody>
                                     </table>
 						</div>

@@ -36,6 +36,9 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-
+<?php
+ob_start();
+require_once('../config/koneksi.php');
+require_once('session.php');
+ ?>
 <body>
-        

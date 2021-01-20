@@ -1,4 +1,4 @@
-
+<?php ob_end_flush();?>
     <!-- jQuery -->
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->

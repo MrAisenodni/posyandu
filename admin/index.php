@@ -1,4 +1,26 @@
-<?php require_once('head.php'); ?>
+<?php require_once('head.php');
+date_default_timezone_set('Asia/Jakarta');
+$hariini = date('Y-m-d');
+$sql = mysqli_query($con,"SELECT count(kode_balita) as jumlah from balita");
+$cbayi = mysqli_fetch_array($sql);
+
+$sql1 = mysqli_query($con,"SELECT * from jadwal WHERE tanggal='$hariini'");
+$jadwal = mysqli_fetch_array($sql1);
+$bulan = array(
+  'Januari',
+  'Februari',
+  'Maret',
+  'April',
+  'Mei',
+  'Juni',
+  'Juli',
+  'Agustus',
+  'September',
+  'Oktober',
+  'November',
+  'Desember',
+);
+?>
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -17,7 +39,7 @@
                                     <h4 class="text-muted vb">JUMLAH BALITA</h4>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <h3 class="counter text-right m-t-15 text-danger">23</h3>
+                                    <h3 class="counter text-right m-t-15 text-danger"><?= $cbayi['jumlah']?></h3>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                 </div>
@@ -33,9 +55,12 @@
                                         data-icon="&#xe01b;"></i>
                                     <h4 class="text-muted vb">JADWAL</h4>
                                 </div><br><br>
-                                <h5 class="text-muted vb">07 Januari 2021</h5>
+                                <h5 class="text-muted vb"><?php if($jadwal['tanggal']==null){echo date('d-A-Y');}else{echo
+                                  substr($jadwal['tanggal'],8,2)." ".
+                                  $bulan[intval(substr($jadwal['tanggal'],6,2))-1]." ".
+                                  substr($jadwal['tanggal'],0,4);}?></h5>
                                 <h5 class="text-muted vb">Posyandu Apel Desa Sukamanah</h5>
-                                <h5 class="text-muted vb">09:00</h5>
+                                <h5 class="text-muted vb"><?php if($jadwal['jam']==null){echo '-';}else{echo $jadwal['jam'];}?></h5>
                                 <!-- <div class="col-md-6 col-sm-6 col-xs-6">
                                     <h3 class="counter text-right m-t-15 text-megna">169</h3>
                                 </div> -->
@@ -50,9 +75,9 @@
                         <div class="white-box">
                             <div class="col-in row">
                                 <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <a href="laporan.php" class="btn btn-success btn-lg">
-                                        <i class="fa fa-file-pdf-o fa-f"></i>     
-                                            <b> Laporan</b>
+                                    <a href="laporan.php" class="btn btn-success btn-lg" target="_blank">
+                                        <i class="fa fa-file-pdf-o fa-f"></i>
+                                            <b> Cetak Laporan</b>
                                     </a>
                                     <h3 class="counter text-right m-t-15 text-primary"></h3>
                                 </div>

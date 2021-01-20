@@ -39,7 +39,7 @@
 <?php
 ob_start();
 require_once('../config/koneksi.php');
-// require_once('session.php');?>
+require_once('session.php');?>
 <body>
     <!-- Preloader -->
     <div class="preloader">
@@ -57,7 +57,7 @@ require_once('../config/koneksi.php');
                 </div>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
-                        <a class="profile-pic" href=""> <b class="hidden-xs">Steave</b> </a>
+                        <a class="profile-pic" href=""> <b class="hidden-xs"><?= $namaa?></b> </a>
                     </li>
                 </ul>
             </div>

@@ -27,12 +27,46 @@
 	<link rel="stylesheet" type="text/css" href="login/css/main.css">
 <!--===============================================================================================-->
 </head>
+<?php require_once('config/koneksi.php');
+if(isset($_POST['login'])){
+	$mail = mysqli_real_escape_string($con, $_POST['uname']);
+	$pw = mysqli_real_escape_string($con,md5($_POST['pass']));
+
+	$sql = mysqli_query($con, "SELECT * FROM admin WHERE username='$mail' AND password='$pw'");
+	$data = mysqli_fetch_array($sql);
+	$num = mysqli_num_rows($sql);
+
+	if($num>0){
+		if($data['kode_admin']!=null){
+			session_start();
+			$_SESSION['kode'] = $data['kode_admin'];
+			$_SESSION['nama'] = $data['nama'];
+			$_SESSION['alamat'] = $data['alamat'];
+			$_SESSION['hp'] = $data['hp'];
+			$_SESSION['uname'] = $data['username'];
+
+			header('location:admin/index.php?stat=login_success');
+		}else{
+			session_start();
+			$_SESSION['nik'] = $data['nik'];
+			$_SESSION['nama'] = $data['nama'];
+			$_SESSION['tmpt'] = $data['tempat_lahir'];
+			$_SESSION['tgl'] = $data['hp'];
+			$_SESSION['hp'] = $data['no_hp'];
+
+			header('location:index.php?stat=login_success');
+		}
+
+	}else{
+		header('location:login.php?stat=wrong_password');
+	}
+} ?>
 <body>
 
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="post">
 					<span class="login100-form-title p-b-33">
 						Login
 					</span>
@@ -50,7 +84,7 @@
 					</div>
 
 					<div class="container-login100-form-btn m-t-20">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" type="submit" name="login">
 							Login
                         </button>
 					</div>
