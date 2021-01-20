@@ -1,4 +1,33 @@
-<?php require_once('head.php'); ?>
+<?php require_once('head.php');
+if(isset($_POST['tambah'])){
+  //ORTU
+  $nik = $_POST['nik'];
+  $nuser = $_POST['nuser'];
+  $tmuser = $_POST['tmuser'];
+  $tluser = $_POST['tluser'];
+  $alamat = $_POST['alamat'];
+  $hp = $_POST['hp'];
+  $agama = $_POST['agama'];
+  $kerja = $_POST['kerja'];
+  $ayah = $_POST['ayah'];
+  $uname = $_POST['uname'];
+  $pass = md5('sementara');
+
+  //BAYI
+  $nama = $_POST['bayi'];
+  $tmbayi = $_POST['tmbayi'];
+  $tlbayi = $_POST['tlbayi'];
+
+  $adduser = mysqli_query($con,"INSERT INTO user VALUES('$nik','$nuser','$tmuser','$tluser','$alamat',
+    '$hp','$agama','$kerja','$ayah','$uname','$pass')");
+  $addbayi = mysqli_query($con,"INSERT INTO balita VALUES('','$nama','$tmbayi','$tlbayi')");
+  if($adduser && $addbayi){
+    header('location:balita.php?stat=input_success');
+  }else{
+    header('location:balita.php?stat=input_failed');
+  }
+}
+?>
         <div class="container-fluid">
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -14,73 +43,65 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <h4 style="text-align: center;">Data Orang Tua</h4>
-                                <form>
+                                <form method="post">
                                     <div class="sm-3">
                                         <label for="exampleInputEmail1" class="form-label">NIK</label>
-                                        <input type="text" class="form-control" id="" aria-describedby="emailHelp">
+                                        <input type="text" name="nik" class="form-control" id="" aria-describedby="emailHelp">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Ibu Bayi</label>
-                                        <input type="text" class="form-control" id="">
+                                        <input type="text" name="nuser" class="form-control" id="">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tempat Lahir</label>
-                                        <input type="text" class="form-control" id="">
+                                        <input type="text" name="tmuser" class="form-control" id="">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tanggal Lahir</label>
-                                        <input type="date" class="form-control" id="">
+                                        <input type="date" name="tluser" class="form-control" id="">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Alamat</label>
-                                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                                        <textarea class="form-control" name="alamat" aria-label="With textarea"></textarea>
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">No HP</label>
-                                        <input type="text" class="form-control" id="">
+                                        <input type="text" name="hp" class="form-control" id="">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Agama</label>
-                                        <input type="text" class="form-control" id="">
+                                        <input type="text" name="agama" class="form-control" id="">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Pekerjaan</label>
-                                        <input type="text" class="form-control" id="">
-                                    </div><br>
-                                    <div class="sm-3">
-                                        <label for="exampleInputPassword1" class="form-label">Umur</label>
-                                        <input type="text" class="form-control" id="">
+                                        <input type="text" name="kerja" class="form-control" id="">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Nama Ayah</label>
-                                        <input type="text" class="form-control" id="">
+                                        <input type="text" name="ayah" class="form-control" id="">
                                     </div><br>
                                     <div class="sm-3">
-                                        <label for="exampleInputPassword1" class="form-label">Anak Ke - </label>
-                                        <input type="text" class="form-control" id="">
+                                        <label for="exampleInputPassword1" class="form-label">Username</label>
+                                        <input type="text" name="uname" class="form-control" id="">
                                     </div><br>
                             </div>
                             <div class="col-sm-6">
                                 <h4 style="text-align: center;">Data Balita</h4>
                                     <div class="sm-3">
                                         <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
-                                        <input type="text" class="form-control" id="" aria-describedby="emailHelp">
+                                        <input type="text" name="bayi" class="form-control" id="" aria-describedby="emailHelp">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tempat Lahir</label>
-                                        <input type="text" class="form-control" id="">
+                                        <input type="text" name="tmbayi" class="form-control" id="">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tanggal Lahir</label>
-                                        <input type="date" class="form-control" id="">
-                                    </div><br>
-                                    <div class="sm-3">
-                                        <label for="exampleInputPassword1" class="form-label">Usia</label>
-                                        <input type="text" class="form-control" id="">
+                                        <input type="date" name="tlbayi" class="form-control" id="">
                                     </div><br>
                                     <hr>
-                                    <a href="" class="btn btn-success btn-lg"><i class="fa fa-check-square"></i> Daftar</a>
-                                    <a href="" class="btn btn-danger btn-lg"><i class="fa fa-times"></i> Batal</a>
+                                    <button name="tambah" class="btn btn-success btn-lg"><i class="fa fa-check-square"></i> Daftar</button>
+                                    <a href="balita.php" class="btn btn-danger btn-lg"><i class="fa fa-times"></i> Batal</a>
                                 </form>
                             </div>
                         </div>

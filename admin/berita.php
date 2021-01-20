@@ -15,11 +15,11 @@
                                 <div class="col-lg-10">
                                     <a href="tambah-berita.php" class="btn btn-success"><i class="fa fa-plus-circle"> </i> Tambah Berita</a>
                                 </div>
-                                <div class="col-lg-2">
+                                <!-- <div class="col-lg-2">
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" placeholder="Username" aria-label="Cari" aria-describedby="basic-addon1">
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         <div class="table-responsive">
                             <table class="table">
@@ -28,22 +28,28 @@
                                         <th>No</th>
                                         <th>Judul</th>
                                         <th>Tanggal</th>
-                                        <th>Auditor</th>
+                                        <th>Penulis</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                  <?php
+                                  $no = 1;
+                                  $sql = mysqli_query($con, "SELECT kode_phbs,judul_berita,tgl_dibuat,penulis_berita FROM phbs order by tgl_dibuat");
+                                  while($data = mysqli_fetch_array($sql)){
+                                  ?>
                                     <tr>
-                                        <td>1</td>
-                                        <td>Deshmukh</td>
-                                        <td>Prohaska</td>
-                                        <td>admin</td>
+                                        <td><?= $no ?></td>
+                                        <td><?= $data['judul_berita'] ?></td>
+                                        <td><?= $data['tgl_dibuat'] ?></td>
+                                        <td><?= $data['penulis_berita'] ?></td>
                                         <td>
-                                            <a href="user/berita.php" class="btn btn-primary"><i class="fa fa-list-alt"></i> Detail</a>
-                                            <a href="edit-berita.php" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Edit</a>
-                                            <a href="" class="btn btn-danger"><i class="fa fa-trash-o"></i> Hapus</a>
+                                            <!-- <a href="../berita.php" class="btn btn-primary"><i class="fa fa-list-alt"></i> Detail</a> -->
+                                            <a href="edit-berita.php?kode=<?= $data['kode_phbs'] ?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Edit</a>
+                                            <a href="del-berita.php?kode=<?= $data['kode_phbs'] ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i> Hapus</a>
                                         </td>
                                     </tr>
+                                  <?php $no++;}?>
                                 </tbody>
                             </table>
                         </div>
