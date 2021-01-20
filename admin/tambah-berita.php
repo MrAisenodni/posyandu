@@ -13,14 +13,15 @@
     $namafile = $_FILES['gmb']['name'];
     $ukfile = $_FILES['gmb']['size'];
     $ext = pathinfo($namafile, PATHINFO_EXTENSION);
-    $lokasi = "img/gmb/";
+    $lokasi = "../img/gmb/";
+    $save = "img/gmb/";
 
     if(!in_array($ext,$ekstensi)){
       header('location:berita.php?stat=wrong_file_ext');
     }else{
       if($ukfile < 1044070){
         move_uploaded_file($_FILES['gmb']['tmp_name'], $lokasi.$namafile);
-        $add = mysqli_query($con,"INSERT INTO phbs VALUES('','$judul','$jenis','$tempat','$tgl','$des','$pen','$edit','$terbit','$lokasi.$namafile')");
+        $add = mysqli_query($con,"INSERT INTO phbs VALUES('','$judul','$jenis','$tempat','$tgl','$des','$pen','$edit','$terbit','$save$namafile')");
         if($add){
           header('location:berita.php?stat=input_success');
         }else{

@@ -88,6 +88,11 @@ if(isset($_POST['login'])){
 							Login
                         </button>
 					</div>
+					<div class="container-login100-form-btn m-t-20">
+						<a class="login100-form-btn" href="index.php">
+							Kembali
+						</a>
+					</div>
 				</form>
 			</div>
 		</div>

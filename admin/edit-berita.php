@@ -21,7 +21,8 @@ if(isset($_POST['up'])){
   $namafile = $_FILES['gmb']['name'];
   $ukfile = $_FILES['gmb']['size'];
   $ext = pathinfo($namafile, PATHINFO_EXTENSION);
-  $lokasi = "img/gmb/";
+  $lokasi = "../img/gmb/";
+  $save = "img/gmb/";
   $up = "";
 
   if($namafile==null){
@@ -54,7 +55,7 @@ if(isset($_POST['up'])){
         penulis_berita='$pen',
         editor_berita='$edit',
         penerbit='$terbit',
-        gambar='$lokasi.$namafile' WHERE kode_phbs='$kodeb'");
+        gambar='$save$namafile' WHERE kode_phbs='$kodeb'");
         if($up){
           header('location:berita.php?stat=update_success');
         }else{
