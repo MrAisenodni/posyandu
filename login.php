@@ -35,7 +35,10 @@ if(isset($_POST['login'])){
 	$sql = mysqli_query($con, "SELECT * FROM admin WHERE username='$mail' AND password='$pw'");
 	$data = mysqli_fetch_array($sql);
 	$num = mysqli_num_rows($sql);
-	
+	$sql2 = mysqli_query($con, "SELECT * FROM user WHERE username='$mail' AND password='$pw'");
+	$data2 = mysqli_fetch_array($sql2);
+	$num2 = mysqli_num_rows($sql2);
+
 	if($num>0){
 		if($data['kode_admin']!=null){
 			session_start();

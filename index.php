@@ -21,12 +21,32 @@ $bulan = array(
 ?>
 		<div class="site-main-container">
 			<!-- Start top-post Area -->
-			<section class="top-post-area pt-10">
+			<section class="top-post-area pt-8">
 				<div class="container no-padding">
 					<div class="row small-gutters">
 						<div class="col-lg-12">
-							<div class="news-tracker-wrap">
-								<h1 style="text-align: center; padding-top: 50px">Selamat Datang di Posyandu Apel Desa Sukamanah</h1>
+							<div class="news-tracker-wrap"><br>
+								<h1 style="text-align: center; padding-top: 50px">Selamat Datang di Posyandu Apel Desa Sukamanah</h1><br><br>
+								<div class="single-latest-post row align-items-center">
+									<div class="col-lg-4 post-left">
+										<div class="feature-img relative">
+											<div class="overlay overlay-bg"></div>
+											<img class="img-fluid" src="img/keg1.jpeg" alt="Kegiatan Posyandu">
+										</div>
+									</div>
+									<div class="col-lg-4 post-center">
+										<div class="feature-img relative">
+											<div class="overlay overlay-bg"></div>
+											<img class="img-fluid" src="img/keg3.jpeg" alt="Kegiatan Posyandu">
+										</div>
+									</div>
+									<div class="col-lg-4 post-right">
+										<div class="feature-img relative">
+											<div class="overlay overlay-bg"></div>
+											<img class="img-fluid" src="img/keg3.jpeg" alt="Kegiatan Posyandu">
+										</div>
+									</div>
+								</div><br>
 							</div>
 						</div>
 					</div>

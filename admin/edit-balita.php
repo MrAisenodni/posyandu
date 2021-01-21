@@ -104,10 +104,6 @@ if(isset($_POST['tambah'])){
                                       <label for="exampleInputPassword1" class="form-label">Nama Ayah</label>
                                       <input type="text" value="<?= $data2['nama_suami'] ?>" name="ayah" class="form-control" id="">
                                   </div><br>
-                                  <div class="sm-3">
-                                      <label for="exampleInputPassword1" class="form-label">Username</label>
-                                      <input type="text" disabled value="<?= $data2['username'] ?>" name="uname" class="form-control" id="">
-                                  </div><br>
                           </div>
                           <div class="col-sm-6">
                               <h4 style="text-align: center;">Data Balita</h4>
@@ -123,8 +119,16 @@ if(isset($_POST['tambah'])){
                                   <div class="sm-3">
                                       <label for="exampleInputPassword1" class="form-label">Tanggal Lahir</label>
                                       <input type="date" value="<?= $data['tgl_lahir'] ?>" name="tlbayi" class="form-control" id="">
-                                  </div><br>
+                                  </div>
                                   <hr>
+                                  <div class="sm-3">
+                                      <label for="exampleInputPassword1" class="form-label">Username</label>
+                                      <input type="text" disabled value="<?= $data2['username'] ?>" name="uname" class="form-control" id="">
+                                  </div><br>
+                                    <div class="sm-3">
+                                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                                        <input type="password" name="pass" class="form-control" id="">
+                                    </div><br>
                                   <button type="submit" name="tambah" class="btn btn-success btn-lg"><i class="fa fa-check-square"></i> Simpan</button>
                                   <a href="balita.php" class="btn btn-danger btn-lg"><i class="fa fa-times"></i> Batal</a>
                               </form>
