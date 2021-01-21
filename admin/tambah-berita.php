@@ -16,7 +16,7 @@
     $lokasi = "../img/gmb/";
     $save = "img/gmb/";
 
-    if($judul==null || $jenis==null || $tempat==null || $tgl==null || $des==null || $pen==null || $edit==null || $terbit==null) {
+    if($judul==null || $jenis==null || $tempat==null || $tgl==null || $des==null || $pen==null || $edit==null || $terbit==null || $namafile==null) {
         header('location:tambah-berita.php?stat=input_null');
     }elseif(!in_array($ext,$ekstensi)){
       header('location:berita.php?stat=wrong_file_ext');

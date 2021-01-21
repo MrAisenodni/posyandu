@@ -35,7 +35,7 @@ if(isset($_POST['login'])){
 	$sql = mysqli_query($con, "SELECT * FROM admin WHERE username='$mail' AND password='$pw'");
 	$data = mysqli_fetch_array($sql);
 	$num = mysqli_num_rows($sql);
-
+	
 	if($num>0){
 		if($data['kode_admin']!=null){
 			session_start();
@@ -47,6 +47,9 @@ if(isset($_POST['login'])){
 
 			header('location:admin/index.php?stat=login_success');
 		}else{
+			$sql = mysqli_query($con, "SELECT * FROM user WHERE username='$mail' AND password='$pw'");
+			$data = mysqli_fetch_array($sql);
+
 			session_start();
 			$_SESSION['nik'] = $data['nik'];
 			$_SESSION['nama'] = $data['nama'];

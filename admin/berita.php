@@ -12,6 +12,7 @@
                     <div class="white-box">
                         <h3 class="box-title">Tabel Berita</h3>
                             <div class="row">
+                                <?php require_once('alert.php'); ?>
                                 <div class="col-lg-10">
                                     <a href="tambah-berita.php" class="btn btn-success"><i class="fa fa-plus-circle"> </i> Tambah Berita</a>
                                 </div>
@@ -45,7 +46,7 @@
                                         <td><?= $data['penulis_berita'] ?></td>
                                         <td>
                                             <!-- <a href="../berita.php" class="btn btn-primary"><i class="fa fa-list-alt"></i> Detail</a> -->
-                                            <a href="edit-berita.php?kode=<?= $data['kode_phbs'] ?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Edit</a>
+                                            <a href="edit-berita.php?kode=<?= $data['kode_phbs'] ?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Ubah</a>
                                             <a href="del-berita.php?kode=<?= $data['kode_phbs'] ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i> Hapus</a>
                                         </td>
                                     </tr>

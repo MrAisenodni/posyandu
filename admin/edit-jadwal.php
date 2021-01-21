@@ -13,9 +13,9 @@ if(isset($_POST['tambah'])){
 
   $add = mysqli_query($con, "UPDATE jadwal SET tanggal='$tgl',jam='$jam' where kode_jadwal='$kode'");
   if($add){
-    header('location:jadwal-posyandu.php?stat=input_success');
+    header('location:jadwal-posyandu.php?stat=update_success');
   }else{
-    header('location:jadwal-posyandu.php?stat=input_failed');
+    header('location:jadwal-posyandu.php?stat=update_failed');
   }
 }
 ?>

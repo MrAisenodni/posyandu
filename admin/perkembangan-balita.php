@@ -10,8 +10,9 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="white-box">
-                    <h3 class="box-title">Tabel Perkembangan Balita</h3>
+                    <h3 class="box-title">Perkembangan Balita</h3>
                         <div class="row">
+                            <?php require_once('alert.php'); ?>
                             <div class="col-lg-10">
                                 <a href="daftar-perkembangan-balita.php" class="btn btn-success"><i class="fa fa-plus-circle"> </i> Tambah Perkembangan Balita</a>
                             </div>

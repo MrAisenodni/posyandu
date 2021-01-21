@@ -6,7 +6,7 @@
 
     if($stat == "input_success"){
       $cls = "alert alert-success";
-      $psn = "Input success";
+      $psn = "Data Berhasil Ditambahkan";
     }elseif($stat == "input_failed"){
       $cls = "alert alert-danger";
       $psn = "Query Error : ".mysqli_errno($con)." - ".mysqli_error($con);
@@ -15,16 +15,16 @@
       $psn = "Data Belum Lengkap";
     }elseif($stat == "delete_success"){
       $cls = "alert alert-success";
-      $psn = "Delete success";
+      $psn = "Data Berhasil Dihapus";
     }elseif($stat == "delete_failed"){
       $cls = "alert alert-danger";
-      $psn = "Delete failed";
+      $psn = "Data Gagal Dihapus";
     }elseif($stat == "update_success"){
       $cls = "alert alert-success";
-      $psn = "Update success";
+      $psn = "Data Berhasil Diubah";
     }elseif($stat == "update_failed"){
       $cls = "alert alert-danger";
-      $psn = "Update failed";
+      $psn = "Data Gagal Diubah";
     }elseif($stat == "file_too_large"){
       $cls = "alert alert-danger";
       $psn = "Input Failed, File Size is Too Large";

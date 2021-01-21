@@ -18,8 +18,6 @@ if(isset($_POST['tambah'])){
 
   }
 }
-
-
 ?>
         <div class="container-fluid">
             <div class="row bg-title">
@@ -69,7 +67,7 @@ if(isset($_POST['tambah'])){
                                         <input type="date" name="tgl" class="form-control" id="">
                                     </div><br>
                                     <hr>
-                                    <button name="tambah" class="btn btn-success btn-lg"><i class="fa fa-check-square"></i> Daftar</button>
+                                    <button name="tambah" class="btn btn-success btn-lg"><i class="fa fa-check-square"></i> Simpan</button>
                                     <a href="imunisasi.php" class="btn btn-danger btn-lg"><i class="fa fa-times"></i> Batal</a>
                                 </form>
                             </div>

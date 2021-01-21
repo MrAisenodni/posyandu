@@ -87,6 +87,20 @@ $bulan = array(
                         </div>
                     </div>
                     <!-- /.col -->
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-bar-chart-o fa-fw"></i> Berat Badan
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div id="chart-container">
+                                <canvas id="Paket"></canvas>
+                            </div>
+                            <script type="text/javascript" src="../data_chart/example.js"></script>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                      </div>
                 </div>
                 <!-- /.row -->
             </div>

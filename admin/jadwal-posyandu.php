@@ -12,9 +12,18 @@
                 <div class="white-box">
                     <h3 class="box-title">Jadwal Posyandu</h3>
                         <div class="row">
+                            <?php 
+                                require_once('alert.php'); 
+                                $sql = mysqli_query($con, "SELECT * FROM jadwal");
+                                $data = mysqli_fetch_array($sql);
+                                $num = mysqli_num_rows($sql);
+
+                                if($num==0) {
+                            ?>
                             <div class="col-lg-10">
                                 <a href="tambah-jadwal.php" class="btn btn-success"><i class="fa fa-plus-circle"> </i> Tambah Jadwal</a>
                             </div>
+                        <?php } ?>
                             <!-- <div class="col-lg-2">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">

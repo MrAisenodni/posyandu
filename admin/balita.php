@@ -10,10 +10,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="white-box">
-                        <h3 class="box-title">Tabel Balita</h3>
+                        <h3 class="box-title">Kelola Data Balita</h3>
                             <div class="row">
+                                <?php require_once('alert.php'); ?>
                                 <div class="col-lg-10">
-                                    <a href="pendaftaran-balita.php" class="btn btn-success"><i class="fa fa-plus-circle"> </i> Pendaftaran Balita</a>
+                                    <a href="tambah-balita.php" class="btn btn-success"><i class="fa fa-plus-circle"> </i> Tambah Balita</a>
                                 </div>
                                 <!-- <div class="col-lg-2">
                                     <div class="input-group mb-3">

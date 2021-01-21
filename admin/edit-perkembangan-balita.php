@@ -4,31 +4,28 @@ if(isset($_GET['kode'])){
   $kd = $_GET['kode'];
   $sql = mysqli_query($con, "SELECT * from perkembangan_balita where kode_balita='$kd'");
   $data = mysqli_fetch_array($sql);
-  $kd = $_GET['kode'];
-  $sql = mysqli_query($con, "SELECT * from balita where kode_balita='$kd'");
-  $data2 = mysqli_fetch_array($sql);
   $nikibu = $data['nik'];
-  $sql2 = mysqli_query($con, "SELECT * from user where nik='$nikibu'");
-  $data3 = mysqli_fetch_array($sql2);
+  $sql2 = mysqli_query($con, "SELECT * FROM balita inner join user on user.nik=balita.nik");
+  $data2 = mysqli_fetch_array($sql2);
 }
 
 if(isset($_POST['tambah'])){
-  $ibu = $_POST['ibu'];
-  $bayi = $_POST['bayi'];
+  // $ibu = $_POST['ibu'];
+  // $bayi = $_POST['bayi'];
   $tb = $_POST['tb'];
   $bb = $_POST['bb'];
   $tgl = $_POST['tgl'];
 
-  if($ibu==null || $bayi==null || $tb==null || $bb==null || $tgl==null) {
-    header('location:edit-perkembangan-balita.php?stat=input_null');
-  } else {
-    $add = mysqli_query($con, "UPDATE jadwal SET ibu='$ibu',bayi='$bayi',bb='$bb',bb='$bb',tgl='$tgl' where kode_balita='$kode'");
+    $add = mysqli_query($con, "UPDATE `perkembangan_balita` SET 
+      `bb_balita`='$bb',
+      `tb_balita`='$tb',
+      `tgl_periksa`='$tgl' 
+      WHERE `kode_balita`='$kd'");
     if($add){
-      header('location:perkembangan-balita.php?stat=input_success');
+      header('location:perkembangan-balita.php?stat=update_success');
     }else{
-      header('location:perkembangan-balita.php?stat=input_failed');
+      header('location:perkembangan-balita.php?stat=update_failed');
     }
-  }
 }
 ?>
        <div class="container-fluid">
@@ -50,25 +47,25 @@ if(isset($_POST['tambah'])){
                                 <form method="post">
                                   <div class="sm-3">
                                       <label for="exampleInputEmail1" class="form-label">Nama Ibu</label>
-                                      <input type="text" name="tb" class="form-control" id="" readonly value="<?= $data['nama'] ?>">
+                                      <input type="text" name="" class="form-control" id="" readonly value="<?= $data2['nama'] ?>">
                                   </div><br>
                                   <div class="sm-3">
                                       <label for="exampleInputPassword1" class="form-label">Nama Balita</label>
-                                      <input type="number" name="tb" class="form-control" id="" readonly value="<?= $data['nama_balita']." | ".$data2['nama'] ?>">
+                                      <input type="text" name="" class="form-control" id="" readonly value="<?= $data2['nama_balita']." | ".$data2['nama'] ?>">
                                   </div><br>
                             </div>
                             <div class="col-sm-6"><br><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tinggi Badan (Cm)</label>
-                                        <input type="number" name="tb" class="form-control" id="" value="<?= $data['tb'] ?>">
+                                        <input type="number" name="tb" class="form-control" id="" value="<?= $data['tb_balita'] ?>">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Berat Badan (Kg)</label>
-                                        <input type="number" name="bb" class="form-control" id="" value="<?= $data['bb'] ?>">
+                                        <input type="number" name="bb" class="form-control" id="" value="<?= $data['bb_balita'] ?>">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tanggal Periksa</label>
-                                        <input type="date" name="tgl" class="form-control" id="" value="<?= $data['tgl'] ?>">
+                                        <input type="date" name="tgl" class="form-control" id="" value="<?= $data['tgl_periksa'] ?>">
                                     </div><br>
                                     <hr>
                                     <button name="tambah" class="btn btn-success btn-lg"><i class="fa fa-check-square"></i> Simpan</button>

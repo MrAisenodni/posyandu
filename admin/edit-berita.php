@@ -25,7 +25,7 @@ if(isset($_POST['up'])){
   $save = "img/gmb/";
   $up = "";
 
-  if($namafile==null){
+    if($namafile==null){
     $up = mysqli_query($con,"UPDATE phbs SET
     judul_berita='$judul',
     jenis_berita='$jenis',
@@ -66,6 +66,7 @@ if(isset($_POST['up'])){
       }
     }
   }
+  
 }
 ?>
         <div class="container-fluid">
@@ -79,7 +80,7 @@ if(isset($_POST['up'])){
             <div class="row">
                 <div class="col-sm-12">
                     <div class="white-box">
-                        <h3 class="box-title">Edit Berita</h3>
+                        <h3 class="box-title">Ubah Berita</h3>
                         <div class="row">
                             <div class="col-sm-6">
                               <form method="post" action="" enctype="multipart/form-data">

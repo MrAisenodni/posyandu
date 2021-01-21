@@ -10,10 +10,11 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="white-box">
-                    <h3 class="box-title">Tabel Imunisasi</h3>
+                    <h3 class="box-title">Catatan Imunisasi</h3>
                         <div class="row">
+                            <?php require_once('alert.php'); ?>
                             <div class="col-lg-10">
-                                <a href="pendaftaran-imunisasi.php" class="btn btn-success"><i class="fa fa-plus-circle"> </i> Pendaftaran Balita</a>
+                                <a href="tambah-imunisasi.php" class="btn btn-success"><i class="fa fa-plus-circle"> </i> Tambah Catatan Imunisasi</a>
                             </div>
                             <!-- <div class="col-lg-2">
                                 <div class="input-group mb-3">
@@ -29,7 +30,7 @@
                                     <th>Nama Bayi</th>
                                     <th>Tanggal</th>
                                     <th>Jenis Imunisasi</th>
-                                    <!-- <th>Aksi</th> -->
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,11 +46,9 @@
                                     <td><?= $data['nama_balita'] ?></td>
                                     <td><?= $data['tgl_imunisasi'] ?></td>
                                     <td><?= $data['jenis_imunisasi'] ?></td>
-                                    <!-- <td>
-                                        <a href="detail-balita.php" class="btn btn-primary"><i class="fa fa-list-alt"></i> Detail</a>
-                                        <a href="" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Edit</a>
-                                        <a href="" class="btn btn-danger"><i class="fa fa-trash-o"></i> Hapus</a>
-                                    </td> -->
+                                    <td>
+                                        <a href="edit-imunisasi.php?kode=<?= $data['kode_balita'] ?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Ubah</a>
+                                    </td>
                                 </tr>
                                 <?php $no++;}?>
                             </tbody>
