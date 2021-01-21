@@ -87,7 +87,7 @@ $bulan = array(
 												                                  substr($jadwal['tanggal'],0,4);}?></li>
                                                     </p>
                                                     <p>
-                                                        <li><span class="lnr lnr-home"></span>Posyandu ApelDesa Sukamanah</li>
+                                                        <li><span class="lnr lnr-home"></span>Posyandu Apel Desa Sukamanah</li>
                                                     </p>
                                                     <p>
                                                         <li><span class="lnr lnr-clock"></span><?php if($jadwal['jam']==null){echo '-';}else{echo $jadwal['jam'];}?></li>

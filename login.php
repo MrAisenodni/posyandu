@@ -58,7 +58,7 @@ if(isset($_POST['login'])){
 		}
 
 	}else{
-		header('location:login.php?stat=wrong_password');
+		header('location:login.php?stat=wrong');
 	}
 } ?>
 <body>
@@ -71,7 +71,8 @@ if(isset($_POST['login'])){
 						Login
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "">
+					<?php require_once('admin/alert.php'); ?>
+					<div class="wrap-input100 validate-input" data_validate="Username is required">
 						<input class="input100" type="text" name="uname" placeholder="Username">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>

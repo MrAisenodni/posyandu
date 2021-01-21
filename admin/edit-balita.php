@@ -27,7 +27,7 @@ if(isset($_POST['tambah'])){
   $tmbayi = $_POST['tmbayi'];
   $tlbayi = $_POST['tlbayi'];
 
-  $adduser = mysqli_query($con,"UPDATE user set
+    $adduser = mysqli_query($con,"UPDATE user set
     nama = '$nuser',
     tempat_lahir = '$tmuser',
     tgl_lahir = '$tluser',
@@ -38,16 +38,17 @@ if(isset($_POST['tambah'])){
     nama_suami = '$ayah'
     where nik = '$niki'");
 
-  $addbayi = mysqli_query($con,"UPDATE balita set
+    $addbayi = mysqli_query($con,"UPDATE balita set
     nama_balita='$nama',
     tempat_lahir='$tmbayi',
     tgl_lahir='$tlbayi'
     where kode_balita='$kdb'");
-  if($adduser && $addbayi){
-    header('location:balita.php?stat=update_success');
-  }else{
-    header('location:balita.php?stat=update_failed');
-  }
+    if($adduser && $addbayi){
+      header('location:balita.php?stat=update_success');
+    }else{
+      header('location:balita.php?stat=update_failed');
+    }
+  
 }
 ?>
         <div class="container-fluid">
@@ -61,8 +62,9 @@ if(isset($_POST['tambah'])){
             <div class="row">
                 <div class="col-sm-12">
                     <div class="white-box">
-                        <h3 class="box-title">Edit Pendaftaran Balita</h3>
+                        <h3 class="box-title">Ubah Pendaftaran Balita</h3>
                         <div class="row">
+                          <?php require_once('alert.php'); ?>
                             <div class="col-sm-6">
                               <h4 style="text-align: center;">Data Orang Tua</h4>
                               <form method="post">

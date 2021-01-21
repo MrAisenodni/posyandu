@@ -46,11 +46,9 @@
                                     <td><?= $data['tgl_periksa'] ?></td>
                                     <td><?= $data['tb_balita'] ?></td>
                                     <td><?= $data['bb_balita'] ?></td>
-                                    <!-- <td>
-                                        <a href="detail-balita.php" class="btn btn-primary"><i class="fa fa-list-alt"></i> Detail</a>
-                                        <a href="" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Edit</a>
-                                        <a href="" class="btn btn-danger"><i class="fa fa-trash-o"></i> Hapus</a>
-                                    </td> -->
+                                    <td>
+                                        <a href="edit-perkembangan-balita.php?kode=<?= $data['kode_balita']?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Ubah</a>
+                                    </td>
                                 </tr>
                                 <?php $no++;}?>
                             </tbody>

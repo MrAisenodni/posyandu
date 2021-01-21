@@ -18,7 +18,10 @@ if(isset($_POST['tambah'])){
   $tmbayi = $_POST['tmbayi'];
   $tlbayi = $_POST['tlbayi'];
 
-  $adduser = mysqli_query($con,"INSERT INTO user VALUES('$nik','$nuser','$tmuser','$tluser','$alamat',
+  if($nik==null || $nuser==null || $tmuser==null || $alamat==null || $hp==null || $agama==null || $kerja==null || $ayah==null || $uname==null || $pass==null || $nama==null || $tmbayi==null || $tlbayi==null) {
+    header('location:pendaftaran-balita.php?stat=input_null');
+  } else {
+    $adduser = mysqli_query($con,"INSERT INTO user VALUES('$nik','$nuser','$tmuser','$tluser','$alamat',
     '$hp','$agama','$kerja','$ayah','$uname','$pass')");
   $addbayi = mysqli_query($con,"INSERT INTO balita VALUES('','$nik','$nama','$tmbayi','$tlbayi')");
   if($adduser && $addbayi){
@@ -26,6 +29,8 @@ if(isset($_POST['tambah'])){
   }else{
     header('location:balita.php?stat=input_failed');
   }
+  }
+  
 }
 ?>
         <div class="container-fluid">
@@ -41,6 +46,7 @@ if(isset($_POST['tambah'])){
                     <div class="white-box">
                         <h3 class="box-title">Pendaftaran Balita</h3>
                         <div class="row">
+                            <?php require_once('alert.php'); ?>
                             <div class="col-sm-6">
                                 <h4 style="text-align: center;">Data Orang Tua</h4>
                                 <form method="post">

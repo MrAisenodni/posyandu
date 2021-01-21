@@ -16,7 +16,9 @@
     $lokasi = "../img/gmb/";
     $save = "img/gmb/";
 
-    if(!in_array($ext,$ekstensi)){
+    if($judul==null || $jenis==null || $tempat==null || $tgl==null || $des==null || $pen==null || $edit==null || $terbit==null) {
+        header('location:tambah-berita.php?stat=input_null');
+    }elseif(!in_array($ext,$ekstensi)){
       header('location:berita.php?stat=wrong_file_ext');
     }else{
       if($ukfile < 1044070){
@@ -46,6 +48,7 @@
                     <div class="white-box">
                         <h3 class="box-title">Tambah Berita</h3>
                         <div class="row">
+                            <?php require_once('alert.php'); ?>
                             <div class="col-sm-6">
                                 <form method="post" action="" enctype="multipart/form-data">
                                     <div class="sm-3">

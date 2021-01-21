@@ -1,15 +1,20 @@
 <?php require_once('head.php');
 if(isset($_POST['tambah'])){
   //BAYI
-  $tgl = $_POST['tgl'];
-  $jam = $_POST['jam'];
+    $tgl = $_POST['tgl'];
+    $jam = $_POST['jam'];
 
-  $add = mysqli_query($con, "INSERT INTO jadwal VALUES('','$tgl','$jam')");
-  if($add){
-    header('location:jadwal-posyandu.php?stat=input_success');
-  }else{
-    header('location:jadwal-posyandu.php?stat=input_failed');
-  }
+    if ($tgl==null || $jam==null) {
+        header('location:tambah-jadwal.php?stat=input_null');
+    } else {
+        # code...
+        $add = mysqli_query($con, "INSERT INTO jadwal VALUES('','$tgl','$jam')");
+        if($add){
+            header('location:jadwal-posyandu.php?stat=input_success');
+        }else{
+            header('location:jadwal-posyandu.php?stat=input_failed');
+        }
+    }
 }
 ?>
         <div class="container-fluid">
@@ -26,6 +31,7 @@ if(isset($_POST['tambah'])){
                         <h3 class="box-title">Jadwal Posyandu</h3>
                         <div class="row">
                             <div class="col-sm-6">
+                                <?php require_once('alert.php'); ?>
                                 <form method="post">
                                     <div class="sm-3">
                                         <label for="exampleInputEmail1" class="form-label">Tanggal</label>

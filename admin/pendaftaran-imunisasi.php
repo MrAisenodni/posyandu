@@ -6,11 +6,16 @@ if(isset($_POST['tambah'])){
   $imun = $_POST['imun'];
   $tgl = $_POST['tgl'];
 
-  $add = mysqli_query($con, "INSERT into imunisasi VALUES('$bayi','$ibu','$imun','$tgl')");
-  if($add){
-    header('location:imunisasi.php?stat=input_success');
-  }else{
-    header('location:imunisasi.php?stat=input_failed');
+  if($ibu==null || $bayi==null || $imun==null || $tgl==null) {
+    header('location:pendaftaran-imunisasi.php?stat=input_null');
+  } else {
+    $add = mysqli_query($con, "INSERT into imunisasi VALUES('$bayi','$ibu','$imun','$tgl')");
+    if($add){
+      header('location:imunisasi.php?stat=input_success');
+    }else{
+      header('location:imunisasi.php?stat=input_failed');
+    }
+
   }
 }
 
@@ -29,6 +34,7 @@ if(isset($_POST['tambah'])){
                     <div class="white-box">
                         <h3 class="box-title">Pendaftaran Imunisasi</h3>
                         <div class="row">
+                          <?php require_once('alert.php'); ?>
                             <div class="col-sm-6">
                                 <h4 style="text-align: center;">Biodata Balita</h4>
                                 <form method="post">

@@ -44,7 +44,7 @@
                                         <td><?= $data['tempat_lahir'] ?></td>
                                         <td><?= $data['usia'] ?> Tahun</td>
                                         <td>
-                                            <a href="edit-balita.php?kode=<?= $data['kode_balita'] ?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Edit</a>
+                                            <a href="edit-balita.php?kode=<?= $data['kode_balita'] ?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Ubah</a>
                                             <a href="del-balita.php?kode=<?= $data['kode_balita'] ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i> Hapus</a>
                                         </td>
                                     </tr>

@@ -43,8 +43,7 @@
                                     <td><?= $data['jam'] ?></td>
                                     <td>
                                         <!-- <a href="detail-balita.php" class="btn btn-primary"><i class="fa fa-list-alt"></i> Detail</a> -->
-                                        <a href="edit-jadwal.php?kode=<?= $data['kode_jadwal']?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Edit</a>
-                                        <a href="del-jadwal.php?kode=<?= $data['kode_jadwal']?>" class="btn btn-danger"><i class="fa fa-trash-o"></i> Hapus</a>
+                                        <a href="edit-jadwal.php?kode=<?= $data['kode_jadwal']?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Ubah</a>
                                     </td>
                                 </tr>
                                 <?php $no++;}?>
