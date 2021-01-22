@@ -29,28 +29,30 @@
                                     </div>
                                     <br>
 									<table class="table">
-                                        <thead>
-                                            <tr>
-                                            <th scope="col">No</th>
-                                            <th scope="col">Tanggal</th>
-                                            <th scope="col">Jenis Imunisasi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-																					<?php
-						                              $no = 1;
-						                              $sql = mysqli_query($con, "SELECT * FROM imunisasi
-						                              inner join balita on imunisasi.kode_balita = balita.kode_balita
-						                              inner join user on imunisasi.nik = user.nik");
-						                              while($data = mysqli_fetch_array($sql)){?>
-                                            <tr>
-                                                <th scope="row"><?= $no ?></th>
-                                                <td><?= $data['tgl_imunisasi'] ?></td>
-                                                <td><?= $data['jenis_imunisasi']?></td>
-                                            </tr>
-																					<?php $no++;}?>
-                                        </tbody>
-                                    </table>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Bayi</th>
+                                    <th>Tanggal</th>
+                                    <th>Jenis Imunisasi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                              $no = 1;
+                              $sql = mysqli_query($con, "SELECT * FROM imunisasi
+                              inner join balita on imunisasi.kode_balita = balita.kode_balita WHERE balita.nik='$niku'");
+                              while($data = mysqli_fetch_array($sql)){
+                              ?>
+                                <tr>
+                                    <td><?= $no ?></td>
+                                    <td><?= $data['nama_balita'] ?></td>
+                                    <td><?= $data['tgl_imunisasi'] ?></td>
+                                    <td><?= $data['jenis_imunisasi'] ?></td>
+                                </tr>
+                                <?php $no++;}?>
+                            </tbody>
+                        </table>
 						</div>
 						<!-- End single-post Area -->
 					</div>

@@ -60,7 +60,7 @@
 				<div class="row align-items-center justify-content-between">
 					<nav id="nav-menu-container">
 						<ul class="nav-menu">
-							<?php if($_SESSION!=null){
+							<?php if($niku!=null){
 								if($akses=='user'){ ?>
 							<li class="menu-active"><a href="index.php">Home</a></li>
 							<li><a href="data-balita.php">Data Balita</a></li>
@@ -75,7 +75,7 @@
                         <ul class="nav-menu">
                             <!-- <li><a href="">Azka</a></li>
                             <li><a href="logout.php">Logout</a></li> -->
-							<?php if($_SESSION!=null){
+							<?php if($niku!=null){
 								if($akses=='user') { ?>
 							<li><a href=""><?php echo $namau ?></a></li>
 							<li><a href="logout.php">Logout</a></li>

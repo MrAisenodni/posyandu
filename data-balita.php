@@ -1,4 +1,11 @@
-<?php require_once('head.php'); ?>		
+<?php require_once('head.php'); 
+  // $sql = mysqli_query($con, "SELECT * FROM `user` INNER JOIN balita ON balita.nik=user.nik WHERE user.nik='$niku'");
+  // $data = mysqli_fetch_array($sql);
+	$sql = mysqli_query($con, "SELECT * FROM `user` WHERE nik='$niku'");
+	$data = mysqli_fetch_array($sql);
+	$sql2 = mysqli_query($con, "SELECT * FROM `balita` WHERE nik='$niku'");
+	$data2 = mysqli_fetch_array($sql2);
+?>		
 		<div class="site-main-container">
 			<!-- Start top-post Area -->
 			<section class="top-post-area pt-10">
@@ -15,9 +22,6 @@
 			</section>
 			<!-- End top-post Area -->
 			<!-- Start latest-post Area -->
-			<?php require_once('session.php'); 
-			$sql = mysqli_query($con, "SELECT * FROM balita inner join user on user.nik=balita.nik WHERE nik='$niku'");
-  			$data = mysqli_fetch_array($sql);?>
 			<section class="latest-post-area pb-120">
 				<div class="container no-padding">
 					<div class="row">
@@ -36,7 +40,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Ibu Balita</th>
-                                                        <td><?= $data['nama_ibu'] ?></td>
+                                                        <td><?= $data['nama'] ?></td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Tempat Lahir</th>
@@ -48,32 +52,32 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Alamat</th>
-                                                        <td>Mark</td>
+                                                        <td><?= $data['alamat'] ?></td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">No Hp</th>
-                                                        <td>Mark</td>
+                                                        <td><?= $data['no_hp'] ?></td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Agama</th>
-                                                        <td>Mark</td>
+                                                        <td><?= $data['agama'] ?></td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Pekerjaan</th>
-                                                        <td>Mark</td>
+                                                        <td><?= $data['pekerjaan'] ?></td>
                                                     </tr>
-                                                    <tr>
+                                                    <!-- <tr>
                                                         <th scope="row">Umur</th>
-                                                        <td>Mark</td>
-                                                    </tr>
+                                                        <td><?= $data['tgl_lahir'] ?></td>
+                                                    </tr> -->
                                                     <tr>
                                                         <th scope="row">Nama Ayah</th>
-                                                        <td>Mark</td>
+                                                        <td><?= $data['nama_suami'] ?></td>
                                                     </tr>
-                                                    <tr>
+                                                    <!-- <tr>
                                                         <th scope="row">Anak Ke-</th>
-                                                        <td>Mark</td>
-                                                    </tr>
+                                                        <td><?= $data['tgl_lahir'] ?></td>
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </div>
@@ -83,20 +87,20 @@
                                                 <tbody>
                                                     <tr>
                                                         <th scope="row">Nama Lengkap</th>
-                                                        <td>Mark</td>
+                                                        <td><?= $data2['nama_balita'] ?></td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Tempat Lahir</th>
-                                                        <td>Mark</td>
+                                                        <td><?= $data2['tempat_lahir'] ?></td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Tanggal Lahir</th>
-                                                        <td>Mark</td>
+                                                        <td><?= $data2['tgl_lahir'] ?></td>
                                                     </tr>
-                                                    <tr>
+                                                    <!-- <tr>
                                                         <th scope="row">Usia</th>
-                                                        <td>Mark</td>
-                                                    </tr>
+                                                        <td><?= $data['tgl_lahir'] ?></td>
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </div>
