@@ -40,7 +40,7 @@ if(isset($_POST['tambah'])){
                                       <label for="exampleInputEmail1" class="form-label">Nama Ibu</label>
                                       <select class="form-control" name="ibu">
                                         <option value="">--Pilih Nama Ibu--</option>
-                                        <?php $sql = mysqli_query($con, "SELECT * FROM user");
+                                        <?php $sql = mysqli_query($con, "SELECT * FROM user WHERE akses='user'");
                                         while($datai = mysqli_fetch_array($sql)){?>
                                         <option value="<?= $datai['nik']?>"><?= $datai['nama'] ?></option>
                                         <?php } ?>

@@ -34,11 +34,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                              <?php
+                                <?php
                               $no = 1;
                               $sql = mysqli_query($con, "SELECT * FROM imunisasi
-                              inner join balita on imunisasi.kode_balita = balita.kode_balita
-                              inner join user on imunisasi.nik = user.nik");
+                              inner join balita on imunisasi.kode_balita = balita.kode_balita");
                               while($data = mysqli_fetch_array($sql)){
                               ?>
                                 <tr>
@@ -47,7 +46,7 @@
                                     <td><?= $data['tgl_imunisasi'] ?></td>
                                     <td><?= $data['jenis_imunisasi'] ?></td>
                                     <td>
-                                        <a href="edit-imunisasi.php?kode=<?= $data['kode_balita'] ?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Ubah</a>
+                                        <a href="edit-imunisasi.php?kode=<?= $data['kode_balita']?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Ubah</a>
                                     </td>
                                 </tr>
                                 <?php $no++;}?>

@@ -10,6 +10,7 @@ if(isset($_POST['tambah'])){
   $agama = $_POST['agama'];
   $kerja = $_POST['kerja'];
   $ayah = $_POST['ayah'];
+  $akses = 'user';
   $uname = $_POST['uname'];
   $pass = md5($_POST['pass']);
 
@@ -22,7 +23,7 @@ if(isset($_POST['tambah'])){
     header('location:pendaftaran-balita.php?stat=input_null');
   } else {
     $adduser = mysqli_query($con,"INSERT INTO user VALUES('$nik','$nuser','$tmuser','$tluser','$alamat',
-    '$hp','$agama','$kerja','$ayah','$uname','$pass')");
+    '$hp','$agama','$kerja','$ayah','$akses','$uname','$pass')");
   $addbayi = mysqli_query($con,"INSERT INTO balita VALUES('','$nik','$nama','$tmbayi','$tlbayi')");
   if($adduser && $addbayi){
     header('location:balita.php?stat=input_success');

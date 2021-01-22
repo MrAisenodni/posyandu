@@ -30,7 +30,8 @@
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<?php require_once('config/koneksi.php');
-	require_once('session.php');?>
+	require_once('session.php');
+	?>
 	<body>
 		<header>
 
@@ -59,17 +60,28 @@
 				<div class="row align-items-center justify-content-between">
 					<nav id="nav-menu-container">
 						<ul class="nav-menu">
+							<?php if($_SESSION!=null){
+								if($akses=='user'){ ?>
 							<li class="menu-active"><a href="index.php">Home</a></li>
 							<li><a href="data-balita.php">Data Balita</a></li>
 							<li><a href="imunisasi.php">Catatan Imunisasi</a></li>
 						    <li><a href="perkembangan-balita.php">Perkembangan Balita</a></li>
+						<?php } }else{ ?>
+							<li class="menu-active"><a href="index.php">Home</a></li>
+						<?php } ?>
 					    </ul>
 					</nav><!-- #nav-menu-container -->
 					<div class="navbar-right">
                         <ul class="nav-menu">
                             <!-- <li><a href="">Azka</a></li>
                             <li><a href="logout.php">Logout</a></li> -->
-														<a href="login.php">Login</a>
+							<?php if($_SESSION!=null){
+								if($akses=='user') { ?>
+							<li><a href=""><?php echo $namau ?></a></li>
+							<li><a href="logout.php">Logout</a></li>
+						<?php } }else{ ?>
+							<li><a href="login.php">Login</a></li>
+						<?php } ?>
                         </ul>
 					</div>
 				</div>

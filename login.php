@@ -28,44 +28,68 @@
 <!--===============================================================================================-->
 </head>
 <?php require_once('config/koneksi.php');
+session_unset();
 if(isset($_POST['login'])){
 	$mail = mysqli_real_escape_string($con, $_POST['uname']);
 	$pw = mysqli_real_escape_string($con,md5($_POST['pass']));
 
-	$sql = mysqli_query($con, "SELECT * FROM admin WHERE username='$mail' AND password='$pw'");
-	$data = mysqli_fetch_array($sql);
-	$num = mysqli_num_rows($sql);
-	$sql2 = mysqli_query($con, "SELECT * FROM user WHERE username='$mail' AND password='$pw'");
-	$data2 = mysqli_fetch_array($sql2);
-	$num2 = mysqli_num_rows($sql2);
+	$sql = mysqli_query($con,"select * from user where username='$mail' AND password='$pw'");
+    $num = mysqli_num_rows($sql);
+    $data = mysqli_fetch_array($sql);
+    $nik = $data['nik'];
+    if($num>0){
+      $find = mysqli_query($con, "select * from user where nik='$nik'");
+      $user = mysqli_fetch_array($find);
 
-	if($num>0){
-		if($data['kode_admin']!=null){
-			session_start();
-			$_SESSION['kode'] = $data['kode_admin'];
-			$_SESSION['nama'] = $data['nama'];
-			$_SESSION['alamat'] = $data['alamat'];
-			$_SESSION['hp'] = $data['hp'];
-			$_SESSION['uname'] = $data['username'];
+      session_start();
+      $_SESSION['niku'] = $user['nik'];
+      $_SESSION['namau'] = $user['nama'];
+      $_SESSION['akses'] = $user['akses'];
 
-			header('location:admin/index.php?stat=login_success');
-		}else{
-			$sql = mysqli_query($con, "SELECT * FROM user WHERE username='$mail' AND password='$pw'");
-			$data = mysqli_fetch_array($sql);
+      if($_SESSION['akses']=='user'){
+        header('location:index.php?stat=login_success');
+      }elseif($_SESSION['akses']=='admin'){
+        header('location:admin/index.php?stat=login_success');
+      }else{
+      	header('location:intruder.php');
+      }
 
-			session_start();
-			$_SESSION['nik'] = $data['nik'];
-			$_SESSION['nama'] = $data['nama'];
-			$_SESSION['tmpt'] = $data['tempat_lahir'];
-			$_SESSION['tgl'] = $data['hp'];
-			$_SESSION['hp'] = $data['no_hp'];
+    }else{
+      header('location:login.php?stat=wrong');
+ //    }
+	// $sql = mysqli_query($con, "SELECT * FROM user WHERE username='$mail' AND password='$pw'");
+	// $data = mysqli_fetch_array($sql);
+	// $num = mysqli_num_rows($sql);
+	// // $sql2 = mysqli_query($con, "SELECT * FROM user WHERE username='$mail' AND password='$pw'");
+	// // $data2 = mysqli_fetch_array($sql2);
+	// // $num2 = mysqli_num_rows($sql2);
 
-			header('location:index.php?stat=login_success');
-		}
+	// if($num>0){
+	// 	if($data['nik']==null){
 
-	}else{
-		header('location:login.php?stat=wrong');
-	}
+	// 		session_start();
+	// 		$_SESSION['kode'] = $data['kode_admin'];
+	// 		$_SESSION['nama'] = $data['nama'];
+	// 		$_SESSION['alamat'] = $data['alamat'];
+	// 		$_SESSION['hp'] = $data['hp'];
+	// 		$_SESSION['uname'] = $data['username'];
+
+	// 		header('location:admin/index.php?stat=login_success');
+	// 	}else{
+	// 		session_start();
+	// 		$_SESSION['nik'] = $data['nik'];
+	// 		$_SESSION['nama'] = $data['nama'];
+	// 		$_SESSION['tmpt'] = $data['tempat_lahir'];
+	// 		$_SESSION['tgl'] = $data['hp'];
+	// 		$_SESSION['hp'] = $data['no_hp'];
+
+	// 		header('location:index.php?stat=login_success');
+	// 	}
+
+	// }else{
+	// 	header('location:login.php?stat=wrong');
+	// }
+  }
 } ?>
 <body>
 

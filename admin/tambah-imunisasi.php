@@ -40,7 +40,7 @@ if(isset($_POST['tambah'])){
                                         <label for="exampleInputEmail1" class="form-label">Nama Ibu</label>
                                         <select class="form-control" name="ibu">
                                           <option value="">--Pilih Nama Ibu--</option>
-                                          <?php $sql = mysqli_query($con, "SELECT * FROM user");
+                                          <?php $sql = mysqli_query($con, "SELECT * FROM user WHERE akses='user'");
                                           while($datai = mysqli_fetch_array($sql)){?>
                                           <option value="<?= $datai['nik']?>"><?= $datai['nama'] ?></option>
                                           <?php } ?>
@@ -53,7 +53,7 @@ if(isset($_POST['tambah'])){
                                           <?php $sql = mysqli_query($con, "SELECT * FROM balita inner join user on user.nik=balita.nik");
                                           while($datab = mysqli_fetch_array($sql)){?>
                                           <option value="<?= $datab['kode_balita']?>"><?php echo $datab['nama_balita']." | ".$datab['nama'] ?></option>
-                                          <?php } ?>
+                                        <?php } ?>
                                         </select>
                                     </div><br>
                             </div>

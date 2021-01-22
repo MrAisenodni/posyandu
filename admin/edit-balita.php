@@ -20,6 +20,7 @@ if(isset($_POST['tambah'])){
   $agama = $_POST['agama'];
   $kerja = $_POST['kerja'];
   $ayah = $_POST['ayah'];
+  $pass = md5($_POST['pass']);
 
   //BAYI
   $kdb = $_POST['kdb'];
@@ -35,7 +36,8 @@ if(isset($_POST['tambah'])){
     no_hp = '$hp',
     agama = '$agama',
     pekerjaan = '$kerja',
-    nama_suami = '$ayah'
+    nama_suami = '$ayah',
+    password = '$pass'
     where nik = '$niki'");
 
     $addbayi = mysqli_query($con,"UPDATE balita set
@@ -126,7 +128,7 @@ if(isset($_POST['tambah'])){
                                       <input type="text" disabled value="<?= $data2['username'] ?>" name="uname" class="form-control" id="">
                                   </div><br>
                                     <div class="sm-3">
-                                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                                        <label for="exampleInputPassword1" class="form-label">Password Baru</label>
                                         <input type="password" name="pass" class="form-control" id="">
                                     </div><br>
                                   <button type="submit" name="tambah" class="btn btn-success btn-lg"><i class="fa fa-check-square"></i> Simpan</button>

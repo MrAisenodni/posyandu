@@ -1,4 +1,4 @@
-<?php require_once('head.php'); ?>
+<?php require_once('head.php'); ?>		
 		<div class="site-main-container">
 			<!-- Start top-post Area -->
 			<section class="top-post-area pt-10">
@@ -6,8 +6,8 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="hero-nav-area">
-								<h1 class="text-white">Data Balita</h1>
-								<p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span>Data Balita</p>
+								<h1 class="text-white">Detail Data Balita</h1>
+								<p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="data-balita.php">Data Balita</a> <span class="lnr lnr-arrow-right"></span> Detail Data Balita</p>
 							</div>
 						</div>
 					</div>
@@ -15,6 +15,9 @@
 			</section>
 			<!-- End top-post Area -->
 			<!-- Start latest-post Area -->
+			<?php require_once('session.php'); 
+			$sql = mysqli_query($con, "SELECT * FROM balita inner join user on user.nik=balita.nik WHERE nik='$niku'");
+  			$data = mysqli_fetch_array($sql);?>
 			<section class="latest-post-area pb-120">
 				<div class="container no-padding">
 					<div class="row">
@@ -23,42 +26,82 @@
 							<div class="single-post-wrap">
 								<div class="content-wrap">
                                     <div class="row">
-                                        <div class="col-lg-9">
-                                            <h3>Data Balita</h3>
+                                        <div class="col-lg-6">
+                                            <table class="table table-borderless">
+                                                <h3 style="text-align: center;">Data Orang Tua</h3><br>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">Nik</th>
+                                                        <td><?= $data['nik'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Ibu Balita</th>
+                                                        <td><?= $data['nama_ibu'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Tempat Lahir</th>
+                                                        <td><?= $data['tempat_lahir'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Tanggal Lahir</th>
+                                                        <td><?= $data['tgl_lahir'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Alamat</th>
+                                                        <td>Mark</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">No Hp</th>
+                                                        <td>Mark</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Agama</th>
+                                                        <td>Mark</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Pekerjaan</th>
+                                                        <td>Mark</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Umur</th>
+                                                        <td>Mark</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Nama Ayah</th>
+                                                        <td>Mark</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Anak Ke-</th>
+                                                        <td>Mark</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                        <!-- <div class="col-lg-3">
-                                            <div class="mb-3">
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Cari....">
-                                            </div>
-                                        </div> -->
+                                        <div class="col-lg-6">
+                                        <table class="table table-borderless">
+                                                <h3 style="text-align: center;">Data Balita</h3><br>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">Nama Lengkap</th>
+                                                        <td>Mark</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Tempat Lahir</th>
+                                                        <td>Mark</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Tanggal Lahir</th>
+                                                        <td>Mark</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Usia</th>
+                                                        <td>Mark</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
-                                    <br>
-									<table class="table">
-                                        <thead>
-                                            <tr>
-                                            <th scope="col">No</th>
-                                            <th scope="col">NIK Ibu Balita</th>
-                                            <th scope="col">Nama Balita</th>
-                                            <th scope="col">Akses</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-																					<?php
-				                                  $no = 1;
-				                                  $sql = mysqli_query($con, "SELECT *,YEAR(CURRENT_DATE) - YEAR(tgl_lahir) AS usia FROM balita");
-				                                  while($data = mysqli_fetch_array($sql)){
-				                                  ?>
-                                            <tr>
-                                                <th scope="row"><?= $no ?></th>
-                                                <td><?= $data['nik']; ?></td>
-                                                <td><?= $data['nama_balita']?></td>
-                                                <td>
-                                                    <a href="detail-data-balita.php" class="btn btn-primary">Detail</a>
-                                                </td>
-                                            </tr>
-																						<?php $no++;}?>
-                                        </tbody>
-                                    </table>
+                                </div> 
 						</div>
 						<!-- End single-post Area -->
 					</div>

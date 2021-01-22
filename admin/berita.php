@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="white-box">
-                        <h3 class="box-title">Tabel Berita</h3>
+                        <h3 class="box-title">Kelola Berita PHBS</h3>
                             <div class="row">
                                 <?php require_once('alert.php'); ?>
                                 <div class="col-lg-10">

@@ -1,8 +1,8 @@
 <?php require_once('head.php');
 date_default_timezone_set('Asia/Jakarta');
-$hariini = date('Y-m-d');
+// $hariini = date('Y-m-d');
 
-$sql1 = mysqli_query($con,"SELECT * from jadwal WHERE tanggal='$hariini'");
+$sql1 = mysqli_query($con,"SELECT * from jadwal");
 $jadwal = mysqli_fetch_array($sql1);
 $bulan = array(
   'Januari',
@@ -60,7 +60,7 @@ $bulan = array(
 						<div class="col-lg-8 post-list">
 							<!-- Start latest-post Area -->
 							<div class="latest-post-wrap">
-								<h4 class="cat-title">Berita Terbaru</h4>
+								<h4 class="cat-title">Berita PHBS</h4>
 								<?php
 								$no = 1;
 								$sql = mysqli_query($con, "SELECT * FROM phbs order by tgl_dibuat DESC");

@@ -14,7 +14,7 @@
                         <div class="row">
                             <?php require_once('alert.php'); ?>
                             <div class="col-lg-10">
-                                <a href="daftar-perkembangan-balita.php" class="btn btn-success"><i class="fa fa-plus-circle"> </i> Tambah Perkembangan Balita</a>
+                                <a href="tambah-perkembangan-balita.php" class="btn btn-success"><i class="fa fa-plus-circle"> </i> Tambah Perkembangan Balita</a>
                             </div>
                             <!-- <div class="col-lg-2">
                                 <div class="input-group mb-3">
