@@ -44,7 +44,7 @@
                               <?php
                               $no = 1;
                               $sql = mysqli_query($con, "SELECT * FROM jadwal");
-                              while($data = mysqli_fetch_array($sql)){
+                              while ($data = mysqli_fetch_array($sql)){ 
                               ?>
                                 <tr>
                                     <td><?= $no ?></td>
@@ -55,7 +55,7 @@
                                         <a href="edit-jadwal.php?kode=<?= $data['kode_jadwal']?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Ubah</a>
                                     </td>
                                 </tr>
-                                <?php $no++;}?>
+                                <?php $no++; } ?>
                             </tbody>
                         </table>
                     </div>

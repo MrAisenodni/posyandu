@@ -39,6 +39,6 @@
 <?php
 ob_start();
 require_once('../config/koneksi.php');
-require_once('session.php');
+require_once('../session.php');
  ?>
 <body>

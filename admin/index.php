@@ -4,7 +4,7 @@ $hariini = date('Y-m-d');
 $sql = mysqli_query($con,"SELECT count(kode_balita) as jumlah from balita");
 $cbayi = mysqli_fetch_array($sql);
 
-$sql1 = mysqli_query($con,"SELECT * from jadwal WHERE tanggal='$hariini'");
+$sql1 = mysqli_query($con,"SELECT * from jadwal");
 $jadwal = mysqli_fetch_array($sql1);
 $bulan = array(
   'Januari',
