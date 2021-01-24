@@ -5,9 +5,9 @@
 				<div class="container no-padding">
 					<div class="row">
 						<div class="col-lg-12">
-							<div class="hero-nav-area">
-								<h1 class="text-white">Catatan Imunisasi</h1>
-								<p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span>Catatan Imunisasi</p>
+							<div class="hero-nav-area" style="background:  #FFD5D1">
+								<h1 class="text-black">Catatan Imunisasi</h1>
+								<p class="text-black link-nav"><a style="color: black" href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span>Catatan Imunisasi</p>
 							</div>
 						</div>
 					</div>
@@ -32,7 +32,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama Bayi</th>
+                                    <th>Nama Balita</th>
                                     <th>Tanggal</th>
                                     <th>Jenis Imunisasi</th>
                                 </tr>
@@ -48,7 +48,7 @@
                                     <td><?= $no ?></td>
                                     <td><?= $data['nama_balita'] ?></td>
                                     <td><?= $data['tgl_imunisasi'] ?></td>
-                                    <td><?= $data['jenis_imunisasi'] ?></td>
+                                    <td><?= $data['jenis_vaksin'] ?></td>
                                 </tr>
                                 <?php $no++;}?>
                             </tbody>

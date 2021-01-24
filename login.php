@@ -95,12 +95,14 @@ if(isset($_POST['login'])){
 
 	<div class="limiter">
 		<div class="container-login100">
+
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
 				<form class="login100-form validate-form" method="post">
 					<span class="login100-form-title p-b-33">
 						Login
 					</span>
-
+					<center><img style="margin-top: -40px" src="img/bayi-regina.png" width="250px"></center>
+					
 					<?php require_once('admin/alert.php'); ?>
 					<div class="wrap-input100 validate-input" data_validate="Username is required">
 						<input class="input100" type="text" name="uname" placeholder="Username">

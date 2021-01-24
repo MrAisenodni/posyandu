@@ -56,9 +56,9 @@
 					</div>
 				</div>
 			</div> -->
-			<div class="container main-menu" id="main-menu">
-				<div class="row align-items-center justify-content-between">
-					<nav id="nav-menu-container">
+			<div class="container main-menu" id="main-menu" style="background: #2148AE">
+				<div class="row align-items-center justify-content-between" >
+					<nav id="nav-menu-container" >
 						<ul class="nav-menu">
 							<?php if($niku!=null){
 								if($akses=='user'){ ?>

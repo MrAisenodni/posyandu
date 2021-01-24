@@ -11,9 +11,9 @@ $data = mysqli_fetch_array($sql)
 				<div class="container no-padding">
 					<div class="row">
 						<div class="col-lg-12">
-							<div class="hero-nav-area">
-								<h1 class="text-white">Berita</h1>
-								<p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span> Berita</p>
+							<div class="hero-nav-area" style="background: #FFD5D1">
+								<h1 class="text-black">Berita</h1>
+								<p class="text-black link-nav"><a style="color: black" href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span> Berita</p>
 							</div>
 						</div>
 					</div>

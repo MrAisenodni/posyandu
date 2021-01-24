@@ -12,9 +12,9 @@
 				<div class="container no-padding">
 					<div class="row">
 						<div class="col-lg-12">
-							<div class="hero-nav-area">
-								<h1 class="text-white">Detail Data Balita</h1>
-								<p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="data-balita.php">Data Balita</a> <span class="lnr lnr-arrow-right"></span> Detail Data Balita</p>
+							<div class="hero-nav-area" style="background: #FFD5D1">
+								<h1  class="text-black">Detail Data Balita</h1>
+								<p class="text-black link-nav"><a style="color: black"  href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span><a style="color: black" href="data-balita.php">Data Balita</a> <span class="lnr lnr-arrow-right"></span> Detail Data Balita</p>
 							</div>
 						</div>
 					</div>

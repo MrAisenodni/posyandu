@@ -60,7 +60,7 @@ $bulan = array(
 						<div class="col-lg-8 post-list">
 							<!-- Start latest-post Area -->
 							<div class="latest-post-wrap">
-								<h4 class="cat-title">Berita PHBS</h4>
+								<h4 style="background: #2148AE" class="cat-title">Berita PHBS</h4>
 								<?php
 								$no = 1;
 								$sql = mysqli_query($con, "SELECT * FROM phbs order by tgl_dibuat DESC");
@@ -93,7 +93,7 @@ $bulan = array(
 						<div class="col-lg-4">
 							<div class="sidebars-area">
 								<div class="single-sidebar-widget editors-pick-widget">
-									<h6 class="title">Jadwal Posyandu</h6>
+									<h6 style="background: #2148AE" class="title">Jadwal Posyandu</h6>
 									<div class="editors-pick-post">
 										<div class="feature-img-wrap relative">
 										</div>
