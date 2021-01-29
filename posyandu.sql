@@ -1,19 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Generation Time: Jan 22, 2021 at 03:42 AM
+-- Generation Time: Jan 29, 2021 at 01:36 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
-=======
--- Generation Time: Jan 27, 2021 at 12:47 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
->>>>>>> 5847880 (perbaikan website)
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -30,67 +25,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `kode_admin` int(11) NOT NULL,
-  `nama_admin` varchar(100) NOT NULL,
-  `alamat` varchar(200) NOT NULL,
-  `no_hp` varchar(13) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`kode_admin`, `nama_admin`, `alamat`, `no_hp`, `username`, `password`) VALUES
-(1, 'Admin', 'jl jl jl', '9867766', 'admin', '21232f297a57a5a743894a0e4a801fc3');
-
--- --------------------------------------------------------
-
---
-=======
->>>>>>> 5847880 (perbaikan website)
 -- Table structure for table `balita`
 --
 
 CREATE TABLE `balita` (
-<<<<<<< HEAD
-  `kode_balita` int(11) NOT NULL,
-  `nik` varchar(20) NOT NULL,
-=======
   `kode_balita` int(5) NOT NULL,
   `nik` char(16) NOT NULL,
->>>>>>> 5847880 (perbaikan website)
   `nama_balita` varchar(100) NOT NULL,
   `tempat_lahir` varchar(50) NOT NULL,
-  `tgl_lahir` date NOT NULL
+  `tgl_lahir` date NOT NULL,
+  `jenkel` enum('L','P') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `balita`
 --
 
-INSERT INTO `balita` (`kode_balita`, `nik`, `nama_balita`, `tempat_lahir`, `tgl_lahir`) VALUES
-<<<<<<< HEAD
-(3, '327505071098', 'Siti Alfayed', 'Bandung', '2020-12-12'),
-(4, '196102181984032001', 'Kunto Mantul', 'Semarang', '2020-07-07');
-=======
-(20, '3604221710870003', 'salsa', 'Serang', '2020-07-07'),
-(21, '3604221308880006', 'ibrahim', 'Jakarta', '2018-05-27'),
-(22, '3604220401850001', 'ikbal', 'Serang', '2020-05-10'),
-(23, '3604220401850001', 'zahra', 'Serang', '2020-08-17'),
-(25, '3604220611750003', 'nazla', 'serang', '2020-05-10'),
-(26, '3604221609670001', 'luafi', 'Serang', '2019-05-12'),
-(27, '3604221403900004', 'rafa', 'Serang', '2017-11-17'),
-(28, '3604222503750002', 'alwi', 'serang', '2018-04-20'),
-(29, '3604222402920005', 'dewi', 'Serang', '2020-11-18'),
-(30, '3604222709910004', 'fenia', 'Serang', '2019-10-13');
->>>>>>> 5847880 (perbaikan website)
+INSERT INTO `balita` (`kode_balita`, `nik`, `nama_balita`, `tempat_lahir`, `tgl_lahir`, `jenkel`) VALUES
+(20, '3604221710870003', 'salsa', 'Serang', '2020-07-07', 'P'),
+(21, '3604221308880006', 'ibrahim', 'Jakarta', '2018-05-27', 'L'),
+(22, '3604220401850001', 'ikbal', 'Serang', '2020-05-10', 'L'),
+(23, '3604220401850001', 'zahra', 'Serang', '2020-08-17', 'P'),
+(25, '3604220611750003', 'nazla', 'serang', '2020-05-10', 'P'),
+(26, '3604221609670001', 'luafi', 'Serang', '2019-05-12', 'L'),
+(27, '3604221403900004', 'rafa', 'Serang', '2017-11-17', 'L'),
+(28, '3604222503750002', 'alwi', 'serang', '2018-04-20', 'L'),
+(29, '3604222402920005', 'dewi', 'Serang', '2020-11-18', 'P'),
+(30, '3604222709910004', 'fenia', 'Serang', '2019-10-13', 'P');
 
 -- --------------------------------------------------------
 
@@ -99,15 +60,9 @@ INSERT INTO `balita` (`kode_balita`, `nik`, `nama_balita`, `tempat_lahir`, `tgl_
 --
 
 CREATE TABLE `imunisasi` (
-<<<<<<< HEAD
-  `kode_balita` int(11) NOT NULL,
-  `nik` int(11) NOT NULL,
-  `jenis_imunisasi` varchar(50) NOT NULL,
-=======
   `kode_balita` int(5) NOT NULL,
   `nik` char(16) NOT NULL,
   `jenis_vaksin` varchar(18) NOT NULL,
->>>>>>> 5847880 (perbaikan website)
   `tgl_imunisasi` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -115,12 +70,6 @@ CREATE TABLE `imunisasi` (
 -- Dumping data for table `imunisasi`
 --
 
-<<<<<<< HEAD
-INSERT INTO `imunisasi` (`kode_balita`, `nik`, `jenis_imunisasi`, `tgl_imunisasi`) VALUES
-(1, 123123, 'Urban (0-7 hari)', '1232-03-12'),
-(4, 2147483647, 'Urban (0-7 hari)', '2021-01-21'),
-(3, 2147483647, 'Urban (0-7 hari)', '2021-02-22');
-=======
 INSERT INTO `imunisasi` (`kode_balita`, `nik`, `jenis_vaksin`, `tgl_imunisasi`) VALUES
 (16, '1203042341', 'DPT-HB-Hib', '2021-01-25'),
 (15, '1203040506', 'HB-D', '2021-01-25'),
@@ -134,7 +83,6 @@ INSERT INTO `imunisasi` (`kode_balita`, `nik`, `jenis_vaksin`, `tgl_imunisasi`) 
 (27, '3604221403900004', '', '2021-01-17'),
 (28, '3604222503750002', '', '2021-01-17'),
 (29, '3604222402920005', 'Polio', '2021-01-17');
->>>>>>> 5847880 (perbaikan website)
 
 -- --------------------------------------------------------
 
@@ -143,11 +91,7 @@ INSERT INTO `imunisasi` (`kode_balita`, `nik`, `jenis_vaksin`, `tgl_imunisasi`) 
 --
 
 CREATE TABLE `jadwal` (
-<<<<<<< HEAD
-  `kode_jadwal` int(11) NOT NULL,
-=======
   `kode_jadwal` int(3) NOT NULL,
->>>>>>> 5847880 (perbaikan website)
   `tanggal` date NOT NULL,
   `jam` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -157,11 +101,7 @@ CREATE TABLE `jadwal` (
 --
 
 INSERT INTO `jadwal` (`kode_jadwal`, `tanggal`, `jam`) VALUES
-<<<<<<< HEAD
-(4, '2021-01-21', '09:10:00');
-=======
 (4, '2020-11-17', '10:10:00');
->>>>>>> 5847880 (perbaikan website)
 
 -- --------------------------------------------------------
 
@@ -170,17 +110,10 @@ INSERT INTO `jadwal` (`kode_jadwal`, `tanggal`, `jam`) VALUES
 --
 
 CREATE TABLE `perkembangan_balita` (
-<<<<<<< HEAD
-  `kode_balita` int(11) NOT NULL,
-  `nik` int(11) NOT NULL,
-  `bb_balita` int(3) NOT NULL,
-  `tb_balita` int(3) NOT NULL,
-=======
   `kode_balita` int(5) NOT NULL,
   `nik` char(16) NOT NULL,
   `bb_balita` decimal(3,1) NOT NULL,
   `tb_balita` decimal(4,1) NOT NULL,
->>>>>>> 5847880 (perbaikan website)
   `tgl_periksa` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -189,12 +122,6 @@ CREATE TABLE `perkembangan_balita` (
 --
 
 INSERT INTO `perkembangan_balita` (`kode_balita`, `nik`, `bb_balita`, `tb_balita`, `tgl_periksa`) VALUES
-<<<<<<< HEAD
-(1, 123123, 42, 100, '1998-01-12'),
-(3, 2147483647, 5, 45, '2021-01-22'),
-(4, 2147483647, 12, 46, '2021-01-22'),
-(3, 2147483647, 12, 47, '2021-01-22');
-=======
 (20, '3604221710870003', '5.4', '56.0', '2021-01-17'),
 (21, '3604221308880006', '13.0', '91.0', '2021-01-17'),
 (22, '3604220401850001', '6.4', '69.0', '2021-01-17'),
@@ -205,7 +132,6 @@ INSERT INTO `perkembangan_balita` (`kode_balita`, `nik`, `bb_balita`, `tb_balita
 (28, '3604222503750002', '11.0', '80.0', '2021-01-17'),
 (29, '3604222402920005', '6.5', '60.0', '2021-01-17'),
 (30, '3604222709910004', '8.4', '66.0', '2021-01-17');
->>>>>>> 5847880 (perbaikan website)
 
 -- --------------------------------------------------------
 
@@ -214,12 +140,8 @@ INSERT INTO `perkembangan_balita` (`kode_balita`, `nik`, `bb_balita`, `tb_balita
 --
 
 CREATE TABLE `phbs` (
-<<<<<<< HEAD
-  `kode_phbs` int(11) NOT NULL,
-=======
   `kode_phbs` int(3) NOT NULL,
   `nik` char(16) NOT NULL,
->>>>>>> 5847880 (perbaikan website)
   `judul_berita` varchar(50) NOT NULL,
   `jenis_berita` varchar(50) NOT NULL,
   `tempat_dibuat` varchar(50) NOT NULL,
@@ -235,13 +157,8 @@ CREATE TABLE `phbs` (
 -- Dumping data for table `phbs`
 --
 
-<<<<<<< HEAD
-INSERT INTO `phbs` (`kode_phbs`, `judul_berita`, `jenis_berita`, `tempat_dibuat`, `tgl_dibuat`, `deskripsi_berita`, `penulis_berita`, `editor_berita`, `penerbit`, `gambar`) VALUES
-(1, 'Imunisasi Sejak Dini', 'Imunisasi', 'Bekasi', '2021-01-14', 'Istilah vaksinasi dan imunisasi tengah ramai diperbincangkan masyarakat. Keduanya sama-sama dilakukan dengna tujuan memberi perlindungan tubuh dari penyakit tertentu.\r\n\r\nMeski banyak pakar mengungkapkan bahwa keduanya memiliki pengertian yang sama, tapi tidak dengan penyataan CDC.\r\n\r\n\r\nMenurut Centers for Disease Control and Prevention (CDC) vaksinasi adalah tindakan memperkenalkan vaksin ke dalam tubuh untuk menciptakan kekebalan (sistem imun) terhadap penyakit tertentu.\r\n\r\nDalam proses vaksinasi, vaksin biasanya diberikan melalui jarum suntik, namun beberapa bisa diberikan melalui mulut atau disemprotkan ke dalam hidung.\r\n\r\nSedangkan definisi imunisasi adalah suatu proses menjadikan seseorang kebal atau terlindungi sepenuhnya dari penyakit melalui tindakan vaksinasi.\r\n\r\nKedua definisi yang hampir serupa ini, akhirnya sering digunakan bergantian. Padahal seseorang yang mendapat suntikkan vaksin belum tentu ia diimunisasi.\r\n\r\nSaat seseorang divaksinasi bukan berarti ia benar-benar terlindungi dari suatu penyakit tertentu, karena ada banyak faktor yang memengaruhi sistem kekebalan dengan vaksin bisa bekerja.\"\"\"\"\"\"', 'Risna Halidi', 'Dini Afrianti Efendi', 'Suara', 'img/gmb/b1.jpg');
-=======
 INSERT INTO `phbs` (`kode_phbs`, `nik`, `judul_berita`, `jenis_berita`, `tempat_dibuat`, `tgl_dibuat`, `deskripsi_berita`, `penulis_berita`, `editor_berita`, `penerbit`, `gambar`) VALUES
 (3, '0', ' Pentingkah Memberi Suplemen Vitamin D untuk Bayi?', 'Kesehatan Bayi', 'Kompas', '2021-01-24', '“Kekurangan vitamin D bisa menyebabkan penyakit tulang rapuh yang disebut rakhitis,” kata Liermann. Vitamin D membantu tubuh menyerap kalsium untuk membentuk dan memperkuat tulang. Tanpa vitamin D, seorang anak lebih rentan mengalami patah tulang dan masalah pertumbuhan. Tubuh juga membutuhkan vitamin D untuk perkembangan otak dan kesehatan sistem kekebalan tubuh.\r\nIbu yang mengonsumsi cukup vitamin D mampu menghasilkan ASI dengan kandungan vitamin D yang memadai untuk kebutuhan bayi.', 'Ariska Puspita Anggraini', 'Ariska Puspita Anggraini', 'Kompas', 'img/gmb/susu.jpg');
->>>>>>> 5847880 (perbaikan website)
 
 -- --------------------------------------------------------
 
@@ -286,15 +203,6 @@ INSERT INTO `user` (`nik`, `nama`, `tempat_lahir`, `tgl_lahir`, `alamat`, `no_hp
 --
 
 --
-<<<<<<< HEAD
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`kode_admin`);
-
---
-=======
->>>>>>> 5847880 (perbaikan website)
 -- Indexes for table `balita`
 --
 ALTER TABLE `balita`
@@ -308,15 +216,12 @@ ALTER TABLE `jadwal`
   ADD PRIMARY KEY (`kode_jadwal`);
 
 --
-<<<<<<< HEAD
-=======
 -- Indexes for table `perkembangan_balita`
 --
 ALTER TABLE `perkembangan_balita`
   ADD KEY `fk_kode_balita` (`kode_balita`);
 
 --
->>>>>>> 5847880 (perbaikan website)
 -- Indexes for table `phbs`
 --
 ALTER TABLE `phbs`
@@ -333,60 +238,32 @@ ALTER TABLE `user`
 --
 
 --
-<<<<<<< HEAD
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `kode_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `balita`
---
-ALTER TABLE `balita`
-  MODIFY `kode_balita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-=======
 -- AUTO_INCREMENT for table `balita`
 --
 ALTER TABLE `balita`
   MODIFY `kode_balita` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
->>>>>>> 5847880 (perbaikan website)
 
 --
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-<<<<<<< HEAD
-  MODIFY `kode_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-=======
   MODIFY `kode_jadwal` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
->>>>>>> 5847880 (perbaikan website)
 
 --
 -- AUTO_INCREMENT for table `phbs`
 --
 ALTER TABLE `phbs`
-<<<<<<< HEAD
-  MODIFY `kode_phbs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-=======
   MODIFY `kode_phbs` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
->>>>>>> 5847880 (perbaikan website)
 
 --
 -- Constraints for dumped tables
 --
 
 --
-<<<<<<< HEAD
--- Constraints for table `balita`
---
-ALTER TABLE `balita`
-  ADD CONSTRAINT `fk_nik` FOREIGN KEY (`nik`) REFERENCES `user` (`nik`) ON DELETE CASCADE ON UPDATE CASCADE;
-=======
 -- Constraints for table `perkembangan_balita`
 --
 ALTER TABLE `perkembangan_balita`
   ADD CONSTRAINT `fk_kode_balita` FOREIGN KEY (`kode_balita`) REFERENCES `balita` (`kode_balita`) ON DELETE CASCADE ON UPDATE CASCADE;
->>>>>>> 5847880 (perbaikan website)
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
