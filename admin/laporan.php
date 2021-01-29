@@ -21,6 +21,7 @@ $bulan = array(
     <tr>
       <th scope="col">No</th>
       <th scope="col">Nama Bayi</th>
+      <th scope="col">Jenis Kelamin</th>
       <th scope="col">Jenis Imunisasi</th>
       <th scope="col">Tanggal Imunisasi</th>
     </tr>
@@ -30,13 +31,14 @@ $bulan = array(
     $no = 1;
     $sql = mysqli_query($con, "SELECT * FROM imunisasi
     inner join balita on imunisasi.kode_balita = balita.kode_balita
-    inner join user on imunisasi.nik = user.nik where tgl_imunisasi like '%$blnini%'");
+    inner join user on imunisasi.nik = user.nik where tgl_imunisasi like '%$blnini%' ORDER BY jenkel ASC");
     while($data = mysqli_fetch_array($sql)){
     ?>
     <tr>
       <th scope="row"><?= $no ?></th>
       <td><?= $data['nama_balita']?></td>
-      <td><?= $data['jenis_imunisasi']?></td>
+      <td><?php if($data['jenkel']=='L') { echo "Laki-laki"; } else { echo "Perempuan"; }?></td>
+      <td><?= $data['jenis_vaksin']?></td>
       <td><?= substr($data['tgl_imunisasi'],8,2)." ".
       $bulan[intval(substr($data['tgl_imunisasi'],6,2))-1]." ".
       substr($data['tgl_imunisasi'],0,4)?></td>
