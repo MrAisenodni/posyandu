@@ -44,7 +44,7 @@
                                     <td><?= $no ?></td>
                                     <td><?= $data['nama_balita'] ?></td>
                                     <td><?= $data['tgl_imunisasi'] ?></td>
-                                    <td><?= $data['jenis_imunisasi'] ?></td>
+                                    <td><?= $data['jenis_vaksin'] ?></td>
                                     <td>
                                         <a href="edit-imunisasi.php?kode=<?= $data['kode_balita']?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Ubah</a>
                                     </td>

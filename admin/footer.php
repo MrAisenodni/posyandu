@@ -23,6 +23,10 @@
     <script src="js/custom.min.js"></script>
     <script src="js/dashboard1.js"></script>
     <script src="plugins/bower_components/toast-master/js/jquery.toast.js"></script>
+    <!-- Chart JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 </body>
 
 </html>

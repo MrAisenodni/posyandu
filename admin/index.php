@@ -3,6 +3,7 @@ date_default_timezone_set('Asia/Jakarta');
 $hariini = date('Y-m-d');
 $sql = mysqli_query($con,"SELECT count(kode_balita) as jumlah from balita");
 $cbayi = mysqli_fetch_array($sql);
+$chart_data = '';
 
 $sql1 = mysqli_query($con,"SELECT * from jadwal");
 $jadwal = mysqli_fetch_array($sql1);
@@ -20,6 +21,12 @@ $bulan = array(
   'November',
   'Desember',
 );
+
+$sql2 = mysqli_query($con, "SELECT * FROM balita");
+while ($data = mysqli_fetch_array($sql2)) {
+    $chart_data = "{ nama_balita:'".$data['nama_balita']."', tempat_lahir: '".$data['tempat_lahir']."', tgl_lahir: '".$data['tgl_lahir']."', jenkel: '".$data['jenkel']."' }";
+}
+$chart_data = substr($chart_data, 0, -2);
 ?>
             <div class="container-fluid">
                 <div class="row bg-title">
@@ -87,21 +94,22 @@ $bulan = array(
                         </div>
                     </div>
                     <!-- /.col -->
-                    <div class="col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <i class="fa fa-bar-chart-o fa-fw"></i> Berat Badan
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div id="chart-container">
-                                <canvas id="Paket"></canvas>
-                            </div>
-                            <script type="text/javascript" src="../data_chart/example.js"></script>
-                            <!-- /.panel-body -->
-                        </div>
-                        <!-- /.panel -->
-                      </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="white-box">
+                        <div id="graph" style="width: 1000px; height: 250px;"></div>
+                    </div>
                 </div>
                 <!-- /.row -->
             </div>
+<script>
+    Morris.Line({
+        element: 'graph',
+        data: [<?php echo $chart_data ?>]
+        xkey: 'nama_balita',
+        ykeys: ['tempat_lahir', 'tgl_lahir', 'jenkel'],
+        labels: ['Tempat Lahir', 'Tanggal Lahir', 'Jenis Kelamin'],
+        hidehover: 'auto'
+    });
+</script>
 <?php require_once('footer.php'); ?>

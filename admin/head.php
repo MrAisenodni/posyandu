@@ -29,6 +29,8 @@
     <link href="css/style.css" rel="stylesheet">
     <!-- color CSS -->
     <link href="css/colors/blue-dark.css" id="theme" rel="stylesheet">
+    <!-- Chart CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -39,7 +41,8 @@
 <?php
 ob_start();
 require_once('../config/koneksi.php');
-require_once('../session.php');?>
+require_once('../session.php');
+?>
 <body>
     <!-- Preloader -->
     <div class="preloader">
@@ -51,9 +54,9 @@ require_once('../session.php');?>
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg "
                     href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i
                         class="fa fa-bars"></i></a>
-                <div class="top-left-part"><a class="logo" href="index.html"><b><img
-                                src="../plugins/images/pixeladmin-logo.png" alt="home" /></b><span
-                            class="hidden-xs"><img src="../plugins/images/pixeladmin-text.png" alt="home" /></span></a>
+                <div class="top-left-part"><a class="logo" href="index.php"><b><img
+                                src="plugins/images/pixeladmin-logo.png" alt="home" /></b><span
+                            class="hidden-xs"><img src="plugins/images/pixeladmin-text.png" alt="home" /></span></a>
                 </div>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
@@ -95,8 +98,7 @@ require_once('../session.php');?>
                     </li>
                 </ul>
                 <div class="center p-20">
-                    <span class="hide-menu"><a href="logout.php"
-                            class="btn btn-danger btn-block btn-rounded waves-effect waves-light"><i class="fa fa-user fa-fw"></i> Logout</a></span>
+                    <span class="hide-menu"><a href="logout.php" class="btn btn-danger btn-block btn-rounded waves-effect waves-light"><i class="fa fa-user fa-fw"></i> Logout</a></span>
                 </div>
             </div>
         </div>
