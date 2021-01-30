@@ -76,7 +76,7 @@
                             <!-- <li><a href="">Azka</a></li>
                             <li><a href="logout.php">Logout</a></li> -->
 							<?php if(!$niku){ ?>
-							<li><a href="login.php" style="margin-left: 100px">Login</a></li>
+							<li><a href="login.php" style="margin-right: 25px">Login</a></li>
 						<?php }else{
 								if($akses=='user') { ?>
 							<li><a href=""><?php echo $namau ?></a></li>
