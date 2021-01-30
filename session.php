@@ -6,4 +6,9 @@
     $namau = $_SESSION['namau'];
     $akses = $_SESSION['akses'];
   }
+  else{
+  	$niku = null;
+  	$namau = null;
+  	$akses = null;
+  }
 ?>

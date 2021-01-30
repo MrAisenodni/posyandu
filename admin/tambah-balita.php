@@ -101,8 +101,14 @@ if(isset($_POST['tambah'])){
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tanggal Lahir</label>
                                         <input type="date" name="tlbayi" class="form-control" id="">
-                                    </div>
-                                    <hr>
+                                    </div><br>
+                                    <div class="sm-3">
+                                        <label for="exampleInputPassword1" class="form-label">Jenis Kelamin</label>
+                                        <select class="form-control" name="jenis_kelamin">
+                                          <option value="Laki-laki">Laki-laki</option>
+                                          <option value="Perempuan">Perempuan</option>
+                                        </select>
+                                    </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Username</label>
                                         <input type="text" name="uname" class="form-control" id="">
