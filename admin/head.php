@@ -14,7 +14,7 @@
     <link rel="canonical" href="https://www.wrappixel.com/templates/pixel-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16"
-        href="https://wrappixel.com/demos/free-admin-templates/all-lite-landing-pages/assets/images/logos/pixel-favicon.png">
+        href="../img/logo.png">
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Menu CSS -->
@@ -52,8 +52,8 @@ require_once('../session.php');
                     href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i
                         class="fa fa-bars"></i></a>
                 <div class="top-left-part"><a class="logo" href="index.php"><b><img
-                                src="plugins/images/pixeladmin-logo.png" alt="home" /></b><span
-                            class="hidden-xs"><img src="plugins/images/pixeladmin-text.png" alt="home" /></span></a>
+                                src="../img/logo.png" alt="home" width="40px" height="40px" /></b><span
+                            class="hidden-xs"><img src="../img/logo-text.png" alt="home" width="140px" height="40px" /></span></a>
                 </div>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>

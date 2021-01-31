@@ -70,7 +70,7 @@ $bulan = array(
 									<div class="col-lg-5 post-left">
 										<div class="feature-img relative">
 											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="<?= $data['gambar']?>" alt="berita">
+											<img class="img-fluid" src="<?= $data['gambar'] ?>" alt="berita">
 										</div>
 									</div>
 									<div class="col-lg-7 post-right">

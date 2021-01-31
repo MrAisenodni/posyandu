@@ -10,6 +10,7 @@ if(isset($_POST['tambah'])){
   $agama = $_POST['agama'];
   $kerja = $_POST['kerja'];
   $ayah = $_POST['ayah'];
+  $jenkel = $_POST['jenkel'];
   $akses = 'user';
   $uname = $_POST['uname'];
   $pass = md5($_POST['pass']);
@@ -24,7 +25,7 @@ if(isset($_POST['tambah'])){
   } else {
     $adduser = mysqli_query($con,"INSERT INTO user VALUES('$nik','$nuser','$tmuser','$tluser','$alamat',
     '$hp','$agama','$kerja','$ayah','$akses','$uname','$pass')");
-  $addbayi = mysqli_query($con,"INSERT INTO balita VALUES('','$nik','$nama','$tmbayi','$tlbayi')");
+  $addbayi = mysqli_query($con,"INSERT INTO balita VALUES('','$nik','$nama','$tmbayi','$tlbayi','$jenkel')");
   if($adduser && $addbayi){
     header('location:balita.php?stat=input_success');
   }else{
@@ -104,9 +105,9 @@ if(isset($_POST['tambah'])){
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Jenis Kelamin</label>
-                                        <select class="form-control" name="jenis_kelamin">
-                                          <option value="Laki-laki">Laki-laki</option>
-                                          <option value="Perempuan">Perempuan</option>
+                                        <select class="form-control" name="jenkel">
+                                          <option value="L">Laki-laki</option>
+                                          <option value="P">Perempuan</option>
                                         </select>
                                     </div><br>
                                     <div class="sm-3">
