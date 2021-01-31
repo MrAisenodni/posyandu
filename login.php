@@ -56,40 +56,7 @@ if(isset($_POST['login'])){
 
     }else{
       header('location:login.php?stat=wrong');
- //    }
-	// $sql = mysqli_query($con, "SELECT * FROM user WHERE username='$mail' AND password='$pw'");
-	// $data = mysqli_fetch_array($sql);
-	// $num = mysqli_num_rows($sql);
-	// // $sql2 = mysqli_query($con, "SELECT * FROM user WHERE username='$mail' AND password='$pw'");
-	// // $data2 = mysqli_fetch_array($sql2);
-	// // $num2 = mysqli_num_rows($sql2);
-
-	// if($num>0){
-	// 	if($data['nik']==null){
-
-	// 		session_start();
-	// 		$_SESSION['kode'] = $data['kode_admin'];
-	// 		$_SESSION['nama'] = $data['nama'];
-	// 		$_SESSION['alamat'] = $data['alamat'];
-	// 		$_SESSION['hp'] = $data['hp'];
-	// 		$_SESSION['uname'] = $data['username'];
-
-	// 		header('location:admin/index.php?stat=login_success');
-	// 	}else{
-	// 		session_start();
-	// 		$_SESSION['nik'] = $data['nik'];
-	// 		$_SESSION['nama'] = $data['nama'];
-	// 		$_SESSION['tmpt'] = $data['tempat_lahir'];
-	// 		$_SESSION['tgl'] = $data['hp'];
-	// 		$_SESSION['hp'] = $data['no_hp'];
-
-	// 		header('location:index.php?stat=login_success');
-	// 	}
-
-	// }else{
-	// 	header('location:login.php?stat=wrong');
-	// }
-  }
+  	}
 } ?>
 <body>
 
@@ -98,10 +65,10 @@ if(isset($_POST['login'])){
 
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
 				<form class="login100-form validate-form" method="post">
-					<span class="login100-form-title p-b-33">
+					<!-- <span class="login100-form-title p-b-33">
 						Login
-					</span>
-					<center><img style="margin-top: -40px" src="img/bayi-regina.png" width="250px"></center>
+					</span> -->
+					<center><img style="margin-top: -40px" src="img/login1.png" width="250px"></center>
 					
 					<?php require_once('admin/alert.php'); ?>
 					<div class="wrap-input100 validate-input" data_validate="Username is required">
