@@ -5,6 +5,7 @@ if(isset($_POST['tambah'])){
   $bayi = $_POST['bayi'];
   $imun = $_POST['imun'];
   $tgl = $_POST['tgl'];
+  $tipe = 'imun';
 
   if($ibu==null || $bayi==null || $imun==null || $tgl==null) {
     header('location:pendaftaran-imunisasi.php?stat=input_null');
@@ -39,7 +40,7 @@ if(isset($_POST['tambah'])){
                                 <form method="post">
                                     <div class="sm-3">
                                         <label for="exampleInputEmail1" class="form-label">Nama Ibu</label>
-                                        <select class="form-control" name="ibu">
+                                        <select class="form-control" name="ibu" required>
                                           <option value="">--Pilih Nama Ibu--</option>
                                           <?php $sql = mysqli_query($con, "SELECT * FROM user WHERE akses='user'");
                                           while($datai = mysqli_fetch_array($sql)){?>
@@ -49,7 +50,7 @@ if(isset($_POST['tambah'])){
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Nama Balita</label>
-                                        <select class="form-control" name="bayi">
+                                        <select class="form-control" name="bayi" required>
                                           <option value="">--Pilih Nama Balita--</option>
                                           <?php $sql = mysqli_query($con, "SELECT * FROM balita inner join user on user.nik=balita.nik");
                                           while($datab = mysqli_fetch_array($sql)){?>
@@ -62,7 +63,7 @@ if(isset($_POST['tambah'])){
                             <div class="col-sm-6"><br><br>
                                     <div class="sm-3">
                                         <label for="exampleInputEmail1" class="form-label">Jenis Imunisasi</label>
-                                        <select class="form-control" name="imun" id="imun">
+                                        <select class="form-control" name="imun" id="imun" required>
                                           <option value="">-- Pilih Jenis Vaksin --</option>
                                           <option value="HB-O (0-7 hari)" id="1">HB-O (0-7 hari)</option>
                                           <option value="BCG" id="1">BCG</option>
@@ -81,7 +82,7 @@ if(isset($_POST['tambah'])){
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tanggal Imunisasi</label>
-                                        <input type="date" name="tgl" class="form-control" id="">
+                                        <input type="date" name="tgl" class="form-control" id="" required>
                                     </div><br><br><br><p>*** Pemberian DPT-HB-Hib lanjutan diberikan minimal 12 bulan setelah pemberian imunisasi DPT-HB-Hib 3 dan dapat diberikan dalam renatng usia 18-24 bulan<br>**** Pemberian imunisasi campak lanjutan diberikan minimal 6 bulan setelah pemberian imunisasi campak terakhir dan dapat diberikan dalam rentang usia 18-24 bulan</p>
                                     <hr>
                                     <button name="tambah" class="btn btn-success btn-lg"><i class="fa fa-check-square"></i> Simpan</button>

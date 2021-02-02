@@ -13,7 +13,7 @@ if(isset($_POST['tambah'])){
   $tgl = $_POST['tgl'];
   $tipe = 'imun';
 
-  $add = mysqli_query($con, "UPDATE imunisasi SET jenis_imunisasi='$imun',tgl_imunisasi='$tgl' where kode_balita='$kd'");
+  $add = mysqli_query($con, "UPDATE imunisasi SET jenis_vaksin='$imun',tgl_imunisasi='$tgl' WHERE kode_balita='$kd'");
   $history = mysqli_query($con, "INSERT INTO `history`(`kode_balita`, `nik`, `tipe`, `jenis_vaksin`, `tgl_imunisasi`) VALUES ('$kd','$nikibu','$tipe','$imun','$tgl')");
   if($add && $history){
     header('location:imunisasi.php?stat=update_success');
@@ -52,8 +52,8 @@ if(isset($_POST['tambah'])){
                             <div class="col-sm-6"><br><br>
                                     <div class="sm-3">
                                         <label for="exampleInputEmail1" class="form-label">Jenis Imunisasi</label>
-                                        <select class="form-control" name="imun" id="imun">
-                                          <option value="<?= $data['jenis_imunisasi'] ?>"><?= $data['jenis_imunisasi'] ?></option>
+                                        <select class="form-control" name="imun" id="imun" required>
+                                          <option value="<?= $data['jenis_vaksin'] ?>"><?= $data['jenis_vaksin'] ?></option>
                                           <option value="HB-O (0-7 hari)" id="1">HB-O (0-7 hari)</option>
                                           <option value="BCG" id="1">BCG</option>
                                           <option value="*Polio 1" id="2">*Polio 1</option>
@@ -71,7 +71,7 @@ if(isset($_POST['tambah'])){
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tanggal Imunisasi</label>
-                                        <input type="date" name="tgl" class="form-control" id="" value="<?= $data['tgl_imunisasi'] ?>">
+                                        <input type="date" name="tgl" class="form-control" id="" value="<?= $data['tgl_imunisasi'] ?>" required>
                                     </div><br><br><br><p>*** Pemberian DPT-HB-Hib lanjutan diberikan minimal 12 bulan setelah pemberian imunisasi DPT-HB-Hib 3 dan dapat diberikan dalam renatng usia 18-24 bulan<br>**** Pemberian imunisasi campak lanjutan diberikan minimal 6 bulan setelah pemberian imunisasi campak terakhir dan dapat diberikan dalam rentang usia 18-24 bulan</p>
                                     <hr>
                                     <button name="tambah" class="btn btn-success btn-lg"><i class="fa fa-check-square"></i> Simpan</button>

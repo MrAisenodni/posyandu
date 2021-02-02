@@ -39,18 +39,8 @@ if(isset($_POST['tambah'])){
                                 <h4 style="text-align: center;">Biodata Balita</h4>
                                 <form method="post">
                                   <div class="sm-3">
-                                      <label for="exampleInputPassword1" class="form-label">Nama Balita</label>
-                                      <select class="form-control" name="bayi">
-                                        <option value="">--Pilih Nama Balita--</option>
-                                        <?php $sql = mysqli_query($con, "SELECT * FROM balita inner join user on user.nik=balita.nik");
-                                        while($datab = mysqli_fetch_array($sql)){?>
-                                        <option value="<?= $datab['kode_balita']?>"><?php echo $datab['nama_balita']." | ".$datab['nama'] ?></option>
-                                        <?php } ?>
-                                      </select>
-                                  </div><br>
-                                  <div class="sm-3">
                                       <label for="exampleInputEmail1" class="form-label">Nama Ibu</label>
-                                      <select class="form-control" name="ibu">
+                                      <select class="form-control" name="ibu" required>
                                         <option value="">-- Pilih Nama Ibu --</option>
                                         <?php $sql = mysqli_query($con, "SELECT * FROM user WHERE akses='user'");
                                         while($datai = mysqli_fetch_array($sql)){?>
@@ -58,19 +48,29 @@ if(isset($_POST['tambah'])){
                                         <?php } ?>
                                       </select>
                                   </div><br>
+                                  <div class="sm-3">
+                                      <label for="exampleInputPassword1" class="form-label">Nama Balita</label>
+                                      <select class="form-control" name="bayi" required>
+                                        <option value="">--Pilih Nama Balita--</option>
+                                        <?php $sql = mysqli_query($con, "SELECT * FROM balita inner join user on user.nik=balita.nik");
+                                        while($datab = mysqli_fetch_array($sql)){?>
+                                        <option value="<?= $datab['kode_balita']?>"><?php echo $datab['nama_balita']." | ".$datab['nama'] ?></option>
+                                        <?php } ?>
+                                      </select>
+                                  </div><br>
                             </div>
                             <div class="col-sm-6"><br><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tinggi Badan (Cm)</label>
-                                        <input type="number" min="0" step=".1" name="tb" class="form-control" id="">
+                                        <input type="number" min="0" step=".1" name="tb" class="form-control" required>
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Berat Badan (Kg)</label>
-                                        <input type="number" min="0" step=".1" name="bb" class="form-control" id="">
+                                        <input type="number" min="0" step=".1" name="bb" class="form-control" required>
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tanggal Periksa</label>
-                                        <input type="date" name="tgl" class="form-control" id="">
+                                        <input type="date" name="tgl" class="form-control" required>
                                     </div><br>
                                     <hr>
                                     <button name="tambah" class="btn btn-success btn-lg"><i class="fa fa-check-square"></i> Simpan</button>

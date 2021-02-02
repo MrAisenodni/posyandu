@@ -47,25 +47,37 @@ if(isset($_POST['tambah'])){
                                 <form method="post">
                                   <div class="sm-3">
                                       <label for="exampleInputEmail1" class="form-label">Nama Ibu</label>
-                                      <input type="text" name="" class="form-control" id="" readonly value="<?= $data2['nama'] ?>">
+                                      <select class="form-control" name="ibu" readonly>
+                                        <option value="">-- Pilih Nama Ibu --</option>
+                                        <?php $sql = mysqli_query($con, "SELECT * FROM user WHERE akses='user'");
+                                        while($datai = mysqli_fetch_array($sql)){?>
+                                        <option value="<?= $datai['nik']?>"><?= $datai['nama'] ?></option>
+                                        <?php } ?>
+                                      </select>
                                   </div><br>
                                   <div class="sm-3">
                                       <label for="exampleInputPassword1" class="form-label">Nama Balita</label>
-                                      <input type="text" name="" class="form-control" id="" readonly value="<?= $data2['nama_balita']." | ".$data2['nama'] ?>">
+                                      <select class="form-control" name="bayi" readonly>
+                                        <option value="">--Pilih Nama Balita--</option>
+                                        <?php $sql = mysqli_query($con, "SELECT * FROM balita inner join user on user.nik=balita.nik");
+                                        while($datab = mysqli_fetch_array($sql)){?>
+                                        <option value="<?= $datab['kode_balita']?>"><?php echo $datab['nama_balita']." | ".$datab['nama'] ?></option>
+                                        <?php } ?>
+                                      </select>
                                   </div><br>
                             </div>
                             <div class="col-sm-6"><br><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tinggi Badan (Cm)</label>
-                                        <input type="number" min="0" step=".1" name="tb" class="form-control" id="" value="<?= $data['tb_balita'] ?>">
+                                        <input type="number" min="0" step=".1" name="tb" class="form-control" required value="<?= $data['tb_balita'] ?>">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Berat Badan (Kg)</label>
-                                        <input type="number" name="bb" min="0" step=".1" class="form-control" id="" value="<?= $data['bb_balita'] ?>">
+                                        <input type="number" name="bb" min="0" step=".1" class="form-control" required value="<?= $data['bb_balita'] ?>">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tanggal Periksa</label>
-                                        <input type="date" name="tgl" class="form-control" id="" value="<?= $data['tgl_periksa'] ?>">
+                                        <input type="date" name="tgl" class="form-control" required value="<?= $data['tgl_periksa'] ?>">
                                     </div><br>
                                     <hr>
                                     <button name="tambah" class="btn btn-success btn-lg"><i class="fa fa-check-square"></i> Simpan</button>
