@@ -40,7 +40,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Ibu Balita</th>
-                                                        <td><?= $data['nama'] ?></td>
+                                                        <td><?= ucwords($data['nama']) ?></td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Tempat Lahir</th>
@@ -72,7 +72,7 @@
                                                     </tr> -->
                                                     <tr>
                                                         <th scope="row">Nama Ayah</th>
-                                                        <td><?= $data['nama_suami'] ?></td>
+                                                        <td><?= ucwords($data['nama_suami']) ?></td>
                                                     </tr>
                                                     <!-- <tr>
                                                         <th scope="row">Anak Ke-</th>
@@ -87,7 +87,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <th scope="row">Nama Lengkap</th>
-                                                        <td><?= $data2['nama_balita'] ?></td>
+                                                        <td><?= ucwords($data2['nama_balita']) ?></td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Tempat Lahir</th>
@@ -96,6 +96,10 @@
                                                     <tr>
                                                         <th scope="row">Tanggal Lahir</th>
                                                         <td><?= $data2['tgl_lahir'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Jenis Kelamin</th>
+                                                        <td><?php if($data2['jenkel'] == 'L') { echo "Laki-laki"; } else { echo "Perempuan"; } ?></td>
                                                     </tr>
                                                     <!-- <tr>
                                                         <th scope="row">Usia</th>

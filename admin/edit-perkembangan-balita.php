@@ -10,22 +10,22 @@ if(isset($_GET['kode'])){
 }
 
 if(isset($_POST['tambah'])){
-  // $ibu = $_POST['ibu'];
-  // $bayi = $_POST['bayi'];
   $tb = $_POST['tb'];
   $bb = $_POST['bb'];
   $tgl = $_POST['tgl'];
+  $tipe = 'perk';
 
-    $add = mysqli_query($con, "UPDATE `perkembangan_balita` SET 
-      `bb_balita`='$bb',
-      `tb_balita`='$tb',
-      `tgl_periksa`='$tgl' 
-      WHERE `kode_balita`='$kd'");
-    if($add){
-      header('location:perkembangan-balita.php?stat=update_success');
-    }else{
-      header('location:perkembangan-balita.php?stat=update_failed');
-    }
+  $add = mysqli_query($con, "UPDATE `perkembangan_balita` SET 
+    `bb_balita`='$bb',
+    `tb_balita`='$tb',
+    `tgl_periksa`='$tgl' 
+    WHERE `kode_balita`='$kd'");
+  $history = mysqli_query($con, "INSERT INTO `history`(`kode_balita`, `nik`, `tipe`, `bb_balita`, `tb_balita`, `tgl_periksa`) VALUES ('$kd','$nikibu','$tipe','$bb','$tb','$tgl')");
+  if($add && $history){
+    header('location:perkembangan-balita.php?stat=update_success');
+  }else{
+    header('location:perkembangan-balita.php?stat=update_failed');
+  }
 }
 ?>
        <div class="container-fluid">
@@ -57,11 +57,11 @@ if(isset($_POST['tambah'])){
                             <div class="col-sm-6"><br><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tinggi Badan (Cm)</label>
-                                        <input type="number" name="tb" class="form-control" id="" value="<?= $data['tb_balita'] ?>">
+                                        <input type="number" min="0" step=".1" name="tb" class="form-control" id="" value="<?= $data['tb_balita'] ?>">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Berat Badan (Kg)</label>
-                                        <input type="number" name="bb" class="form-control" id="" value="<?= $data['bb_balita'] ?>">
+                                        <input type="number" name="bb" min="0" step=".1" class="form-control" id="" value="<?= $data['bb_balita'] ?>">
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tanggal Periksa</label>

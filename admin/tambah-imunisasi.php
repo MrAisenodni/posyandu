@@ -10,7 +10,8 @@ if(isset($_POST['tambah'])){
     header('location:pendaftaran-imunisasi.php?stat=input_null');
   } else {
     $add = mysqli_query($con, "INSERT into imunisasi VALUES('$bayi','$ibu','$imun','$tgl')");
-    if($add){
+    $history = mysqli_query($con, "INSERT INTO `history`(`kode_balita`, `nik`, `tipe`, `jenis_vaksin`, `tgl_imunisasi`) VALUES ('$bayi','$ibu','$tipe','$imun','$tgl')");
+    if($add && $history){
       header('location:imunisasi.php?stat=input_success');
     }else{
       header('location:imunisasi.php?stat=input_failed');
@@ -60,7 +61,22 @@ if(isset($_POST['tambah'])){
                             <div class="col-sm-6"><br><br>
                                     <div class="sm-3">
                                         <label for="exampleInputEmail1" class="form-label">Jenis Imunisasi</label>
-                                        <input type="text" name="imun" class="form-control" id="">
+                                        <select class="form-control" name="imun" id="imun">
+                                          <option value="">-- Pilih Jenis Vaksin --</option>
+                                          <option value="HB-O (0-7 hari)" id="1">HB-O (0-7 hari)</option>
+                                          <option value="BCG" id="1">BCG</option>
+                                          <option value="*Polio 1" id="2">*Polio 1</option>
+                                          <option value="*DPT-HB-Hib 1" id="2">*DPT-HB-Hib 1</option>
+                                          <option value="*Polio 2" id="2">*Polio 2</option>
+                                          <option value="*DPT-HB-Hib 2" id="2">*DPT-HB-Hib 2 </option>
+                                          <option value="*Polio 3" id="2">*Polio 3</option>
+                                          <option value="*DPT-HB-Hib 3" id="2">*DPT-HB-Hib 3</option>
+                                          <option value="*Polio 4" id="2">*Polio 4</option>
+                                          <option value="*IPV" id="2">*IPV</option>
+                                          <option value="Campak" id="1">Campak</option>
+                                          <option value="***DPT-HB-Hib Lanjutan" id="4">***DPT-HB-Hib Lanjutan</option>
+                                          <option value="****Campak Lanjutan" id="5">****Campak Lanjutan</option>
+                                        </select>
                                     </div><br>
                                     <div class="sm-3">
                                         <label for="exampleInputPassword1" class="form-label">Tanggal Imunisasi</label>
@@ -79,3 +95,14 @@ if(isset($_POST['tambah'])){
         </div>
         <!-- /.container-fluid -->
 <?php require_once('footer.php'); ?>
+<script type="text/javascript">
+  function pesan() {
+    var imun = document.getElementById('imun');
+    var dua = document.getElementById('2');
+    var tiga = document.getElementById('3');
+    var empat = document.getElementById('4');
+    var lima = document.getElementById('5');
+    if (dua.selected) {
+    }
+  }
+</script>
