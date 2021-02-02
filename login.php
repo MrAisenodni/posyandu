@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V19</title>
+	<title>Login Posyandu Desa Apel Sukamanah</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -68,7 +68,7 @@ if(isset($_POST['login'])){
 					<!-- <span class="login100-form-title p-b-33">
 						Login
 					</span> -->
-					<center><img style="margin-top: -40px" src="img/login1.png" width="250px"></center>
+					<center><img style="margin-top: -40px" src="img/login1.png" width="150px" height="150px"></center><br>
 					
 					<?php require_once('admin/alert.php'); ?>
 					<div class="wrap-input100 validate-input" data_validate="Username is required">
