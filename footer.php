@@ -54,13 +54,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Siste
 	    <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
 	    <script src="admin/morris/examples/lib/example.js"></script>
 		<script type="text/javascript">
-        Morris.Bar({
-          element: 'bar-graph',
+        Morris.Line({
+          element: 'line-graph',
           data: [<?php echo $chartbb; ?>],
           xkey: 'periode',
           ykeys: ['berat'],
           labels: ['Berat Badan'],
-          barColors: ['blue'],
+          lineColors: ['blue'],
+          pointFillColors: ['black'],
           hideHover: 'auto'
         });
         Morris.Area({
@@ -69,7 +70,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Siste
           xkey: 'periode',
           ykeys: ['tinggi'],
           labels: ['Tinggi Badan'],
-          barColors: ['red'],
+          lineColors: ['red'],
+          pointFillColors: ['black'],
           hideHover: 'auto'
         });
 	    </script>

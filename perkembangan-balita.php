@@ -42,7 +42,7 @@
                                         <div class="col-md-6">
 					                        <div class="white-box" style="width: 490px">
 					                            <h4 align="center"><b>Berat Badan (kg)</b></h4>
-					                            <div id="bar-graph" style="width: 415px; height: 250px;"></div>
+					                            <div id="line-graph" style="width: 415px; height: 250px;"></div>
 					                        </div>
 					                    </div>
 					                    <div class="col-md-6">
