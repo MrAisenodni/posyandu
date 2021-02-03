@@ -13,8 +13,8 @@
     $namafile = $_FILES['gmb']['name'];
     $ukfile = $_FILES['gmb']['size'];
     $ext = pathinfo($namafile, PATHINFO_EXTENSION);
-    $lokasi = "../img/gmb/";
-    $save = "img/gmb/";
+    $lokasi = "../img/";
+    $save = "img/";
 
     if($judul==null || $jenis==null || $tempat==null || $tgl==null || $des==null || $pen==null || $edit==null || $terbit==null || $namafile==null) {
         header('location:tambah-berita.php?stat=input_null');

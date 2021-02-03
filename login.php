@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="login/images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="img/logo.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="login/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -68,7 +68,7 @@ if(isset($_POST['login'])){
 					<!-- <span class="login100-form-title p-b-33">
 						Login
 					</span> -->
-					<center><img style="margin-top: -40px" src="img/login1.png" width="150px" height="150px"></center><br>
+					<center><img style="margin-top: -40px" src="img/bayi.png" width="50%" height="50%"></center><br>
 					
 					<?php require_once('admin/alert.php'); ?>
 					<div class="wrap-input100 validate-input" data_validate="Username is required">
