@@ -1,14 +1,27 @@
-<?php require_once('head.php'); ?>
+<?php require_once('head.php'); 
+	$sqlbb = mysqli_query($con, "SELECT * FROM history WHERE nik=$niku AND tipe='perk'");
+	$chartbb = '';
+	while ($databb = mysqli_fetch_array($sqlbb)) {
+		$chartbb .= "{ periode:'".$databb['tgl_periksa']."', berat:".$databb['bb_balita']." },";
+	}
+	$chartbb = substr($chartbb, 0, -1);
+
+	$sqltb = mysqli_query($con, "SELECT * FROM history WHERE nik=$niku AND tipe='perk'");
+	$charttb = '';
+	while ($datatb = mysqli_fetch_array($sqltb)) {
+		$charttb .= "{ periode:'".$datatb['tgl_periksa']."', tinggi:".$datatb['tb_balita']." },";
+	}
+	$charttb = substr($charttb, 0, -1);
+?>
 		<div class="site-main-container">
 			<!-- Start top-post Area -->
 			<section class="top-post-area pt-10">
 				<div class="container no-padding">
 					<div class="row">
 						<div class="col-lg-12">
-							<div class="hero-nav-area" style="background: #FFD5D1">
-								<h1 class="text-black">Perkembangan Balita</h1>
-								<p class="text-black link-nav"><a style="color: black" href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span>Perkembangan Balita</p>
-							</div>
+						<div class="hero-nav-area" style="background: #FFD5D1">
+							<h1 class="text-black">Perkembangan Balita</h1>
+							<p class="text-black link-nav"><a style="color: black" href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span>Perkembangan Balita</p>
 						</div>
 					</div>
 				</div>
@@ -24,8 +37,20 @@
 								<div class="content-wrap">
                                     <div class="row">
                                         <div class="col-lg-9">
-                                            <h3>Perkembangan Balita</h3>
+                                            <h3>Perkembangan Balita</h3><br>
                                         </div>
+                                        <div class="col-md-6">
+					                        <div class="white-box" style="width: 490px">
+					                            <h4 align="center"><b>Berat Badan (kg)</b></h4>
+					                            <div id="bar-graph" style="width: 415px; height: 250px;"></div>
+					                        </div>
+					                    </div>
+					                    <div class="col-md-6">
+					                        <div class="white-box" style="width: 490px">
+					                            <h4 align="center"><b>Tinggi Badan (cm)</b></h4>
+					                            <div id="area-graph" style="width: 415px; height: 285px;"></div>
+					                        </div>
+					                    </div>
                                     </div>
                                     <br>
 									<table class="table">

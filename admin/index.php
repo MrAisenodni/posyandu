@@ -22,16 +22,16 @@ $bulan = array(
   'Desember',
 );
 
-    $sqlchart = mysqli_query($con, "SELECT (SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='P' AND b.bb_balita<6.0) AS wanita1, 
-(SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='P' AND b.bb_balita>=6.0 AND b.bb_balita<11.0) AS wanita2, 
-(SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='P' AND b.bb_balita>=11.0 AND b.bb_balita<16.0) AS wanita3, 
-(SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='P' AND b.bb_balita>=16.0 AND b.bb_balita<23.0) AS wanita4,
-(SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='L' AND b.bb_balita<6.0) AS pria1, 
-(SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='L' AND b.bb_balita>=6.0 AND b.bb_balita<11.0) AS pria2, 
-(SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='L' AND b.bb_balita>=11.0 AND b.bb_balita<16.0) AS pria3, 
-(SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='L' AND b.bb_balita>=16.0 AND b.bb_balita<23.0) AS pria4 FROM balita");
+    $sqlchart = mysqli_query($con, "SELECT (SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='P' AND b.bb_balita<10.0) AS wanita1, 
+(SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='P' AND b.bb_balita>=10.0 AND b.bb_balita<20.0) AS wanita2, 
+(SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='P' AND b.bb_balita>=20.0 AND b.bb_balita<30.0) AS wanita3, 
+(SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='P' AND b.bb_balita>=30.0 AND b.bb_balita<40.0) AS wanita4,
+(SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='L' AND b.bb_balita<10.0) AS pria1, 
+(SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='L' AND b.bb_balita>=10.0 AND b.bb_balita<20.0) AS pria2, 
+(SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='L' AND b.bb_balita>=20.0 AND b.bb_balita<30.0) AS pria3, 
+(SELECT count(a.nama_balita) FROM balita a INNER JOIN perkembangan_balita b ON b.kode_balita = a.kode_balita WHERE a.jenkel='L' AND b.bb_balita>=30.0 AND b.bb_balita<40.0) AS pria4 FROM balita");
     $datachart = mysqli_fetch_array($sqlchart);
-
+    
     $sqlchart2 = mysqli_query($con, "SELECT (SELECT COUNT(nama_balita) FROM balita WHERE jenkel='L') AS l, (SELECT COUNT(nama_balita) FROM balita WHERE jenkel='P') AS p FROM balita");
     $datachart2 = mysqli_fetch_array($sqlchart2);
 ?>

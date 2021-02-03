@@ -30,10 +30,10 @@
         Morris.Bar({
           element: 'bar-graph',
           data: [
-            {x: '0-5,99', y: <?= $datachart['pria1'] ?>, z: <?= $datachart['wanita1'] ?>},
-            {x: '6-10,99', y: <?= $datachart['pria2'] ?>, z: <?= $datachart['wanita2'] ?>},
-            {x: '11-15,99', y: <?= $datachart['pria3'] ?>, z: <?= $datachart['wanita3'] ?>},
-            {x: '16-23', y: <?= $datachart['pria4'] ?>, z: <?= $datachart['wanita4'] ?>}
+            {x: '0-9,99', y: <?= $datachart['pria1'] ?>, z: <?= $datachart['wanita1'] ?>},
+            {x: '10-19,99', y: <?= $datachart['pria2'] ?>, z: <?= $datachart['wanita2'] ?>},
+            {x: '20-29,99', y: <?= $datachart['pria3'] ?>, z: <?= $datachart['wanita3'] ?>},
+            {x: '30-40', y: <?= $datachart['pria4'] ?>, z: <?= $datachart['wanita4'] ?>}
           ],
           xkey: 'x',
           ykeys: ['y', 'z'],

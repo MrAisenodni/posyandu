@@ -29,11 +29,15 @@
 		<link rel="stylesheet" href="css/owl.carousel.css">
 		<link rel="stylesheet" href="css/jquery-ui.css">
 		<link rel="stylesheet" href="css/main.css">
+		<!-- Morris CSS -->
+	    <link rel="stylesheet" href="morris/examples/lib/example.css">
+	    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+	    <link rel="stylesheet" href="morris/morris.css">
 	</head>
 	<?php require_once('config/koneksi.php');
 	require_once('session.php');
 	?>
-	<body>
+	<body style="width: 100%">
 		<header>
 			<div class="container main-menu" id="main-menu">
 				<div class="row align-items-center justify-content-between">

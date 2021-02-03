@@ -47,5 +47,31 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Siste
 		<script src="js/owl.carousel.min.js"></script>
 		<script src="js/mail-script.js"></script>
 		<script src="js/main.js"></script>
+		<!-- Morris JavaScript -->
+	    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+	    <script src="admin/morris/morris.js"></script>
+	    <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+	    <script src="admin/morris/examples/lib/example.js"></script>
+		<script type="text/javascript">
+        Morris.Bar({
+          element: 'bar-graph',
+          data: [<?php echo $chartbb; ?>],
+          xkey: 'periode',
+          ykeys: ['berat'],
+          labels: ['Berat Badan'],
+          barColors: ['blue'],
+          hideHover: 'auto'
+        });
+        Morris.Area({
+          element: 'area-graph',
+          data: [<?php echo $charttb; ?>],
+          xkey: 'periode',
+          ykeys: ['tinggi'],
+          labels: ['Tinggi Badan'],
+          barColors: ['red'],
+          hideHover: 'auto'
+        });
+	    </script>
 	</body>
 </html>

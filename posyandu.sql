@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 29, 2021 at 01:36 PM
+-- Generation Time: Feb 03, 2021 at 01:34 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -51,7 +51,42 @@ INSERT INTO `balita` (`kode_balita`, `nik`, `nama_balita`, `tempat_lahir`, `tgl_
 (27, '3604221403900004', 'rafa', 'Serang', '2017-11-17', 'L'),
 (28, '3604222503750002', 'alwi', 'serang', '2018-04-20', 'L'),
 (29, '3604222402920005', 'dewi', 'Serang', '2020-11-18', 'P'),
-(30, '3604222709910004', 'fenia', 'Serang', '2019-10-13', 'P');
+(30, '3604222709910004', 'fenia', 'Serang', '2019-10-13', 'P'),
+(31, '327505071098', 'Andi', 'Jakarta', '2020-10-10', 'L');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `history`
+--
+
+CREATE TABLE `history` (
+  `kode_balita` int(5) NOT NULL,
+  `nik` char(16) NOT NULL,
+  `tipe` enum('imun','perk') NOT NULL,
+  `bb_balita` decimal(3,1) DEFAULT NULL,
+  `tb_balita` decimal(4,1) DEFAULT NULL,
+  `tgl_periksa` date DEFAULT NULL,
+  `jenis_vaksin` varchar(18) DEFAULT NULL,
+  `tgl_imunisasi` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `history`
+--
+
+INSERT INTO `history` (`kode_balita`, `nik`, `tipe`, `bb_balita`, `tb_balita`, `tgl_periksa`, `jenis_vaksin`, `tgl_imunisasi`) VALUES
+(20, '3604221710870003', 'imun', NULL, NULL, NULL, 'HB-O (0-7 hari)', '2021-02-01'),
+(21, '3604221308880006', 'imun', NULL, NULL, NULL, '*DPT-HB-Hib 1', '2021-01-31'),
+(22, '3604220401850001', 'imun', NULL, NULL, NULL, '*DPT-HB-Hib 3', '2021-01-31'),
+(20, '3604221710870003', 'imun', NULL, NULL, NULL, '*Polio 2', '2021-02-02'),
+(22, '3604220401850001', 'imun', NULL, NULL, NULL, 'HB-O (0-7 hari)', '2021-02-01'),
+(22, '3604220401850001', 'imun', NULL, NULL, NULL, 'Campak', '2021-02-02'),
+(20, '3604221710870003', 'perk', '24.2', '52.5', '2021-01-31', NULL, NULL),
+(21, '3604221308880006', 'perk', '21.9', '47.7', '2021-02-01', NULL, NULL),
+(22, '3604220401850001', 'perk', '22.0', '46.2', '2021-01-31', NULL, NULL),
+(22, '3604220401850001', 'perk', '22.2', '46.7', '2021-02-01', NULL, NULL),
+(22, '3604220401850001', 'perk', '22.5', '47.1', '2021-02-02', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -71,18 +106,9 @@ CREATE TABLE `imunisasi` (
 --
 
 INSERT INTO `imunisasi` (`kode_balita`, `nik`, `jenis_vaksin`, `tgl_imunisasi`) VALUES
-(16, '1203042341', 'DPT-HB-Hib', '2021-01-25'),
-(15, '1203040506', 'HB-D', '2021-01-25'),
-(20, '3604221710870003', 'Polio 2', '2021-01-17'),
-(21, '3604221308880006', '', '2021-01-17'),
-(22, '3604220401850001', 'Polio 2', '2021-01-17'),
-(25, '3604220611750003', 'Polio 2', '2021-01-17'),
-(23, '3604220401850001', '', '2021-01-17'),
-(30, '3604222709910004', '', '2021-01-17'),
-(26, '3604221609670001', '', '2021-01-17'),
-(27, '3604221403900004', '', '2021-01-17'),
-(28, '3604222503750002', '', '2021-01-17'),
-(29, '3604222402920005', 'Polio', '2021-01-17');
+(20, '3604221710870003', '*Polio 2', '2021-02-02'),
+(21, '3604221308880006', '*DPT-HB-Hib 1', '2021-01-31'),
+(22, '3604220401850001', 'Campak', '2021-02-02');
 
 -- --------------------------------------------------------
 
@@ -122,16 +148,9 @@ CREATE TABLE `perkembangan_balita` (
 --
 
 INSERT INTO `perkembangan_balita` (`kode_balita`, `nik`, `bb_balita`, `tb_balita`, `tgl_periksa`) VALUES
-(20, '3604221710870003', '5.4', '56.0', '2021-01-17'),
-(21, '3604221308880006', '13.0', '91.0', '2021-01-17'),
-(22, '3604220401850001', '6.4', '69.0', '2021-01-17'),
-(23, '3604220401850001', '5.4', '56.0', '2021-01-17'),
-(25, '3604220611750003', '8.0', '64.0', '2021-01-17'),
-(26, '3604221609670001', '10.0', '75.0', '2021-01-17'),
-(27, '3604221403900004', '13.0', '90.0', '2021-01-17'),
-(28, '3604222503750002', '11.0', '80.0', '2021-01-17'),
-(29, '3604222402920005', '6.5', '60.0', '2021-01-17'),
-(30, '3604222709910004', '8.4', '66.0', '2021-01-17');
+(20, '3604221710870003', '24.2', '52.5', '2021-01-31'),
+(21, '3604221308880006', '21.9', '47.7', '2021-02-01'),
+(22, '3604220401850001', '22.5', '47.1', '2021-02-02');
 
 -- --------------------------------------------------------
 
@@ -141,7 +160,6 @@ INSERT INTO `perkembangan_balita` (`kode_balita`, `nik`, `bb_balita`, `tb_balita
 
 CREATE TABLE `phbs` (
   `kode_phbs` int(3) NOT NULL,
-  `nik` char(16) NOT NULL,
   `judul_berita` varchar(50) NOT NULL,
   `jenis_berita` varchar(50) NOT NULL,
   `tempat_dibuat` varchar(50) NOT NULL,
@@ -157,8 +175,8 @@ CREATE TABLE `phbs` (
 -- Dumping data for table `phbs`
 --
 
-INSERT INTO `phbs` (`kode_phbs`, `nik`, `judul_berita`, `jenis_berita`, `tempat_dibuat`, `tgl_dibuat`, `deskripsi_berita`, `penulis_berita`, `editor_berita`, `penerbit`, `gambar`) VALUES
-(3, '0', ' Pentingkah Memberi Suplemen Vitamin D untuk Bayi?', 'Kesehatan Bayi', 'Kompas', '2021-01-24', '“Kekurangan vitamin D bisa menyebabkan penyakit tulang rapuh yang disebut rakhitis,” kata Liermann. Vitamin D membantu tubuh menyerap kalsium untuk membentuk dan memperkuat tulang. Tanpa vitamin D, seorang anak lebih rentan mengalami patah tulang dan masalah pertumbuhan. Tubuh juga membutuhkan vitamin D untuk perkembangan otak dan kesehatan sistem kekebalan tubuh.\r\nIbu yang mengonsumsi cukup vitamin D mampu menghasilkan ASI dengan kandungan vitamin D yang memadai untuk kebutuhan bayi.', 'Ariska Puspita Anggraini', 'Ariska Puspita Anggraini', 'Kompas', 'img/gmb/susu.jpg');
+INSERT INTO `phbs` (`kode_phbs`, `judul_berita`, `jenis_berita`, `tempat_dibuat`, `tgl_dibuat`, `deskripsi_berita`, `penulis_berita`, `editor_berita`, `penerbit`, `gambar`) VALUES
+(3, ' Pentingkah Memberi Suplemen Vitamin D untuk Bayi?', 'Kesehatan Bayi', 'Kompas', '2021-01-24', 'Kekurangan vitamin D bisa menyebabkan penyakit tulang rapuh yang disebut rakhitis, kata Liermann. Vitamin D membantu tubuh menyerap kalsium untuk membentuk dan memperkuat tulang. Tanpa vitamin D, seorang anak lebih rentan mengalami patah tulang dan masalah pertumbuhan. Tubuh juga membutuhkan vitamin D untuk perkembangan otak dan kesehatan sistem kekebalan tubuh.\r\nIbu yang mengonsumsi cukup vitamin D mampu menghasilkan ASI dengan kandungan vitamin D yang memadai untuk kebutuhan bayi.', 'Ariska Puspita Anggraini', 'Ariska Puspita Anggraini', 'Kompas', 'img/keg3.jpeg');
 
 -- --------------------------------------------------------
 
@@ -188,7 +206,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`nik`, `nama`, `tempat_lahir`, `tgl_lahir`, `alamat`, `no_hp`, `agama`, `pekerjaan`, `nama_suami`, `akses`, `username`, `password`) VALUES
 ('1020302948', 'Testing', 'testing', '2021-01-25', 'Testing', 'Testing', 'Testing', 'Testing', 'Testing', 'user', 'testing', 'ae2b1fca515949e5d54fb22b8ed95575'),
 ('12345', 'Regina Devi Tarigan', 'Medan', '1999-05-10', 'Jl. RS Fatmawati No. 1', '081281567751', 'Kristen', 'Mahasiswa', 'Robert Downey Juniot', 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3'),
-('3604220401850001', 'elis', 'serang', '2020-08-17', 'kalobar', '082271432281', 'islam', 'wirausaha', 'suprallah', 'user', 'zahra', 'd41d8cd98f00b204e9800998ecf8427e'),
+('327505071098', 'Samiun', 'Jakarta', '1999-10-07', 'Jakarta', '0891249124', 'Islam', 'Ngamen', 'Gobar', 'user', 'andi', 'ee11cbb19052e40b07aac0ca060c23ee'),
+('3604220401850001', 'elis', 'serang', '2020-08-17', 'kalobar', '082271432281', 'islam', 'wirausaha', 'suprallah', 'user', 'zahra', '827ccb0eea8a706c4c34a16891f84e7b'),
 ('3604220611750003', 'ika', 'Serang', '1989-11-06', 'pasir k', '087781241345', 'Islam', 'petani', 'rohim', 'user', 'nazla', '827ccb0eea8a706c4c34a16891f84e7b'),
 ('3604221308880006', 'Surtini', 'Jakarta', '1990-08-13', 'kp pagedongan', '08125711963', 'Islam', 'wirausaha', 'bayu', 'user', 'ibrahim', '827ccb0eea8a706c4c34a16891f84e7b'),
 ('3604221403900004', 'esih', 'Serang', '1997-03-14', 'pagedong I', '081277481212', 'Islam', 'ibu rumah ', 'agus', 'user', 'rafa', '827ccb0eea8a706c4c34a16891f84e7b'),
@@ -241,7 +260,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `balita`
 --
 ALTER TABLE `balita`
-  MODIFY `kode_balita` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `kode_balita` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `jadwal`

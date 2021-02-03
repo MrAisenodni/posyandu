@@ -27,9 +27,9 @@
     <!-- color CSS -->
     <link href="css/colors/blue-dark.css" id="theme" rel="stylesheet">
     <!-- Morris CSS -->
-    <link rel="stylesheet" href="morris/examples/lib/example.css">
+    <link rel="stylesheet" href="admin/morris/examples/lib/example.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
-    <link rel="stylesheet" href="morris/morris.css">
+    <link rel="stylesheet" href="admin/morris/morris.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
