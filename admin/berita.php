@@ -45,7 +45,6 @@
                                         <td><?= $data['tgl_dibuat'] ?></td>
                                         <td><?= $data['penulis_berita'] ?></td>
                                         <td>
-                                            <!-- <a href="../berita.php" class="btn btn-primary"><i class="fa fa-list-alt"></i> Detail</a> -->
                                             <a href="edit-berita.php?kode=<?= $data['kode_phbs'] ?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Ubah</a>
                                             <a href="del-berita.php?kode=<?= $data['kode_phbs'] ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i> Hapus</a>
                                         </td>
