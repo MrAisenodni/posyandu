@@ -27,30 +27,30 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
     <script src="morris/examples/lib/example.js"></script>
     <script type="text/javascript">
-        Morris.Bar({
-          element: 'bar-graph',
-          data: [
-            {x: '0-9,99', y: <?= $datachart['pria1'] ?>, z: <?= $datachart['wanita1'] ?>},
-            {x: '10-19,99', y: <?= $datachart['pria2'] ?>, z: <?= $datachart['wanita2'] ?>},
-            {x: '20-29,99', y: <?= $datachart['pria3'] ?>, z: <?= $datachart['wanita3'] ?>},
-            {x: '30-40', y: <?= $datachart['pria4'] ?>, z: <?= $datachart['wanita4'] ?>}
-          ],
-          xkey: 'x',
-          ykeys: ['y', 'z'],
-          labels: ['Laki-laki', 'Perempuan'],
-          barColors: ['blue', 'pink'],
-          hideHover: 'auto'
-        });
-        Morris.Donut({
-          element: 'donut-graph',
-          data: [
-            {value: <?= $datachart2['l'] ?>, label: 'Laki-laki'},
-            {value: <?= $datachart2['p'] ?>, label: 'Perempuan'}
-          ],
-            labelColor: 'black',
-          colors: ['blue','pink'],
-          formatter: function (x) { return x}
-        });
+      Morris.Bar({
+        element: 'bar-graph',
+        data: [
+          {x: '0-9,99', y: <?= $datachart['pria1'] ?>, z: <?= $datachart['wanita1'] ?>},
+          {x: '10-19,99', y: <?= $datachart['pria2'] ?>, z: <?= $datachart['wanita2'] ?>},
+          {x: '20-29,99', y: <?= $datachart['pria3'] ?>, z: <?= $datachart['wanita3'] ?>},
+          {x: '30-40', y: <?= $datachart['pria4'] ?>, z: <?= $datachart['wanita4'] ?>}
+        ],
+        xkey: 'x',
+        ykeys: ['y', 'z'],
+        labels: ['Laki-laki', 'Perempuan'],
+        barColors: ['blue', 'pink'],
+        hideHover: 'auto'
+      });
+      Morris.Donut({
+        element: 'donut-graph',
+        data: [
+          {value: <?= $datachart2['l'] ?>, label: 'Laki-laki'},
+          {value: <?= $datachart2['p'] ?>, label: 'Perempuan'}
+        ],
+          labelColor: 'black',
+        colors: ['blue','pink'],
+        formatter: function (x) { return x}
+      });
     </script>
 </body>
 
