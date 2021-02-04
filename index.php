@@ -63,7 +63,7 @@ $bulan = array(
 								<h4 style="background: #2148AE" class="cat-title">Berita PHBS</h4>
 								<?php
 								$no = 1;
-								$sql = mysqli_query($con, "SELECT * FROM phbs order by tgl_dibuat DESC");
+								$sql = mysqli_query($con, "SELECT * FROM phbs ORDER BY tgl_dibuat DESC");
 								while($data = mysqli_fetch_array($sql)){
 								?>
 								<div class="single-latest-post row align-items-center">

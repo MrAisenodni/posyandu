@@ -1,9 +1,9 @@
 <?php require_once('head.php');
-
-$no = 1;
-$sql = mysqli_query($con, "SELECT * FROM phbs order by tgl_dibuat DESC");
-$data = mysqli_fetch_array($sql)
-
+if(isset($_GET['kode'])) {
+	$kode = $_GET['kode'];
+	$sql = mysqli_query($con, "SELECT * FROM phbs WHERE kode_phbs='$kode'");
+	$data = mysqli_fetch_array($sql);
+}
 ?>
 		<div class="site-main-container">
 			<!-- Start top-post Area -->
@@ -29,10 +29,10 @@ $data = mysqli_fetch_array($sql)
 							<div class="single-post-wrap">
 								<div class="feature-img-thumb relative">
 									<div class="overlay overlay-bg"></div>
-									<img class="img-fluid" src="<?= $data['gambar']?>" alt="">
+									<img class="img-fluid" src="<?= $data['gambar']?>" alt="berita">
 								</div>
 								<div class="content-wrap">
-									<h3><?php $data['judul_berita']?></h3>
+									<h3 class="text-center"><?= $data['judul_berita']?></h3><br>
 									<ul class="meta pb-20">
 										<li><a href="#"><span class="lnr lnr-user"></span><?= $data['penulis_berita']?></a></li>
 										<li><a href="#"><span class="lnr lnr-calendar-full"></span><?= $data['tgl_dibuat']?></a></li>
