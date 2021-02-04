@@ -63,19 +63,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-																					<?php
-						                              $no = 1;
-						                              $sql = mysqli_query($con, "SELECT *,YEAR(CURRENT_DATE) - YEAR(tgl_lahir) AS usia FROM perkembangan_balita
-						                              inner join balita on balita.kode_balita=perkembangan_balita.kode_balita");
-						                              while($data = mysqli_fetch_array($sql)){
-						                              ?>
+										<?php
+			                              $no = 1;
+			                              $sql = mysqli_query($con, "SELECT * FROM history WHERE nik=$niku AND tipe='perk'");
+			                              while($data = mysqli_fetch_array($sql)){
+			                              ?>
                                             <tr>
                                                 <th scope="row"><?= $no ?></th>
                                                 <td><?= $data['tgl_periksa']; ?></td>
                                                 <td><?= $data['tb_balita']?> CM</td>
                                                 <td><?= $data['bb_balita']?> KG</td>
                                             </tr>
-																						<?php $no++;}?>
+										<?php $no++;}?>
                                         </tbody>
                                     </table>
 						</div>
