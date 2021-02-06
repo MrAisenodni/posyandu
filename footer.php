@@ -53,6 +53,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Siste
 	    <script src="admin/morris/morris.js"></script>
 	    <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
 	    <script src="admin/morris/examples/lib/example.js"></script>
+	    <!-- Canvas JavaScript -->
+	    <script src="canvasjs/canvasjs.min.js"></script>
 		<script type="text/javascript">
         Morris.Line({
           element: 'line-graph',
@@ -75,39 +77,292 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Siste
           hideHover: 'auto'
         });
 	    </script>
-	    <script type="text/javascript">
-        Morris.Bar({
-          element: 'bbp-graph',
-          data: [
-          	{x: '<1 tahun', y: 19, z: 5},
-          	{x: '<2 tahun', y: 8, z: 6},
-          	{x: '<3 tahun', y: 18, z: 3},
-          	{x: '<4 tahun', y: 12, z: 8},
-          	{x: '<5 tahun', y: 4, z: null}
-          ],
-          xkey: 'x',
-          ykeys: ['y','z'],
-          labels: ['Bayi Sehat','Bayi Kurang Sehat'],
-          barColors: ['green','red'],
-          xLabelAngle: 60,
-          hideHover: 'auto'
-        });
-        Morris.Bar({
-          element: 'bbw-graph',
-          data: [
-          	{x: '<1 tahun', y: 19, z: 5},
-          	{x: '<2 tahun', y: 8, z: 6},
-          	{x: '<3 tahun', y: 18, z: 3},
-          	{x: '<4 tahun', y: 12, z: 8},
-          	{x: '<5 tahun', y: 4, z: null}
-          ],
-          xkey: 'x',
-          ykeys: ['y','z'],
-          labels: ['Bayi Sehat','Bayi Kurang Sehat'],
-          barColors: ['green','red'],
-          xLabelAngle: 60,
-          hideHover: 'auto'
-        });
-	    </script>
+	    <script>
+		window.onload = function () {
+			CanvasJS.addColorSet("greenred",
+                [//colorSet Array
+
+                "orange",
+                "green",
+                "red"
+            ]);
+
+		    var chart = new CanvasJS.Chart("bbw-graph", {
+		      colorSet: "greenred",
+		            
+		      title:{
+		        text: "Berat Badan Balita Perempuan",
+		        fontFamily: "Roboto",
+		        fontWeight: "bold"              
+		      },
+
+		      data: [  //array of dataSeries     
+		      { //dataSeries - first quarter
+		 /*** Change type "column" to "bar", "area", "line" or "pie"***/        
+		       type: "column",
+		       name: "Kekurangan",
+		       indexLabel: "{y}",
+		       indexLabelPlacement: "inside",
+		       indexLabelOrientation: "vertical",
+		       indexLabelFontFamily: "Roboto",
+		       indexLabelFontColor: "white",
+		       indexLabelFontSize: 14,
+		       indexLabelFontWeight: "bold",
+		       showInLegend: true,
+		       dataPoints: [
+		       { label: "<1 tahun", y: 58 },
+		       { label: "<2 tahun", y: 69 },
+		       { label: "<3 tahun", y: 80 },                                    
+		       { label: "<4 tahun", y: 74 },
+		       { label: "<5 tahun", y: 64 }
+		       ]
+		     },
+
+		     { //dataSeries - second quarter
+
+		      type: "column",
+		      name: "Ideal", 
+			  indexLabel: "{y}",
+			  indexLabelPlacement: "inside",
+			  indexLabelOrientation: "vertical",
+			  indexLabelFontFamily: "Roboto",
+			  indexLabelFontColor: "white",
+			  indexLabelFontSize: 14,
+			  indexLabelFontWeight: "bold",
+		      showInLegend: true,               
+		      dataPoints: [
+		      { label: "<1 tahun", y: 63 },
+		      { label: "<2 tahun", y: 73 },
+		      { label: "<3 tahun", y: 88 },                                    
+		      { label: "<4 tahun", y: 77 },
+		      { label: "<5 tahun", y: 60 }
+		      ]
+		    },
+
+		    { //dataSeries - third quarter
+
+		      type: "column",
+		      name: "Kelebihan", 
+			  indexLabel: "{y}",
+			  indexLabelPlacement: "inside",
+			  indexLabelOrientation: "vertical",
+			  indexLabelFontFamily: "Roboto",
+			  indexLabelFontColor: "white",
+			  indexLabelFontSize: 14,
+			  indexLabelFontWeight: "bold",
+		      showInLegend: true,               
+		      dataPoints: [
+		      { label: "<1 tahun", y: 63 },
+		      { label: "<2 tahun", y: 73 },
+		      { label: "<3 tahun", y: 88 },                                    
+		      { label: "<4 tahun", y: 77 },
+		      { label: "<5 tahun", y: 60 }
+		      ]
+		    }
+		    ],
+		 /** Set axisY properties here*/
+		    axisY:{
+		      title: "Jumlah Balita",
+		      titleFontFamily: "Roboto"
+		    }    
+		  });
+		    chart.render();
+
+		    CanvasJS.addColorSet("bluerange",
+                [//colorSet Array
+
+                "blue",
+                "dark-red"
+            ]);
+
+		    var chart = new CanvasJS.Chart("bbp-graph", {
+		      colorSet: "bluerange",
+		            
+		      title:{
+		        text: "Berat Badan Balita Laki-laki",
+		        fontFamily: "Roboto",
+		        fontWeight: "bold"              
+		      },
+
+		      data: [  //array of dataSeries     
+		      { //dataSeries - first quarter
+		 /*** Change type "column" to "bar", "area", "line" or "pie"***/        
+		       type: "column",
+		       name: "Balita Sehat",
+		       indexLabel: "{y}",
+		       indexLabelPlacement: "inside",
+		       indexLabelOrientation: "vertical",
+		       indexLabelFontFamily: "Roboto",
+		       indexLabelFontColor: "white",
+		       indexLabelFontSize: 14,
+		       indexLabelFontWeight: "bold",
+		       showInLegend: true,
+		       dataPoints: [
+		       { label: "<1 tahun", y: 58 },
+		       { label: "<2 tahun", y: 69 },
+		       { label: "<3 tahun", y: 80 },                                    
+		       { label: "<4 tahun", y: 74 },
+		       { label: "<5 tahun", y: 64 }
+		       ]
+		     },
+
+		     { //dataSeries - second quarter
+
+		      type: "column",
+		      name: "Balita Kurang Sehat", 
+			  indexLabel: "{y}",
+			  indexLabelPlacement: "inside",
+			  indexLabelOrientation: "vertical",
+			  indexLabelFontFamily: "Roboto",
+			  indexLabelFontColor: "white",
+			  indexLabelFontSize: 14,
+			  indexLabelFontWeight: "bold",
+		      showInLegend: true,               
+		      dataPoints: [
+		      { label: "<1 tahun", y: 63 },
+		      { label: "<2 tahun", y: 73 },
+		      { label: "<3 tahun", y: 88 },                                    
+		      { label: "<4 tahun", y: 77 },
+		      { label: "<5 tahun", y: 60 }
+		      ]
+		    }
+		    ],
+		 /** Set axisY properties here*/
+		    axisY:{
+		      title: "Jumlah Balita",
+		      titleFontFamily: "Roboto"
+		    }    
+		  });
+
+		chart.render();
+
+		var chart = new CanvasJS.Chart("tbw-graph", {
+		      colorSet: "greenred",
+		            
+		      title:{
+		        text: "Tinggi Badan Balita Perempuan",
+		        fontFamily: "Roboto",
+		        fontWeight: "bold"              
+		      },
+
+		      data: [  //array of dataSeries     
+		      { //dataSeries - first quarter
+		 /*** Change type "column" to "bar", "area", "line" or "pie"***/        
+		       type: "column",
+		       name: "Balita Sehat",
+		       indexLabel: "{y}",
+		       indexLabelPlacement: "inside",
+		       indexLabelOrientation: "vertical",
+		       indexLabelFontFamily: "Roboto",
+		       indexLabelFontColor: "white",
+		       indexLabelFontSize: 14,
+		       indexLabelFontWeight: "bold",
+		       showInLegend: true,
+		       dataPoints: [
+		       { label: "<1 tahun", y: 58 },
+		       { label: "<2 tahun", y: 69 },
+		       { label: "<3 tahun", y: 80 },                                    
+		       { label: "<4 tahun", y: 74 },
+		       { label: "<5 tahun", y: 64 }
+		       ]
+		     },
+
+		     { //dataSeries - second quarter
+
+		      type: "column",
+		      name: "Balita Kurang Sehat", 
+			  indexLabel: "{y}",
+			  indexLabelPlacement: "inside",
+			  indexLabelOrientation: "vertical",
+			  indexLabelFontFamily: "Roboto",
+			  indexLabelFontColor: "white",
+			  indexLabelFontSize: 14,
+			  indexLabelFontWeight: "bold",
+		      showInLegend: true,               
+		      dataPoints: [
+		      { label: "<1 tahun", y: 63 },
+		      { label: "<2 tahun", y: 73 },
+		      { label: "<3 tahun", y: 88 },                                    
+		      { label: "<4 tahun", y: 77 },
+		      { label: "<5 tahun", y: 60 }
+		      ]
+		    }
+		    ],
+		 /** Set axisY properties here*/
+		    axisY:{
+		      title: "Jumlah Balita",
+		      titleFontFamily: "Roboto"
+		    }    
+		  });
+		    chart.render();
+
+		    CanvasJS.addColorSet("bluerange",
+                [//colorSet Array
+
+                "blue",
+                "orange"
+            ]);
+
+		    var chart = new CanvasJS.Chart("tbp-graph", {
+		      colorSet: "bluerange",
+		            
+		      title:{
+		        text: "Tinggi Badan Balita Laki-laki",
+		        fontFamily: "Roboto",
+		        fontWeight: "bold"              
+		      },
+
+		      data: [  //array of dataSeries     
+		      { //dataSeries - first quarter
+		 /*** Change type "column" to "bar", "area", "line" or "pie"***/        
+		       type: "column",
+		       name: "Balita Sehat",
+		       indexLabel: "{y}",
+		       indexLabelPlacement: "inside",
+		       indexLabelOrientation: "vertical",
+		       indexLabelFontFamily: "Roboto",
+		       indexLabelFontColor: "white",
+		       indexLabelFontSize: 14,
+		       indexLabelFontWeight: "bold",
+		       showInLegend: true,
+		       dataPoints: [
+		       { label: "<1 tahun", y: 58 },
+		       { label: "<2 tahun", y: 69 },
+		       { label: "<3 tahun", y: 80 },                                    
+		       { label: "<4 tahun", y: 74 },
+		       { label: "<5 tahun", y: 64 }
+		       ]
+		     },
+
+		     { //dataSeries - second quarter
+
+		      type: "column",
+		      name: "Balita Kurang Sehat", 
+			  indexLabel: "{y}",
+			  indexLabelPlacement: "inside",
+			  indexLabelOrientation: "vertical",
+			  indexLabelFontFamily: "Roboto",
+			  indexLabelFontColor: "white",
+			  indexLabelFontSize: 14,
+			  indexLabelFontWeight: "bold",
+		      showInLegend: true,               
+		      dataPoints: [
+		      { label: "<1 tahun", y: 63 },
+		      { label: "<2 tahun", y: 73 },
+		      { label: "<3 tahun", y: 88 },                                    
+		      { label: "<4 tahun", y: 77 },
+		      { label: "<5 tahun", y: 60 }
+		      ]
+		    }
+		    ],
+		 /** Set axisY properties here*/
+		    axisY:{
+		      title: "Jumlah Balita",
+		      titleFontFamily: "Roboto"
+		    }    
+		  });
+		    chart.render();
+		}
+		</script>
 	</body>
 </html>

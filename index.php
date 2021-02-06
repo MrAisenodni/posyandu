@@ -18,6 +18,25 @@ $bulan = array(
   'November',
   'Desember',
 );
+
+$sqlbb = mysqli_query($con, "SELECT (SELECT COUNT(kode_balita) FROM history WHERE tipe = 'perk' AND bb_balita < 25) AS data1 FROM history");
+$chartbb = mysqli_fetch_array($sqlbb);
+
+$data1 = array( 
+	array( "label" => "<1tahun", "y" => 58 ),
+	array( "label" => "<2tahun", "y" => 69 ),
+    array( "label" => "<3tahun", "y" => 80 ),
+    array( "label" => "<4tahun", "y" => 74 ),
+    array( "label" => "<5tahun", "y" => 64 )
+);
+
+$data2 = array( 
+	array( "label" => "<1tahun", "y" => 63 ),
+    array( "label" => "<2tahun", "y" => 73 ),
+    array( "label" => "<3tahun", "y" => 88 ),
+    array( "label" => "<4tahun", "y" => 77 ),
+    array( "label" => "<5tahun", "y" => 60 )
+);
 ?>
 		<div class="site-main-container">
 			<!-- Start top-post Area -->
@@ -49,17 +68,89 @@ $bulan = array(
 								</div><br>
 								<div class="row">
 					                <div class="col-md-6">
-					                    <div class="white-box" style="width: 550px">
-					                        <h3 align="center"><b>Bayi Laki-laki</b></h3>
-					                        <div id="bbp-graph" style="width: 550px; height: 350px;"></div>
-					                        <h4 align="center"><b>Berat Badan (kg)</b></h4>
+					                    <div class="white-box" style="width: 525px">
+					                        <div id="bbp-graph" style="width: 525px; height: 350px;"></div><br>
+					                        <table class="table table-bordered table-hover">
+					                        	<tr class="text-center table-primary">
+					                        		<th>Umur</th>
+					                        		<th>Berat Badan Ideal (kg)</th>
+					                        		<th>Rata-rata (kg)</th>
+					                        	</tr>
+					                        	<tr class="text-center table-light">
+					                        		<td><?php echo "<1 tahun" ?></td>
+					                        		<td>7,5 - 13,5</td>
+					                        		<td>13,2</td>
+					                        	</tr>
+					                        	<tr class="text-center table-light">
+					                        		<td><?php echo "<2 tahun" ?></td>
+					                        		<td>9,5 - 15,5</td>
+					                        		<td>14,1</td>
+					                        	</tr>
+					                        	<tr class="text-center table-light">
+					                        		<td><?php echo "<3 tahun" ?></td>
+					                        		<td>11 - 18</td>
+					                        		<td>16,7</td>
+					                        	</tr>
+					                        	<tr class="text-center table-light">
+					                        		<td><?php echo "<4 tahun" ?></td>
+					                        		<td>12,5 - 21</td>
+					                        		<td>15,4</td>
+					                        	</tr>
+					                        	<tr class="text-center table-light">
+					                        		<td><?php echo "<5 tahun" ?></td>
+					                        		<td>14 - 24</td>
+					                        		<td>21,2</td>
+					                        	</tr>
+					                        </table>
 					                    </div>
 					                </div>
 					                <div class="col-md-6">
-					                    <div class="white-box" style="width: 550px">
-					                        <h3 align="center"><b>Bayi Perempuan</b></h3>
-					                        <div id="bbw-graph" style="width: 550px; height: 350px;"></div>
-					                        <h4 align="center"><b>Berat Badan (kg)</b></h4>
+					                    <div class="white-box" style="width: 525px">
+					                        <div id="bbw-graph" style="width: 525px; height: 350px;"></div><br>
+					                        <table class="table table-bordered table-hover">
+					                        	<tr class="text-center table-warning">
+					                        		<th>Umur</th>
+					                        		<th>Berat Badan Ideal (kg)</th>
+					                        		<th>Rata-rata (kg)</th>
+					                        	</tr>
+					                        	<tr class="text-center table-light">
+					                        		<td><?php echo "<1 tahun" ?></td>
+					                        		<td>7,5 - 13,5</td>
+					                        		<td>13,2</td>
+					                        	</tr>
+					                        	<tr class="text-center table-light">
+					                        		<td><?php echo "<2 tahun" ?></td>
+					                        		<td>9,5 - 15,5</td>
+					                        		<td>14,1</td>
+					                        	</tr>
+					                        	<tr class="text-center table-light">
+					                        		<td><?php echo "<3 tahun" ?></td>
+					                        		<td>11 - 18</td>
+					                        		<td>16,7</td>
+					                        	</tr>
+					                        	<tr class="text-center table-light">
+					                        		<td><?php echo "<4 tahun" ?></td>
+					                        		<td>12,5 - 21</td>
+					                        		<td>15,4</td>
+					                        	</tr>
+					                        	<tr class="text-center table-light">
+					                        		<td><?php echo "<5 tahun" ?></td>
+					                        		<td>14 - 24</td>
+					                        		<td>21,2</td>
+					                        	</tr>
+					                        </table>
+					                    </div>
+					                </div>
+					            </div><br>
+					            <div class="row">
+					                <div class="col-md-6">
+					                    <div class="white-box" style="width: 525px">
+					                        <div id="tbp-graph" style="width: 525px; height: 350px;"></div>
+					                    </div>
+					                </div>
+					                <div class="col-md-6">
+					                    <div class="white-box" style="width: 525px">
+					                        <div id="tbw-graph" style="width: 525px; height: 350px;"></div>
 					                    </div>
 					                </div>
 					            </div><br>
