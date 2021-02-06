@@ -2,7 +2,7 @@
 date_default_timezone_set('Asia/Jakarta');
 // $hariini = date('Y-m-d');
 
-$sql1 = mysqli_query($con,"SELECT * from jadwal");
+$sql1 = mysqli_query($con,"SELECT * FROM jadwal");
 $jadwal = mysqli_fetch_array($sql1);
 $bulan = array(
   'Januari',
@@ -26,7 +26,7 @@ $bulan = array(
 					<div class="row small-gutters">
 						<div class="col-lg-12">
 							<div class="news-tracker-wrap"><br>
-								<h1 style="text-align: center; padding-top: 50px">Selamat Datang di Posyandu Apel Desa Sukamanah</h1><br><br>
+								<h1 style="text-align: center;">Selamat Datang di Posyandu Apel Desa Sukamanah</h1><br><br>
 								<div class="single-latest-post row align-items-center">
 									<div class="col-lg-4 post-left">
 										<div class="feature-img relative">
@@ -47,17 +47,22 @@ $bulan = array(
 										</div>
 									</div>
 								</div><br>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="top-post-area pt-8">
-				<div class="container no-padding">
-					<div class="row small-gutters">
-						<div class="col-lg-12">
-							<div class="news-tracker-wrap"><br>
-								
+								<div class="row">
+					                <div class="col-md-6">
+					                    <div class="white-box" style="width: 550px">
+					                        <h3 align="center"><b>Bayi Laki-laki</b></h3>
+					                        <div id="bbp-graph" style="width: 550px; height: 350px;"></div>
+					                        <h4 align="center"><b>Berat Badan (kg)</b></h4>
+					                    </div>
+					                </div>
+					                <div class="col-md-6">
+					                    <div class="white-box" style="width: 550px">
+					                        <h3 align="center"><b>Bayi Perempuan</b></h3>
+					                        <div id="bbw-graph" style="width: 550px; height: 350px;"></div>
+					                        <h4 align="center"><b>Berat Badan (kg)</b></h4>
+					                    </div>
+					                </div>
+					            </div><br>
 							</div>
 						</div>
 					</div>

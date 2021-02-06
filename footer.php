@@ -75,5 +75,39 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Siste
           hideHover: 'auto'
         });
 	    </script>
+	    <script type="text/javascript">
+        Morris.Bar({
+          element: 'bbp-graph',
+          data: [
+          	{x: '<1 tahun', y: 19, z: 5},
+          	{x: '<2 tahun', y: 8, z: 6},
+          	{x: '<3 tahun', y: 18, z: 3},
+          	{x: '<4 tahun', y: 12, z: 8},
+          	{x: '<5 tahun', y: 4, z: null}
+          ],
+          xkey: 'x',
+          ykeys: ['y','z'],
+          labels: ['Bayi Sehat','Bayi Kurang Sehat'],
+          barColors: ['green','red'],
+          xLabelAngle: 60,
+          hideHover: 'auto'
+        });
+        Morris.Bar({
+          element: 'bbw-graph',
+          data: [
+          	{x: '<1 tahun', y: 19, z: 5},
+          	{x: '<2 tahun', y: 8, z: 6},
+          	{x: '<3 tahun', y: 18, z: 3},
+          	{x: '<4 tahun', y: 12, z: 8},
+          	{x: '<5 tahun', y: 4, z: null}
+          ],
+          xkey: 'x',
+          ykeys: ['y','z'],
+          labels: ['Bayi Sehat','Bayi Kurang Sehat'],
+          barColors: ['green','red'],
+          xLabelAngle: 60,
+          hideHover: 'auto'
+        });
+	    </script>
 	</body>
 </html>
