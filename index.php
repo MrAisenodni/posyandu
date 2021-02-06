@@ -19,24 +19,55 @@ $bulan = array(
   'Desember',
 );
 
-$sqlbb = mysqli_query($con, "SELECT (SELECT COUNT(kode_balita) FROM history WHERE tipe = 'perk' AND bb_balita < 25) AS data1 FROM history");
-$chartbb = mysqli_fetch_array($sqlbb);
+$sqlbbp = mysqli_query($con, "SELECT 
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=1 AND a.bb_balita<7.5 AND b.jenkel='L') AS wast1,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=1 AND a.bb_balita>=7.5 AND a.bb_balita<13.5 AND b.jenkel='L') AS ideal1,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=1 AND a.bb_balita>=13.5 AND b.jenkel='L') AS obe1,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=2 AND a.bb_balita<9.5 AND b.jenkel='L') AS wast2,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=2 AND a.bb_balita>=9.5 AND a.bb_balita<15.5 AND b.jenkel='L') AS ideal2,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=2 AND a.bb_balita>=15.5 AND b.jenkel='L') AS obe2,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=3 AND a.bb_balita<11 AND b.jenkel='L') AS wast3,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=3 AND a.bb_balita>=11 AND a.bb_balita<18 AND b.jenkel='L') AS ideal3,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=3 AND a.bb_balita>=18 AND b.jenkel='L') AS obe3,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=4 AND a.bb_balita<12.5 AND b.jenkel='L') AS wast4,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=4 AND a.bb_balita>=12.5 AND a.bb_balita<21 AND b.jenkel='L') AS ideal4,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=4 AND a.bb_balita>=21 AND b.jenkel='L') AS obe4,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=5 AND a.bb_balita<14 AND b.jenkel='L') AS wast5,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=5 AND a.bb_balita>=14 AND a.bb_balita<24 AND b.jenkel='L') AS ideal5,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=5 AND a.bb_balita>=24 AND b.jenkel='L') AS obe5 FROM perkembangan_balita LIMIT 0,1");
+$chartbbp = mysqli_fetch_array($sqlbbp);
 
-$data1 = array( 
-	array( "label" => "<1tahun", "y" => 58 ),
-	array( "label" => "<2tahun", "y" => 69 ),
-    array( "label" => "<3tahun", "y" => 80 ),
-    array( "label" => "<4tahun", "y" => 74 ),
-    array( "label" => "<5tahun", "y" => 64 )
-);
+$sqlbbw = mysqli_query($con, "SELECT 
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=1 AND a.bb_balita<7.5 AND b.jenkel='P') AS wast1,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=1 AND a.bb_balita>=7.5 AND a.bb_balita<13.5 AND b.jenkel='P') AS ideal1,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=1 AND a.bb_balita>=13.5 AND b.jenkel='P') AS obe1,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=2 AND a.bb_balita<9.5 AND b.jenkel='P') AS wast2,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=2 AND a.bb_balita>=9.5 AND a.bb_balita<15.5 AND b.jenkel='P') AS ideal2,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=2 AND a.bb_balita>=15.5 AND b.jenkel='P') AS obe2,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=3 AND a.bb_balita<11 AND b.jenkel='P') AS wast3,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=3 AND a.bb_balita>=11 AND a.bb_balita<18 AND b.jenkel='P') AS ideal3,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=3 AND a.bb_balita>=18 AND b.jenkel='P') AS obe3,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=4 AND a.bb_balita<12.5 AND b.jenkel='P') AS wast4,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=4 AND a.bb_balita>=12.5 AND a.bb_balita<21 AND b.jenkel='P') AS ideal4,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=4 AND a.bb_balita>=21 AND b.jenkel='P') AS obe4,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=5 AND a.bb_balita<14 AND b.jenkel='P') AS wast5,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=5 AND a.bb_balita>=14 AND a.bb_balita<24 AND b.jenkel='P') AS ideal5,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=5 AND a.bb_balita>=24 AND b.jenkel='P') AS obe5 FROM perkembangan_balita LIMIT 0,1");
+$chartbbw = mysqli_fetch_array($sqlbbw);
 
-$data2 = array( 
-	array( "label" => "<1tahun", "y" => 63 ),
-    array( "label" => "<2tahun", "y" => 73 ),
-    array( "label" => "<3tahun", "y" => 88 ),
-    array( "label" => "<4tahun", "y" => 77 ),
-    array( "label" => "<5tahun", "y" => 60 )
-);
+$sqlavgbbp = mysqli_query($con, "SELECT (SELECT AVG(a.bb_balita) AS AVG FROM perkembangan_balita a LEFT JOIN balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=1 AND b.jenkel='L') AS avg1,
+(SELECT AVG(a.bb_balita) AS AVG FROM perkembangan_balita a LEFT JOIN balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=2 AND b.jenkel='L') AS avg2,
+(SELECT AVG(a.bb_balita) AS AVG FROM perkembangan_balita a LEFT JOIN balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=3 AND b.jenkel='L') AS avg3,
+(SELECT AVG(a.bb_balita) AS AVG FROM perkembangan_balita a LEFT JOIN balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=4 AND b.jenkel='L') AS avg4,
+(SELECT AVG(a.bb_balita) AS AVG FROM perkembangan_balita a LEFT JOIN balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=5 AND b.jenkel='L') AS avg5 FROM perkembangan_balita LIMIT 0,1");
+$dataavgbbp = mysqli_fetch_array($sqlavgbbp);
+
+$sqlavgbbw = mysqli_query($con, "SELECT (SELECT AVG(a.bb_balita) AS AVG FROM perkembangan_balita a LEFT JOIN balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=1 AND b.jenkel='P') AS avg1,
+(SELECT AVG(a.bb_balita) AS AVG FROM perkembangan_balita a LEFT JOIN balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=2 AND b.jenkel='P') AS avg2,
+(SELECT AVG(a.bb_balita) AS AVG FROM perkembangan_balita a LEFT JOIN balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=3 AND b.jenkel='P') AS avg3,
+(SELECT AVG(a.bb_balita) AS AVG FROM perkembangan_balita a LEFT JOIN balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=4 AND b.jenkel='P') AS avg4,
+(SELECT AVG(a.bb_balita) AS AVG FROM perkembangan_balita a LEFT JOIN balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=5 AND b.jenkel='P') AS avg5 FROM perkembangan_balita LIMIT 0,1");
+$dataavgbbw = mysqli_fetch_array($sqlavgbbw);
 ?>
 		<div class="site-main-container">
 			<!-- Start top-post Area -->
@@ -79,27 +110,27 @@ $data2 = array(
 					                        	<tr class="text-center table-light">
 					                        		<td><?php echo "<1 tahun" ?></td>
 					                        		<td>7,5 - 13,5</td>
-					                        		<td>13,2</td>
+					                        		<td><?php if($dataavgbbp['avg1'] != null) { echo substr($dataavgbbp['avg1'],0,4); } else { echo "0"; } ?></td>
 					                        	</tr>
 					                        	<tr class="text-center table-light">
 					                        		<td><?php echo "<2 tahun" ?></td>
 					                        		<td>9,5 - 15,5</td>
-					                        		<td>14,1</td>
+					                        		<td><?php if($dataavgbbp['avg2'] != null) { echo substr($dataavgbbp['avg2'],0,4); } else { echo "0"; } ?></td>
 					                        	</tr>
 					                        	<tr class="text-center table-light">
 					                        		<td><?php echo "<3 tahun" ?></td>
 					                        		<td>11 - 18</td>
-					                        		<td>16,7</td>
+					                        		<td><?php if($dataavgbbp['avg3'] != null) { echo substr($dataavgbbp['avg3'],0,4); } else { echo "0"; } ?></td>
 					                        	</tr>
 					                        	<tr class="text-center table-light">
 					                        		<td><?php echo "<4 tahun" ?></td>
 					                        		<td>12,5 - 21</td>
-					                        		<td>15,4</td>
+					                        		<td><?php if($dataavgbbp['avg4'] != null) { echo substr($dataavgbbp['avg4'],0,4); } else { echo "0"; } ?></td>
 					                        	</tr>
 					                        	<tr class="text-center table-light">
 					                        		<td><?php echo "<5 tahun" ?></td>
 					                        		<td>14 - 24</td>
-					                        		<td>21,2</td>
+					                        		<td><?php if($dataavgbbp['avg5'] != null) { echo substr($dataavgbbp['avg5'],0,4); } else { echo "0"; } ?></td>
 					                        	</tr>
 					                        </table>
 					                    </div>
@@ -116,27 +147,27 @@ $data2 = array(
 					                        	<tr class="text-center table-light">
 					                        		<td><?php echo "<1 tahun" ?></td>
 					                        		<td>7,5 - 13,5</td>
-					                        		<td>13,2</td>
+					                        		<td><?php if($dataavgbbw['avg1'] != null) { echo substr($dataavgbbw['avg1'],0,4); } else { echo "0"; } ?></td>
 					                        	</tr>
 					                        	<tr class="text-center table-light">
 					                        		<td><?php echo "<2 tahun" ?></td>
 					                        		<td>9,5 - 15,5</td>
-					                        		<td>14,1</td>
+					                        		<td><?php if($dataavgbbw['avg2'] != null) { echo substr($dataavgbbw['avg2'],0,4); } else { echo "0"; } ?></td>
 					                        	</tr>
 					                        	<tr class="text-center table-light">
 					                        		<td><?php echo "<3 tahun" ?></td>
 					                        		<td>11 - 18</td>
-					                        		<td>16,7</td>
+					                        		<td><?php if($dataavgbbw['avg3'] != null) { echo substr($dataavgbbw['avg3'],0,4); } else { echo "0"; } ?></td>
 					                        	</tr>
 					                        	<tr class="text-center table-light">
 					                        		<td><?php echo "<4 tahun" ?></td>
 					                        		<td>12,5 - 21</td>
-					                        		<td>15,4</td>
+					                        		<td><?php if($dataavgbbw['avg4'] != null) { echo substr($dataavgbbw['avg4'],0,4); } else { echo "0"; } ?></td>
 					                        	</tr>
 					                        	<tr class="text-center table-light">
 					                        		<td><?php echo "<5 tahun" ?></td>
 					                        		<td>14 - 24</td>
-					                        		<td>21,2</td>
+					                        		<td><?php if($dataavgbbw['avg5'] != null) { echo substr($dataavgbbw['avg5'],0,4); } else { echo "0"; } ?></td>
 					                        	</tr>
 					                        </table>
 					                    </div>
