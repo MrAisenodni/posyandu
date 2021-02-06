@@ -43,7 +43,7 @@
                               ?>
                                 <tr>
                                     <td><?= $no ?></td>
-                                    <td><?= $data['nama_balita'] ?></td>
+                                    <td><?php echo ucwords($data['nama_balita']); ?></td>
                                     <td><?= $data['tgl_periksa'] ?></td>
                                     <td><?= $data['tb_balita'] ?></td>
                                     <td><?= $data['bb_balita'] ?></td>

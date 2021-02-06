@@ -42,7 +42,7 @@
                               ?>
                                 <tr>
                                     <td><?= $no ?></td>
-                                    <td><?= $data['nama_balita'] ?></td>
+                                    <td><?php echo ucwords($data['nama_balita']); ?></td>
                                     <td><?= $data['tgl_imunisasi'] ?></td>
                                     <td><?= $data['jenis_vaksin'] ?></td>
                                     <td>

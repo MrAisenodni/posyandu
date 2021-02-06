@@ -5,7 +5,7 @@ if(isset($_GET['kode'])){
   $sql = mysqli_query($con, "SELECT * from perkembangan_balita where kode_balita='$kd'");
   $data = mysqli_fetch_array($sql);
   $nikibu = $data['nik'];
-  $sql2 = mysqli_query($con, "SELECT * FROM balita inner join user on user.nik=balita.nik");
+  $sql2 = mysqli_query($con, "SELECT * FROM balita inner join user on user.nik=balita.nik WHERE balita.nik = '$nikibu'");
   $data2 = mysqli_fetch_array($sql2);
 }
 
@@ -46,25 +46,13 @@ if(isset($_POST['tambah'])){
                                 <h4 style="text-align: center;">Biodata Balita</h4>
                                 <form method="post">
                                   <div class="sm-3">
-                                      <label for="exampleInputEmail1" class="form-label">Nama Ibu</label>
-                                      <select class="form-control" name="ibu" readonly>
-                                        <option value="">-- Pilih Nama Ibu --</option>
-                                        <?php $sql = mysqli_query($con, "SELECT * FROM user WHERE akses='user'");
-                                        while($datai = mysqli_fetch_array($sql)){?>
-                                        <option value="<?= $datai['nik']?>"><?= $datai['nama'] ?></option>
-                                        <?php } ?>
-                                      </select>
-                                  </div><br>
-                                  <div class="sm-3">
-                                      <label for="exampleInputPassword1" class="form-label">Nama Balita</label>
-                                      <select class="form-control" name="bayi" readonly>
-                                        <option value="">--Pilih Nama Balita--</option>
-                                        <?php $sql = mysqli_query($con, "SELECT * FROM balita inner join user on user.nik=balita.nik");
-                                        while($datab = mysqli_fetch_array($sql)){?>
-                                        <option value="<?= $datab['kode_balita']?>"><?php echo $datab['nama_balita']." | ".$datab['nama'] ?></option>
-                                        <?php } ?>
-                                      </select>
-                                  </div><br>
+                                        <label for="exampleInputEmail1" class="form-label">Nama Ibu</label>
+                                        <input type="text" name="" class="form-control" id="" readonly value="<?php echo ucwords($data2['nama']) ?>">
+                                    </div><br>
+                                    <div class="sm-3">
+                                        <label for="exampleInputPassword1" class="form-label">Nama Balita</label>
+                                        <input type="text" name="" class="form-control" id="" readonly value="<?php echo ucwords($data2['nama_balita'])." | ".ucwords($data2['nama']) ?>">
+                                    </div><br>
                             </div>
                             <div class="col-sm-6"><br><br>
                                     <div class="sm-3">

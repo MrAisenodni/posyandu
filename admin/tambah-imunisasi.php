@@ -44,7 +44,7 @@ if(isset($_POST['tambah'])){
                                           <option value="">--Pilih Nama Ibu--</option>
                                           <?php $sql = mysqli_query($con, "SELECT * FROM user WHERE akses='user'");
                                           while($datai = mysqli_fetch_array($sql)){?>
-                                          <option value="<?= $datai['nik']?>"><?= $datai['nama'] ?></option>
+                                          <option value="<?= $datai['nik']?>"><?php echo ucwords($datai['nama']) ?></option>
                                           <?php } ?>
                                         </select>
                                     </div><br>
@@ -54,7 +54,7 @@ if(isset($_POST['tambah'])){
                                           <option value="">--Pilih Nama Balita--</option>
                                           <?php $sql = mysqli_query($con, "SELECT * FROM balita inner join user on user.nik=balita.nik");
                                           while($datab = mysqli_fetch_array($sql)){?>
-                                          <option value="<?= $datab['kode_balita']?>"><?php echo $datab['nama_balita']." | ".$datab['nama'] ?></option>
+                                          <option value="<?= $datab['kode_balita']?>"><?php echo ucwords($datab['nama_balita'])." | ".ucwords($datab['nama']) ?></option>
                                         <?php } ?>
                                         </select>
                                     </div><br>
@@ -63,7 +63,7 @@ if(isset($_POST['tambah'])){
                             <div class="col-sm-6"><br><br>
                                     <div class="sm-3">
                                         <label for="exampleInputEmail1" class="form-label">Jenis Imunisasi</label>
-                                        <select class="form-control" name="imun" id="imun" required>
+                                        <select class="form-control" name="imun" id="imun">
                                           <option value="">-- Pilih Jenis Vaksin --</option>
                                           <option value="HB-O (0-7 hari)" id="1">HB-O (0-7 hari)</option>
                                           <option value="BCG" id="1">BCG</option>

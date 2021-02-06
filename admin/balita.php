@@ -41,7 +41,7 @@
                                   ?>
                                     <tr>
                                         <td><?= $no ?></td>
-                                        <td><?= $data['nama_balita'] ?></td>
+                                        <td><?php echo ucwords($data['nama_balita']) ?></td>
                                         <td><?= $data['tempat_lahir'] ?></td>
                                         <td><?= $data['usia'] ?> Tahun</td>
                                         <td>

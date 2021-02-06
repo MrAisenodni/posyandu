@@ -52,6 +52,17 @@ $bulan = array(
 					</div>
 				</div>
 			</section>
+			<section class="top-post-area pt-8">
+				<div class="container no-padding">
+					<div class="row small-gutters">
+						<div class="col-lg-12">
+							<div class="news-tracker-wrap"><br>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			<!-- End top-post Area -->
 			<!-- Start latest-post Area -->
 			<section class="latest-post-area pb-120">
