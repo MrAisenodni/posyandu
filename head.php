@@ -45,12 +45,14 @@
 						<ul class="nav-menu">
 							<?php if(!$niku){ ?>
 								<li class="menu-active"><a href="index.php">Home</a></li>
+								<li class="menu-active"><a href="info.php">Info</a></li>
 							<?php } else {
 								if($akses=='user'){ ?>
 									<li class="menu-active"><a href="index.php">Home</a></li>
 									<li><a href="data-balita.php">Data Balita</a></li>
 									<li><a href="imunisasi.php">Catatan Imunisasi</a></li>
 								    <li><a href="perkembangan-balita.php">Perkembangan Balita</a></li>
+									<li class="menu-active"><a href="info.php">Info</a></li>
 							<?php } } ?>
 					    </ul>
 					</nav><!-- #nav-menu-container -->
