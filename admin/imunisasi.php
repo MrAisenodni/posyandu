@@ -29,6 +29,7 @@
                                     <th>No</th>
                                     <th>Nama Bayi</th>
                                     <th>Tanggal</th>
+                                    <th>Umur</th>
                                     <th>Jenis Imunisasi</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -36,14 +37,15 @@
                             <tbody>
                                 <?php
                               $no = 1;
-                              $sql = mysqli_query($con, "SELECT * FROM imunisasi
-                              inner join balita on imunisasi.kode_balita = balita.kode_balita");
+                              $sql = mysqli_query($con, "SELECT *,(TIMESTAMPDIFF( MONTH, b.tgl_lahir, now() ) % 12) AS umur FROM imunisasi a
+                              inner join balita b on b.kode_balita = a.kode_balita");
                               while($data = mysqli_fetch_array($sql)){
                               ?>
                                 <tr>
                                     <td><?= $no ?></td>
                                     <td><?php echo ucwords($data['nama_balita']); ?></td>
                                     <td><?= $data['tgl_imunisasi'] ?></td>
+                                    <td><?= $data['umur'] ?></td>
                                     <td><?= $data['jenis_vaksin'] ?></td>
                                     <td>
                                         <a href="edit-imunisasi.php?kode=<?= $data['kode_balita']?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Ubah</a>
