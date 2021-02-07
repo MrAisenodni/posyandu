@@ -20,6 +20,11 @@ if(isset($_GET['kode'])) {
 				</div>
 			</section>
 			<!-- End top-post Area -->
+			<section>
+				<div>
+					<center><img style="width: 700px" align="center" src="img/keg1.jpeg"></center>
+				</div>
+			</section>
 			<!-- Start latest-post Area -->
 			<section class="latest-post-area pb-120">
 				<div class="container no-padding">
