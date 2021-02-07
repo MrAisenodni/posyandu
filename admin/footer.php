@@ -26,31 +26,189 @@
     <script src="morris/morris.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
     <script src="morris/examples/lib/example.js"></script>
-    <script type="text/javascript">
-      Morris.Bar({
-        element: 'bar-graph',
-        data: [
-          {x: '0-9,99', y: <?= $datachart['pria1'] ?>, z: <?= $datachart['wanita1'] ?>},
-          {x: '10-19,99', y: <?= $datachart['pria2'] ?>, z: <?= $datachart['wanita2'] ?>},
-          {x: '20-29,99', y: <?= $datachart['pria3'] ?>, z: <?= $datachart['wanita3'] ?>},
-          {x: '30-40', y: <?= $datachart['pria4'] ?>, z: <?= $datachart['wanita4'] ?>}
+    <!-- Canvas JavaScript -->
+    <script src="../canvasjs/canvasjs.min.js"></script>
+    <script>
+    window.onload = function () {
+      CanvasJS.addColorSet("greenred",
+                [//colorSet Array
+
+                "yellow",
+                "lightgreen",
+                "red"
+            ]);
+
+        var chart = new CanvasJS.Chart("bbw-graph", {
+          colorSet: "greenred",
+                
+          title:{
+            text: "Berat Badan Balita Perempuan",
+            fontFamily: "Roboto",
+            fontWeight: "bold"              
+          },
+
+          data: [  //array of dataSeries     
+          { //dataSeries - first quarter
+     /*** Change type "column" to "bar", "area", "line" or "pie"***/        
+           type: "column",
+           name: "Kekurangan",
+           indexLabel: "{y}",
+           indexLabelPlacement: "inside",
+           indexLabelOrientation: "vertical",
+           indexLabelFontFamily: "Roboto",
+           indexLabelFontColor: "white",
+           indexLabelFontSize: 14,
+           indexLabelFontWeight: "bold",
+           showInLegend: true,
+           dataPoints: [
+           { label: "<1 tahun", y: <?= $chartbbw['wast1'] ?> },
+           { label: "<2 tahun", y: <?= $chartbbw['wast2'] ?> },
+           { label: "<3 tahun", y: <?= $chartbbw['wast3'] ?> },                                    
+           { label: "<4 tahun", y: <?= $chartbbw['wast4'] ?> },
+           { label: "<5 tahun", y: <?= $chartbbw['wast5'] ?> }
+           ]
+         },
+
+         { //dataSeries - second quarter
+
+          type: "column",
+          name: "Ideal", 
+        indexLabel: "{y}",
+        indexLabelPlacement: "inside",
+        indexLabelOrientation: "vertical",
+        indexLabelFontFamily: "Roboto",
+        indexLabelFontColor: "white",
+        indexLabelFontSize: 14,
+        indexLabelFontWeight: "bold",
+          showInLegend: true,               
+          dataPoints: [
+          { label: "<1 tahun", y: <?= $chartbbw['ideal1'] ?> },
+           { label: "<2 tahun", y: <?= $chartbbw['ideal2'] ?> },
+           { label: "<3 tahun", y: <?= $chartbbw['ideal3'] ?> },                                    
+           { label: "<4 tahun", y: <?= $chartbbw['ideal4'] ?> },
+           { label: "<5 tahun", y: <?= $chartbbw['ideal5'] ?> }
+          ]
+        },
+
+        { //dataSeries - third quarter
+
+          type: "column",
+          name: "Kelebihan", 
+        indexLabel: "{y}",
+        indexLabelPlacement: "inside",
+        indexLabelOrientation: "vertical",
+        indexLabelFontFamily: "Roboto",
+        indexLabelFontColor: "white",
+        indexLabelFontSize: 14,
+        indexLabelFontWeight: "bold",
+          showInLegend: true,               
+          dataPoints: [
+          { label: "<1 tahun", y: <?= $chartbbw['obe1'] ?> },
+           { label: "<2 tahun", y: <?= $chartbbw['obe2'] ?> },
+           { label: "<3 tahun", y: <?= $chartbbw['obe3'] ?> },                                    
+           { label: "<4 tahun", y: <?= $chartbbw['obe4'] ?> },
+           { label: "<5 tahun", y: <?= $chartbbw['obe5'] ?> }
+          ]
+        }
         ],
-        xkey: 'x',
-        ykeys: ['y', 'z'],
-        labels: ['Laki-laki', 'Perempuan'],
-        barColors: ['blue', 'pink'],
-        hideHover: 'auto'
+     /** Set axisY properties here*/
+        axisY:{
+          title: "Jumlah Balita",
+          titleFontFamily: "Roboto"
+        }    
       });
-      Morris.Donut({
-        element: 'donut-graph',
-        data: [
-          {value: <?= $datachart2['l'] ?>, label: 'Laki-laki'},
-          {value: <?= $datachart2['p'] ?>, label: 'Perempuan'}
+        chart.render();
+
+        CanvasJS.addColorSet("bluerange",
+                [//colorSet Array
+
+                "blue",
+                "green",
+                "purple"
+            ]);
+
+        var chart = new CanvasJS.Chart("bbp-graph", {
+          colorSet: "bluerange",
+                
+          title:{
+            text: "Berat Badan Balita Laki-laki",
+            fontFamily: "Roboto",
+            fontWeight: "bold"              
+          },
+
+          data: [  //array of dataSeries     
+          { //dataSeries - first quarter
+     /*** Change type "column" to "bar", "area", "line" or "pie"***/        
+           type: "column",
+           name: "Kekurangan",
+           indexLabel: "{y}",
+           indexLabelPlacement: "inside",
+           indexLabelOrientation: "vertical",
+           indexLabelFontFamily: "Roboto",
+           indexLabelFontColor: "white",
+           indexLabelFontSize: 14,
+           indexLabelFontWeight: "bold",
+           showInLegend: true,
+           dataPoints: [
+           { label: "<1 tahun", y: <?= $chartbbp['wast1'] ?> },
+           { label: "<2 tahun", y: <?= $chartbbp['wast2'] ?> },
+           { label: "<3 tahun", y: <?= $chartbbp['wast3'] ?> },                                    
+           { label: "<4 tahun", y: <?= $chartbbp['wast4'] ?> },
+           { label: "<5 tahun", y: <?= $chartbbp['wast5'] ?> }
+           ]
+         },
+
+         { //dataSeries - second quarter
+
+          type: "column",
+          name: "Ideal", 
+        indexLabel: "{y}",
+        indexLabelPlacement: "inside",
+        indexLabelOrientation: "vertical",
+        indexLabelFontFamily: "Roboto",
+        indexLabelFontColor: "white",
+        indexLabelFontSize: 14,
+        indexLabelFontWeight: "bold",
+          showInLegend: true,               
+          dataPoints: [
+          { label: "<1 tahun", y: <?= $chartbbp['ideal1'] ?> },
+           { label: "<2 tahun", y: <?= $chartbbp['ideal2'] ?> },
+           { label: "<3 tahun", y: <?= $chartbbp['ideal3'] ?> },                                    
+           { label: "<4 tahun", y: <?= $chartbbp['ideal4'] ?> },
+           { label: "<5 tahun", y: <?= $chartbbp['ideal5'] ?> }
+          ]
+        },
+
+        { //dataSeries - third quarter
+
+          type: "column",
+          name: "Kelebihan", 
+        indexLabel: "{y}",
+        indexLabelPlacement: "inside",
+        indexLabelOrientation: "vertical",
+        indexLabelFontFamily: "Roboto",
+        indexLabelFontColor: "white",
+        indexLabelFontSize: 14,
+        indexLabelFontWeight: "bold",
+          showInLegend: true,               
+          dataPoints: [
+          { label: "<1 tahun", y: <?= $chartbbp['obe1'] ?> },
+           { label: "<2 tahun", y: <?= $chartbbp['obe2'] ?> },
+           { label: "<3 tahun", y: <?= $chartbbp['obe3'] ?> },                                    
+           { label: "<4 tahun", y: <?= $chartbbp['obe4'] ?> },
+           { label: "<5 tahun", y: <?= $chartbbp['obe5'] ?> }
+          ]
+        }
         ],
-          labelColor: 'black',
-        colors: ['blue','pink'],
-        formatter: function (x) { return x}
+     /** Set axisY properties here*/
+        axisY:{
+          title: "Jumlah Balita",
+          titleFontFamily: "Roboto"
+        }    
       });
+
+    chart.render();
+    }
     </script>
 </body>
 
