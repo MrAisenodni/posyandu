@@ -81,15 +81,15 @@ require_once('../session.php');
                                 aria-hidden="true"></i><span class="hide-menu">Jadwal</span></a>
                     </li>
                     <li>
-                        <a href="balita.php" class="waves-effect"><i class="fa fa-table fa-fw"
+                        <a href="balita.php" class="waves-effect"><i class="fa fa-user fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Balita</span></a>
                     </li>
                     <li>
-                        <a href="imunisasi.php" class="waves-effect"><i class="fa fa-table fa-fw"
+                        <a href="imunisasi.php" class="waves-effect"><i class="fa fa-medkit fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Imunisasi</span></a>
                     </li>
                     <li>
-                        <a href="perkembangan-balita.php" class="waves-effect"><i class="fa fa-table fa-fw"
+                        <a href="perkembangan-balita.php" class="waves-effect"><i class="fa fa-line-chart fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Perkembangan Balita</span></a>
                     </li>
                 </ul>
