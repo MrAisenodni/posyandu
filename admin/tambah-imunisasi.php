@@ -7,8 +7,8 @@ if(isset($_POST['tambah'])){
   $tgl = $_POST['tgl'];
   $tipe = 'imun';
 
-  if($ibu==null || $bayi==null || $imun==null || $tgl==null) {
-    header('location:pendaftaran-imunisasi.php?stat=input_null');
+  if($ibu==null || $bayi==null || $tgl==null) {
+    header('location:imunisasi.php?stat=input_null');
   } else {
     $add = mysqli_query($con, "INSERT into imunisasi VALUES('$bayi','$ibu','$imun','$tgl')");
     $history = mysqli_query($con, "INSERT INTO `history`(`kode_balita`, `nik`, `tipe`, `jenis_vaksin`, `tgl_imunisasi`) VALUES ('$bayi','$ibu','$tipe','$imun','$tgl')");
