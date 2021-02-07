@@ -14,7 +14,7 @@ if(isset($_POST['tambah'])){
   $tipe = 'imun';
 
   $add = mysqli_query($con, "UPDATE imunisasi SET jenis_vaksin='$imun',tgl_imunisasi='$tgl' WHERE kode_balita='$kd'");
-  $history = mysqli_query($con, "INSERT INTO `history`(`kode_balita`, `nik`, `tipe`, `jenis_vaksin`, `tgl_imunisasi`) VALUES ('$kd','$nikibu','$tipe','$imun','$tgl')");
+  $history = mysqli_query($con, "INSERT into history_imun VALUES('$kd','$nikibu','$imun','$tgl')");
   if($add && $history){
     header('location:imunisasi.php?stat=update_success');
   }else{

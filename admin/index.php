@@ -366,94 +366,80 @@ $dataimun = mysqli_fetch_array($sqlimun);
                                 <tr class="text-center table-warning" style="background: lightgreen;">
                                     <th style="text-align: center; font-weight: bold;">Umur</th>
                                     <th style="text-align: center; font-weight: bold;">Jenis Vaksin</th>
-                                    <th style="text-align: center; font-weight: bold;">Jumlah</th>
+                                    <th style="text-align: center; font-weight: bold;">Telah Divaksin</th>
+                                    <th style="text-align: center; font-weight: bold; background: pink;">Belum Divaksin</th>
                                 </tr>
                                 <tr class="text-center table-light">
-                                    <td rowspan="2"><1 bulan</td>
+                                    <td><1 bulan</td>
                                     <td>HB-O (0-7 hari)</td>
+                                    <td><?= $dataimun['imun1'] ?></td>
                                     <td><?= $dataimun['imun1'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
-                                    <td>Belum divaksin</td>
-                                    <td><?= $dataimun['imun2'] ?></td>
-                                </tr>
-                                <tr class="text-center table-light">
-                                    <td rowspan="3"><2 bulan</td>
+                                    <td rowspan="2"><2 bulan</td>
                                     <td>BCG</td>
+                                    <td><?= $dataimun['imun3'] ?></td>
                                     <td><?= $dataimun['imun3'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td>*Polio 1</td>
                                     <td><?= $dataimun['imun4'] ?></td>
+                                    <td><?= $dataimun['imun4'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
-                                    <td>Belum divaksin</td>
-                                    <td><?= $dataimun['imun5'] ?></td>
-                                </tr>
-                                <tr class="text-center table-light">
-                                    <td rowspan="3"><3 bulan</td>
+                                    <td rowspan="2"><3 bulan</td>
                                     <td>*DPT-HB-Hib 1</td>
+                                    <td><?= $dataimun['imun6'] ?></td>
                                     <td><?= $dataimun['imun6'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td>*Polio 2</td>
                                     <td><?= $dataimun['imun7'] ?></td>
+                                    <td><?= $dataimun['imun7'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
-                                    <td>Belum divaksin</td>
-                                    <td><?= $dataimun['imun8'] ?></td>
-                                </tr>
-                                <tr class="text-center table-light">
-                                    <td rowspan="3"><4 bulan</td>
+                                    <td rowspan="2"><4 bulan</td>
                                     <td>*DPT-HB-Hib 2</td>
+                                    <td><?= $dataimun['imun9'] ?></td>
                                     <td><?= $dataimun['imun9'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td>*Polio 3</td>
                                     <td><?= $dataimun['imun10'] ?></td>
+                                    <td><?= $dataimun['imun10'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
-                                    <td>Belum divaksin</td>
-                                    <td><?= $dataimun['imun11'] ?></td>
-                                </tr>
-                                <tr class="text-center table-light">
-                                    <td rowspan="4"><5 bulan</td>
+                                    <td rowspan="3"><5 bulan</td>
                                     <td>*DPT-HB-Hib 3</td>
+                                    <td><?= $dataimun['imun12'] ?></td>
                                     <td><?= $dataimun['imun12'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td>*Polio 4</td>
                                     <td><?= $dataimun['imun13'] ?></td>
+                                    <td><?= $dataimun['imun13'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td>*IPV</td>
                                     <td><?= $dataimun['imun14'] ?></td>
+                                    <td><?= $dataimun['imun14'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
-                                    <td>Belum divaksin</td>
-                                    <td><?= $dataimun['imun15'] ?></td>
-                                </tr>
-                                <tr class="text-center table-light">
-                                    <td rowspan="2"><10 bulan</td>
+                                    <td><10 bulan</td>
                                     <td>***Campak</td>
+                                    <td><?= $dataimun['imun16'] ?></td>
                                     <td><?= $dataimun['imun16'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
-                                    <td>Belum divaksin</td>
-                                    <td><?= $dataimun['imun17'] ?></td>
-                                </tr>
-                                <tr class="text-center table-light">
-                                    <td rowspan="3">>10 bulan</td>
+                                    <td rowspan="2">>10 bulan</td>
                                     <td>***DPT-HB-Hib Lanjutan</td>
+                                    <td><?= $dataimun['imun18'] ?></td>
                                     <td><?= $dataimun['imun18'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td>****Campak Lanjutan</td>
                                     <td><?= $dataimun['imun19'] ?></td>
-                                </tr>
-                                <tr class="text-center table-light">
-                                    <td>Belum divaksin</td>
-                                    <td><?= $dataimun['imun20'] ?></td>
+                                    <td><?= $dataimun['imun19'] ?></td>
                                 </tr>
                             </table>
                         </div>
