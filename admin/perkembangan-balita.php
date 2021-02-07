@@ -31,7 +31,7 @@
                                     <th>Tanggal</th>
                                     <th>Tinggi Badan</th>
                                     <th>Berat Badan</th>
-                                    <!-- <th>Aksi</th> -->
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>

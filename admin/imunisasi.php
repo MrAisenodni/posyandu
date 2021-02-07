@@ -23,15 +23,15 @@
                             </div> -->
                         </div>
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table text-center">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Nama Bayi</th>
-                                    <th>Tanggal</th>
-                                    <th>Umur</th>
-                                    <th>Jenis Imunisasi</th>
-                                    <th>Aksi</th>
+                                    <th class="text-center">No</th>
+                                    <th class="text-center">Nama Bayi</th>
+                                    <th class="text-center">Tanggal</th>
+                                    <th class="text-center">Umur (Bulan)</th>
+                                    <th class="text-center">Jenis Imunisasi</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,7 +45,7 @@
                                     <td><?= $no ?></td>
                                     <td><?php echo ucwords($data['nama_balita']); ?></td>
                                     <td><?= $data['tgl_imunisasi'] ?></td>
-                                    <td><?= $data['umur'] ?></td>
+                                    <td class="text-center"><?= $data['umur'] ?></td>
                                     <td><?= $data['jenis_vaksin'] ?></td>
                                     <td>
                                         <a href="edit-imunisasi.php?kode=<?= $data['kode_balita']?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Ubah</a>
