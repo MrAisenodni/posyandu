@@ -75,7 +75,7 @@ if(isset($_POST['tambah'])){
                                           <option value="*DPT-HB-Hib 3" id="2">*DPT-HB-Hib 3</option>
                                           <option value="*Polio 4" id="2">*Polio 4</option>
                                           <option value="*IPV" id="2">*IPV</option>
-                                          <option value="Campak" id="1">Campak</option>
+                                          <option value="***Campak" id="1">***Campak</option>
                                           <option value="***DPT-HB-Hib Lanjutan" id="4">***DPT-HB-Hib Lanjutan</option>
                                           <option value="****Campak Lanjutan" id="5">****Campak Lanjutan</option>
                                         </select>

@@ -133,26 +133,26 @@ $sqlavgtbw = mysqli_query($con, "SELECT
 $dataavgtbw = mysqli_fetch_array($sqlavgtbw);
 
 $sqlimun = mysqli_query($con, "SELECT 
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='HB-O (0-7 hari)' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<1) AS imun1,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<1) AS imun2,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='BCG' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=1 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<2) AS imun3,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='*Polio 1' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=1 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<2) AS imun4,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=1 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<2) AS imun5,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='*DPT-HB-Hib 1' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=2 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<3) AS imun6,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='*Polio 2' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=2 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<3) AS imun7,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=2 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<3) AS imun8,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='*DPT-HB-Hib 2' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=3 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<4) AS imun9,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='*Polio 3' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=3 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<4) AS imun10,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=3 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<4) AS imun11,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='*DPT-HB-Hib 3' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=4 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<5) AS imun12,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='*Polio 4' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=4 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<5) AS imun13,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='IPV' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=4 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<5) AS imun14,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=4 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<5) AS imun15,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='***Campak' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=5 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<10) AS imun16,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=5 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<10) AS imun17,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='***DPT-HB-Hib Lanjutan' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=10) AS imun18,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='****Campak Lanjutan' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=10) AS imun19,
-(SELECT COUNT(b.nama_balita) AS jumlah FROM imunisasi a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=10) AS imun20 FROM balita LIMIT 0,1");
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='HB-O (0-7 hari)' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<1) AS imun1,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<1) AS imun2,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='BCG' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=1 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<2) AS imun3,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='*Polio 1' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=1 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<2) AS imun4,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=1 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<2) AS imun5,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='*DPT-HB-Hib 1' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=2 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<3) AS imun6,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='*Polio 2' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=2 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<3) AS imun7,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=2 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<3) AS imun8,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='*DPT-HB-Hib 2' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=3 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<4) AS imun9,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='*Polio 3' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=3 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<4) AS imun10,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=3 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<4) AS imun11,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='*DPT-HB-Hib 3' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=4 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<5) AS imun12,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='*Polio 4' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=4 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<5) AS imun13,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='IPV' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=4 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<5) AS imun14,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=4 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<5) AS imun15,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='***Campak' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=5 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<10) AS imun16,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=5 AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)<10) AS imun17,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='***DPT-HB-Hib Lanjutan' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=10) AS imun18,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='****Campak Lanjutan' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=10) AS imun19,
+(SELECT COUNT(b.nama_balita) AS jumlah FROM history_imun a INNER JOIN balita b ON b.kode_balita = a.kode_balita WHERE a.jenis_vaksin='' AND (TIMESTAMPDIFF( MONTH, tgl_lahir, now() ) % 12)>=10) AS imun20 FROM balita LIMIT 0,1");
 $dataimun = mysqli_fetch_array($sqlimun);
 ?>
             <div class="container-fluid">
@@ -373,73 +373,73 @@ $dataimun = mysqli_fetch_array($sqlimun);
                                     <td><1 bulan</td>
                                     <td>HB-O (0-7 hari)</td>
                                     <td><?= $dataimun['imun1'] ?></td>
-                                    <td><?= $dataimun['imun1'] ?></td>
+                                    <td style="background: lightgrey;"><?= $dataimun['imun2'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td rowspan="2"><2 bulan</td>
                                     <td>BCG</td>
                                     <td><?= $dataimun['imun3'] ?></td>
-                                    <td><?= $dataimun['imun3'] ?></td>
+                                    <td style="background: lightgrey;"><?= $dataimun['imun5'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td>*Polio 1</td>
                                     <td><?= $dataimun['imun4'] ?></td>
-                                    <td><?= $dataimun['imun4'] ?></td>
+                                    <td style="background: lightgrey;"><?= $dataimun['imun5'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td rowspan="2"><3 bulan</td>
                                     <td>*DPT-HB-Hib 1</td>
                                     <td><?= $dataimun['imun6'] ?></td>
-                                    <td><?= $dataimun['imun6'] ?></td>
+                                    <td style="background: lightgrey;"><?= $dataimun['imun8'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td>*Polio 2</td>
                                     <td><?= $dataimun['imun7'] ?></td>
-                                    <td><?= $dataimun['imun7'] ?></td>
+                                    <td style="background: lightgrey;"><?= $dataimun['imun8'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td rowspan="2"><4 bulan</td>
                                     <td>*DPT-HB-Hib 2</td>
                                     <td><?= $dataimun['imun9'] ?></td>
-                                    <td><?= $dataimun['imun9'] ?></td>
+                                    <td style="background: lightgrey;"><?= $dataimun['imun11'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td>*Polio 3</td>
                                     <td><?= $dataimun['imun10'] ?></td>
-                                    <td><?= $dataimun['imun10'] ?></td>
+                                    <td style="background: lightgrey;"><?= $dataimun['imun11'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td rowspan="3"><5 bulan</td>
                                     <td>*DPT-HB-Hib 3</td>
                                     <td><?= $dataimun['imun12'] ?></td>
-                                    <td><?= $dataimun['imun12'] ?></td>
+                                    <td style="background: lightgrey;"><?= $dataimun['imun15'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td>*Polio 4</td>
                                     <td><?= $dataimun['imun13'] ?></td>
-                                    <td><?= $dataimun['imun13'] ?></td>
+                                    <td style="background: lightgrey;"><?= $dataimun['imun15'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td>*IPV</td>
                                     <td><?= $dataimun['imun14'] ?></td>
-                                    <td><?= $dataimun['imun14'] ?></td>
+                                    <td style="background: lightgrey;"><?= $dataimun['imun15'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td><10 bulan</td>
                                     <td>***Campak</td>
                                     <td><?= $dataimun['imun16'] ?></td>
-                                    <td><?= $dataimun['imun16'] ?></td>
+                                    <td style="background: lightgrey;"><?= $dataimun['imun17'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td rowspan="2">>10 bulan</td>
                                     <td>***DPT-HB-Hib Lanjutan</td>
                                     <td><?= $dataimun['imun18'] ?></td>
-                                    <td><?= $dataimun['imun18'] ?></td>
+                                    <td style="background: lightgrey;"><?= $dataimun['imun20'] ?></td>
                                 </tr>
                                 <tr class="text-center table-light">
                                     <td>****Campak Lanjutan</td>
                                     <td><?= $dataimun['imun19'] ?></td>
-                                    <td><?= $dataimun['imun19'] ?></td>
+                                    <td style="background: lightgrey;"><?= $dataimun['imun20'] ?></td>
                                 </tr>
                             </table>
                         </div>
