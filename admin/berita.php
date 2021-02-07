@@ -46,7 +46,7 @@
                                         <td><?= $data['penulis_berita'] ?></td>
                                         <td>
                                             <a href="edit-berita.php?kode=<?= $data['kode_phbs'] ?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Ubah</a>
-                                            <a href="del-berita.php?kode=<?= $data['kode_phbs'] ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i> Hapus</a>
+                                            <a href="del-berita.php?kode=<?= $data['kode_phbs'] ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin?');"><i class="fa fa-trash-o"></i> Hapus</a>
                                         </td>
                                     </tr>
                                   <?php $no++;}?>

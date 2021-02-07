@@ -46,7 +46,7 @@
                                         <td><?= $data['usia'] ?> Tahun</td>
                                         <td>
                                             <a href="edit-balita.php?kode=<?= $data['kode_balita'] ?>" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Ubah</a>
-                                            <a href="del-balita.php?kode=<?= $data['kode_balita'] ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i> Hapus</a>
+                                            <a href="del-balita.php?kode=<?= $data['kode_balita'] ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin?');"><i class="fa fa-trash-o"></i> Hapus</a>
                                         </td>
                                     </tr>
                                     <?php $no++;}?>

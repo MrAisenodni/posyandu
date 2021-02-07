@@ -20,7 +20,7 @@ $bulan = array(
 <h4 class="text-center fs-14">Posyandu Apel Desa Sukamanah</h4><hr>
 <table class="table table-bordered">
   <thead>
-    <tr>
+    <tr class="text-center">
       <th scope="col" class="fw-bold">No</th>
       <th scope="col" class="fw-bold">Nama Bayi</th>
       <th scope="col" class="fw-bold">Jenis Kelamin</th>
@@ -41,7 +41,7 @@ $bulan = array(
     <tr>
       <th scope="row"><?= $no ?></th>
       <td><?php echo ucwords($data['nama_balita']);?></td>
-      <td><?php if($data['jenkel']=='L') { echo "Laki-laki"; } else { echo "Perempuan"; }?></td>
+      <td ><?php if($data['jenkel']=='L') { echo "Laki-laki"; } else { echo "Perempuan"; }?></td>
       <td><?= $data['bb_balita']?></td>
       <td><?= $data['tb_balita']?></td>
       <td><?= $data['jenis_vaksin']?></td>
