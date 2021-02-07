@@ -208,6 +208,49 @@
       });
 
     chart.render();
+    var chart = new CanvasJS.Chart("donutp", {
+      theme: "light2",
+      animationEnabled: true,
+      title: {
+        text: "Jumlah Balita Laki-laki",
+        fontFamily: 'Roboto',
+        fontWeight: 'bold'
+      },
+      data: [{
+        type: "doughnut",
+        showInLegend: true,
+        legendText: "{label} : {y}",
+        dataPoints: [
+          { label: "<1 tahun", y: <?= $datapria['pria1'] ?> },
+          { label: "<2 tahun", y: <?= $datapria['pria2'] ?> },
+          { label: "<3 tahun", y: <?= $datapria['pria3'] ?> },                                    
+          { label: "<4 tahun", y: <?= $datapria['pria4'] ?> },
+          { label: "<5 tahun", y: <?= $datapria['pria5'] ?> }
+        ]
+      }]
+    });
+    chart.render();
+    var chart = new CanvasJS.Chart("donutw", {
+      animationEnabled: true,
+      title: {
+        text: "Jumlah Balita Perempuan",
+        fontFamily: 'Roboto',
+        fontWeight: 'bold'
+      },
+      data: [{
+        type: "doughnut",
+        showInLegend: true,
+        legendText: "{label} : {y}",
+        dataPoints: [
+          { label: "<1 tahun", y: <?= $datawanita['wanita1'] ?> },
+          { label: "<2 tahun", y: <?= $datawanita['wanita2'] ?> },
+          { label: "<3 tahun", y: <?= $datawanita['wanita3'] ?> },                                    
+          { label: "<4 tahun", y: <?= $datawanita['wanita4'] ?> },
+          { label: "<5 tahun", y: <?= $datawanita['wanita5'] ?> }
+        ]
+      }]
+    });
+    chart.render();
     }
     </script>
 </body>

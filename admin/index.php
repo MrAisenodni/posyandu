@@ -22,6 +22,22 @@ $bulan = array(
   'Desember',
 );
 
+    $sqlpria = mysqli_query($con, "SELECT 
+        (SELECT COUNT(nama_balita) AS jumlah FROM balita WHERE (YEAR(CURRENT_DATE()) - YEAR(tgl_lahir))=1 AND jenkel='L') AS pria1,
+        (SELECT COUNT(nama_balita) AS jumlah FROM balita WHERE (YEAR(CURRENT_DATE()) - YEAR(tgl_lahir))=2 AND jenkel='L') AS pria2,
+        (SELECT COUNT(nama_balita) AS jumlah FROM balita WHERE (YEAR(CURRENT_DATE()) - YEAR(tgl_lahir))=3 AND jenkel='L') AS pria3,
+        (SELECT COUNT(nama_balita) AS jumlah FROM balita WHERE (YEAR(CURRENT_DATE()) - YEAR(tgl_lahir))=4 AND jenkel='L') AS pria4,
+        (SELECT COUNT(nama_balita) AS jumlah FROM balita WHERE (YEAR(CURRENT_DATE()) - YEAR(tgl_lahir))=5 AND jenkel='L') AS pria5 FROM balita");
+    $datapria = mysqli_fetch_array($sqlpria);
+
+    $sqlwanita = mysqli_query($con, "SELECT 
+        (SELECT COUNT(nama_balita) AS jumlah FROM balita WHERE (YEAR(CURRENT_DATE()) - YEAR(tgl_lahir))=1 AND jenkel='P') AS wanita1,
+        (SELECT COUNT(nama_balita) AS jumlah FROM balita WHERE (YEAR(CURRENT_DATE()) - YEAR(tgl_lahir))=2 AND jenkel='P') AS wanita2,
+        (SELECT COUNT(nama_balita) AS jumlah FROM balita WHERE (YEAR(CURRENT_DATE()) - YEAR(tgl_lahir))=3 AND jenkel='P') AS wanita3,
+        (SELECT COUNT(nama_balita) AS jumlah FROM balita WHERE (YEAR(CURRENT_DATE()) - YEAR(tgl_lahir))=4 AND jenkel='P') AS wanita4,
+        (SELECT COUNT(nama_balita) AS jumlah FROM balita WHERE (YEAR(CURRENT_DATE()) - YEAR(tgl_lahir))=5 AND jenkel='P') AS wanita5 FROM balita");
+    $datawanita = mysqli_fetch_array($sqlwanita);
+
     $sqlbbp = mysqli_query($con, "SELECT 
 (SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=1 AND a.bb_balita<7.5 AND b.jenkel='L') AS wast1,
 (SELECT COUNT(b.nama_balita) AS jumlah FROM perkembangan_balita a LEFT JOIn balita b ON b.kode_balita = a.kode_balita WHERE (YEAR(CURRENT_DATE()) - YEAR(b.tgl_lahir))=1 AND a.bb_balita>=7.5 AND a.bb_balita<13.5 AND b.jenkel='L') AS ideal1,
@@ -205,6 +221,18 @@ $dataavgbbw = mysqli_fetch_array($sqlavgbbw);
                         </div>
                     </div>
                 </div><br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="white-box" style="width: 555px">
+                            <div id="donutp" style="width: 500px; height: 350px;"></div><br>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="white-box" style="width: 555px">
+                            <div id="donutw" style="width: 500px; height: 350px;"></div><br>
+                        </div>
+                    </div>
+                </div>
                 <!-- /.row -->
             </div>
         </div>
