@@ -257,6 +257,179 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Siste
 		  });
 
 		chart.render();
+
+		CanvasJS.addColorSet("greenred",
+                [//colorSet Array
+
+                "yellow",
+                "lightgreen",
+                "red"
+            ]);
+      // Bar Chart Tinggi Badan Pria
+        var chart = new CanvasJS.Chart("tbw-graph", {
+          colorSet: "greenred",
+                
+          title:{
+            text: "Tinggi Badan Balita Perempuan",
+            fontFamily: "Roboto",
+            fontWeight: "bold"              
+          },
+
+          data: [  //array of dataSeries     
+          { //dataSeries - first quarter
+     /*** Change type "column" to "bar", "area", "line" or "pie"***/        
+           type: "column",
+           name: "Kekurangan",
+           indexLabel: "{y}",
+           indexLabelPlacement: "inside",
+           indexLabelOrientation: "vertical",
+           indexLabelFontFamily: "Roboto",
+           indexLabelFontColor: "white",
+           indexLabelFontSize: 14,
+           indexLabelFontWeight: "bold",
+           showInLegend: true,
+           dataPoints: [
+           { label: "<2 tahun", y: <?= $charttbw['wast2'] ?> },
+           { label: "<3 tahun", y: <?= $charttbw['wast3'] ?> },                                    
+           { label: "<4 tahun", y: <?= $charttbw['wast4'] ?> },
+           { label: "<5 tahun", y: <?= $charttbw['wast5'] ?> }
+           ]
+         },
+
+         { //dataSeries - second quarter
+
+          type: "column",
+          name: "Ideal", 
+        indexLabel: "{y}",
+        indexLabelPlacement: "inside",
+        indexLabelOrientation: "vertical",
+        indexLabelFontFamily: "Roboto",
+        indexLabelFontColor: "white",
+        indexLabelFontSize: 14,
+        indexLabelFontWeight: "bold",
+          showInLegend: true,               
+          dataPoints: [
+           { label: "<2 tahun", y: <?= $charttbw['ideal2'] ?> },
+           { label: "<3 tahun", y: <?= $charttbw['ideal3'] ?> },                                    
+           { label: "<4 tahun", y: <?= $charttbw['ideal4'] ?> },
+           { label: "<5 tahun", y: <?= $charttbw['ideal5'] ?> }
+          ]
+        },
+
+        { //dataSeries - third quarter
+
+          type: "column",
+          name: "Kelebihan", 
+        indexLabel: "{y}",
+        indexLabelPlacement: "inside",
+        indexLabelOrientation: "vertical",
+        indexLabelFontFamily: "Roboto",
+        indexLabelFontColor: "white",
+        indexLabelFontSize: 14,
+        indexLabelFontWeight: "bold",
+          showInLegend: true,               
+          dataPoints: [
+           { label: "<2 tahun", y: <?= $charttbw['obe2'] ?> },
+           { label: "<3 tahun", y: <?= $charttbw['obe3'] ?> },                                    
+           { label: "<4 tahun", y: <?= $charttbw['obe4'] ?> },
+           { label: "<5 tahun", y: <?= $charttbw['obe5'] ?> }
+          ]
+        }
+        ],
+     /** Set axisY properties here*/
+        axisY:{
+          title: "Jumlah Balita",
+          titleFontFamily: "Roboto"
+        }    
+      });
+        chart.render();
+
+        CanvasJS.addColorSet("bluerange",
+                [//colorSet Array
+
+                "blue",
+                "green",
+                "purple"
+            ]);
+        // Bar Chart Tinggi Badan Wanita
+        var chart = new CanvasJS.Chart("tbp-graph", {
+          colorSet: "bluerange",
+                
+          title:{
+            text: "Tinggi Badan Balita Laki-laki",
+            fontFamily: "Roboto",
+            fontWeight: "bold"              
+          },
+
+          data: [  //array of dataSeries     
+          { //dataSeries - first quarter
+     /*** Change type "column" to "bar", "area", "line" or "pie"***/        
+           type: "column",
+           name: "Kekurangan",
+           indexLabel: "{y}",
+           indexLabelPlacement: "inside",
+           indexLabelOrientation: "vertical",
+           indexLabelFontFamily: "Roboto",
+           indexLabelFontColor: "white",
+           indexLabelFontSize: 14,
+           indexLabelFontWeight: "bold",
+           showInLegend: true,
+           dataPoints: [
+           { label: "<2 tahun", y: <?= $charttbp['wast2'] ?> },
+           { label: "<3 tahun", y: <?= $charttbp['wast3'] ?> },                                    
+           { label: "<4 tahun", y: <?= $charttbp['wast4'] ?> },
+           { label: "<5 tahun", y: <?= $charttbp['wast5'] ?> }
+           ]
+         },
+
+         { //dataSeries - second quarter
+
+          type: "column",
+          name: "Ideal", 
+        indexLabel: "{y}",
+        indexLabelPlacement: "inside",
+        indexLabelOrientation: "vertical",
+        indexLabelFontFamily: "Roboto",
+        indexLabelFontColor: "white",
+        indexLabelFontSize: 14,
+        indexLabelFontWeight: "bold",
+          showInLegend: true,               
+          dataPoints: [
+           { label: "<2 tahun", y: <?= $charttbp['ideal2'] ?> },
+           { label: "<3 tahun", y: <?= $charttbp['ideal3'] ?> },                                    
+           { label: "<4 tahun", y: <?= $charttbp['ideal4'] ?> },
+           { label: "<5 tahun", y: <?= $charttbp['ideal5'] ?> }
+          ]
+        },
+
+        { //dataSeries - third quarter
+
+          type: "column",
+          name: "Kelebihan", 
+        indexLabel: "{y}",
+        indexLabelPlacement: "inside",
+        indexLabelOrientation: "vertical",
+        indexLabelFontFamily: "Roboto",
+        indexLabelFontColor: "white",
+        indexLabelFontSize: 14,
+        indexLabelFontWeight: "bold",
+          showInLegend: true,               
+          dataPoints: [
+           { label: "<2 tahun", y: <?= $charttbp['obe2'] ?> },
+           { label: "<3 tahun", y: <?= $charttbp['obe3'] ?> },                                    
+           { label: "<4 tahun", y: <?= $charttbp['obe4'] ?> },
+           { label: "<5 tahun", y: <?= $charttbp['obe5'] ?> }
+          ]
+        }
+        ],
+     /** Set axisY properties here*/
+        axisY:{
+          title: "Jumlah Balita",
+          titleFontFamily: "Roboto"
+        }    
+      });
+
+    chart.render();
 		}
 		</script>
 	</body>
