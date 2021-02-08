@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2021 at 11:45 AM
+-- Generation Time: Feb 08, 2021 at 01:02 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -117,6 +117,38 @@ INSERT INTO `history` (`kode_balita`, `nik`, `tipe`, `bb_balita`, `tb_balita`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `history_imun`
+--
+
+CREATE TABLE `history_imun` (
+  `kode_balita` int(5) NOT NULL,
+  `nik` char(16) NOT NULL,
+  `jenis_vaksin` varchar(18) NOT NULL,
+  `tgl_imunisasi` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `history_imun`
+--
+
+INSERT INTO `history_imun` (`kode_balita`, `nik`, `jenis_vaksin`, `tgl_imunisasi`) VALUES
+(20, '3604221710870003', '', '2021-02-05'),
+(21, '3604221308880006', '***Campak', '2021-02-07'),
+(22, '3604220401850001', '***Campak', '2021-02-02'),
+(23, '3604220401850001', '***Campak', '2021-02-07'),
+(25, '3604220611750003', '', '2021-02-07'),
+(26, '3604221609670001', '', '2021-02-07'),
+(27, '3604221403900004', '*Polio 2', '2021-02-07'),
+(28, '3604222503750002', '', '2021-02-07'),
+(29, '3604222402920005', '*DPT-HB-Hib 1', '2021-02-07'),
+(30, '3604222709910004', '', '2021-02-07'),
+(31, '327505071098', '*Polio 3', '2021-02-07'),
+(20, '3604221710870003', '***Campak', '2021-02-08'),
+(27, '3604221403900004', '*DPT-HB-Hib 1', '2021-02-08');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `imunisasi`
 --
 
@@ -132,13 +164,13 @@ CREATE TABLE `imunisasi` (
 --
 
 INSERT INTO `imunisasi` (`kode_balita`, `nik`, `jenis_vaksin`, `tgl_imunisasi`) VALUES
-(20, '3604221710870003', '', '2021-02-05'),
-(21, '3604221308880006', 'Campak', '2021-02-07'),
-(22, '3604220401850001', 'Campak', '2021-02-02'),
-(23, '3604220401850001', 'Campak', '2021-02-07'),
+(20, '3604221710870003', '***Campak', '2021-02-08'),
+(21, '3604221308880006', '***Campak', '2021-02-07'),
+(22, '3604220401850001', '***Campak', '2021-02-02'),
+(23, '3604220401850001', '***Campak', '2021-02-07'),
 (25, '3604220611750003', '', '2021-02-07'),
 (26, '3604221609670001', '', '2021-02-07'),
-(27, '3604221403900004', '*Polio 2', '2021-02-07'),
+(27, '3604221403900004', '*DPT-HB-Hib 1', '2021-02-08'),
 (28, '3604222503750002', '', '2021-02-07'),
 (29, '3604222402920005', '*DPT-HB-Hib 1', '2021-02-07'),
 (30, '3604222709910004', '', '2021-02-07'),
@@ -302,7 +334,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `balita`
 --
 ALTER TABLE `balita`
-  MODIFY `kode_balita` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `kode_balita` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `jadwal`
