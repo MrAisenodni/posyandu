@@ -304,13 +304,13 @@ $dataimun = mysqli_fetch_array($sqlimun);
                     <div class="col-md-6">
                         <div class="white-box" style="width: 555px">
                             <div id="tbp-graph" style="width: 500px; height: 300px;"></div><br>
+                            <h3 class="text-center"><b>Rata-rata Tinggi Badan Balita Laki-laki</b></h3>
                             <table class="table table-bordered">
                                 <tr class="text-center table-warning" style="background: lightblue;">
                                     <th style="text-align: center; font-weight: bold;">Umur</th>
                                     <th style="text-align: center; font-weight: bold;">Tinggi Badan Ideal (cm)</th>
                                     <th style="text-align: center; font-weight: bold;">Rata-rata (cm)</th>
                                 </tr>
-                                <h3 class="text-center"><b>Rata-rata Tinggi Badan Balita Laki-laki</b></h3>
                                 <tr class="text-center table-light">
                                     <td><?php echo "<1 tahun" ?></td>
                                     <td>71 - 79,7</td>
