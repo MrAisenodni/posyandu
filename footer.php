@@ -289,6 +289,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Siste
            indexLabelFontWeight: "bold",
            showInLegend: true,
            dataPoints: [
+           { label: "<1 tahun", y: <?= $charttbw['wast1'] ?> },
            { label: "<2 tahun", y: <?= $charttbw['wast2'] ?> },
            { label: "<3 tahun", y: <?= $charttbw['wast3'] ?> },                                    
            { label: "<4 tahun", y: <?= $charttbw['wast4'] ?> },
@@ -309,6 +310,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Siste
         indexLabelFontWeight: "bold",
           showInLegend: true,               
           dataPoints: [
+          { label: "<1 tahun", y: <?= $charttbw['ideal1'] ?> },
            { label: "<2 tahun", y: <?= $charttbw['ideal2'] ?> },
            { label: "<3 tahun", y: <?= $charttbw['ideal3'] ?> },                                    
            { label: "<4 tahun", y: <?= $charttbw['ideal4'] ?> },
@@ -329,6 +331,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Siste
         indexLabelFontWeight: "bold",
           showInLegend: true,               
           dataPoints: [
+          { label: "<1 tahun", y: <?= $charttbw['obe1'] ?> },
            { label: "<2 tahun", y: <?= $charttbw['obe2'] ?> },
            { label: "<3 tahun", y: <?= $charttbw['obe3'] ?> },                                    
            { label: "<4 tahun", y: <?= $charttbw['obe4'] ?> },
@@ -375,6 +378,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Siste
            indexLabelFontWeight: "bold",
            showInLegend: true,
            dataPoints: [
+           { label: "<1 tahun", y: <?= $charttbp['wast1'] ?> },
            { label: "<2 tahun", y: <?= $charttbp['wast2'] ?> },
            { label: "<3 tahun", y: <?= $charttbp['wast3'] ?> },                                    
            { label: "<4 tahun", y: <?= $charttbp['wast4'] ?> },
@@ -395,6 +399,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Siste
         indexLabelFontWeight: "bold",
           showInLegend: true,               
           dataPoints: [
+          { label: "<1 tahun", y: <?= $charttbp['ideal1'] ?> },
            { label: "<2 tahun", y: <?= $charttbp['ideal2'] ?> },
            { label: "<3 tahun", y: <?= $charttbp['ideal3'] ?> },                                    
            { label: "<4 tahun", y: <?= $charttbp['ideal4'] ?> },
@@ -415,6 +420,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Siste
         indexLabelFontWeight: "bold",
           showInLegend: true,               
           dataPoints: [
+          { label: "<1 tahun", y: <?= $charttbp['obe1'] ?> },
            { label: "<2 tahun", y: <?= $charttbp['obe2'] ?> },
            { label: "<3 tahun", y: <?= $charttbp['obe3'] ?> },                                    
            { label: "<4 tahun", y: <?= $charttbp['obe4'] ?> },

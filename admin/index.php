@@ -222,8 +222,8 @@ $dataimun = mysqli_fetch_array($sqlimun);
                 <!-- .row berat badan -->
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="white-box" style="width: 555px">
-                            <div id="bbp-graph" style="width: 500px; height: 300px;"></div><br>
+                        <div class="white-box" style="width: 490px">
+                            <div id="bbp-graph" style="width: 425px; height: 300px;"></div><br>
                             <h3 class="text-center"><b>Rata-rata Berat Badan Balita Laki-laki</b></h3>
                             <table class="table table-bordered">
                                 <tr class="text-center table-warning" style="background: lightblue;">
@@ -260,8 +260,8 @@ $dataimun = mysqli_fetch_array($sqlimun);
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="white-box" style="width: 555px">
-                            <div id="bbw-graph" style="width: 500px; height: 300px;"></div><br>
+                        <div class="white-box" style="width: 490px">
+                            <div id="bbw-graph" style="width: 425px; height: 300px;"></div><br>
                             <h3 class="text-center"><b>Rata-rata Berat Badan Balita Permpuan</b></h3>
                             <table class="table table-bordered">
                                 <tr class="text-center table-warning" style="background: gold;">
@@ -302,8 +302,8 @@ $dataimun = mysqli_fetch_array($sqlimun);
                 <!-- .row tinggi badan -->
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="white-box" style="width: 555px">
-                            <div id="tbp-graph" style="width: 500px; height: 300px;"></div><br>
+                        <div class="white-box" style="width: 490px">
+                            <div id="tbp-graph" style="width: 425px; height: 300px;"></div><br>
                             <h3 class="text-center"><b>Rata-rata Tinggi Badan Balita Laki-laki</b></h3>
                             <table class="table table-bordered">
                                 <tr class="text-center table-warning" style="background: lightblue;">
@@ -340,8 +340,8 @@ $dataimun = mysqli_fetch_array($sqlimun);
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="white-box" style="width: 555px">
-                            <div id="tbw-graph" style="width: 500px; height: 300px;"></div><br>
+                        <div class="white-box" style="width: 490px">
+                            <div id="tbw-graph" style="width: 425px; height: 300px;"></div><br>
                             <h3 class="text-center"><b>Rata-rata Tinggi Badan Balita Perempuan</b></h3>
                             <table class="table table-bordered">
                                 <tr class="text-center table-warning" style="background: gold;">
@@ -471,13 +471,13 @@ $dataimun = mysqli_fetch_array($sqlimun);
                 <!-- .row jumlah balita  -->
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="white-box" style="width: 555px">
-                            <div id="donutp" style="width: 500px; height: 350px;"></div><br>
+                        <div class="white-box" style="width: 495px">
+                            <div id="donutp" style="width: 425px; height: 350px;"></div><br>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="white-box" style="width: 555px">
-                            <div id="donutw" style="width: 500px; height: 350px;"></div><br>
+                        <div class="white-box" style="width: 495px">
+                            <div id="donutw" style="width: 425px; height: 350px;"></div><br>
                         </div>
                     </div>
                 </div>
